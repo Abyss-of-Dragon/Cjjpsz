@@ -54,6 +54,7 @@ No,it doesn't.
 ⑥查询检索
 ⑦活动日历
 ⑧截图分享
+⑨上传下载文件
 ⑩游戏资讯
 
 6. Design the main screen of your app. You could either hand-drawn or include a wireframe of the main screen of your app 
