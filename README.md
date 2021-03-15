@@ -22,23 +22,25 @@
 
 (2) Novelty: o List at least 3 keywords to summarize the purpose of your app 
 
-​  ①玩家视角 	②类百科全书 	③多功能工具箱
+​  &emsp;①玩家视角 	②类百科全书 	③多功能工具箱
 
 ​	o Perform a search in https://github.com/. Do similar apps that you propose exist? 
 
-​		**No,it doesn't.**
+​	&emsp;**No,it doesn't.**
 
 ​	o What is the novelty of your project? Explain your novelty by selecting one or more of these 		reasons: 
 
-​		**(1) performance improvement;** 
+​	&emsp;**(1) performance improvement;** 
 
-​		**(2) better design;** 
+​	&emsp;**(2) better design;** 
 
-​		**(3) unique features;** 
+​	&emsp;**(3) unique features;** 
 
-​		**(4) place-specific (for example, other apps exist but they are designed for other region/country/university).** 
+​	&emsp;**(4) place-specific (for example, other apps exist but they are designed for other region/country/university).** 
 
-​		**(5) 更简洁的UI**
+​	&emsp;**(5) 更简洁的UI**
+
+
 
 1. Ease of Test: Is it easy to test the app? **Yes,it is.**
 
@@ -50,16 +52,16 @@
 
 2. List at least 10 features supported in your App. An example feature is “import a file”, “login form”, “take picture using a camera” 
 
-   **①注册登录 	②论坛 	③抽卡模拟 	④养成计算 	⑤百科图鉴 	⑥查询检索 	⑦活动日历** 
+   &emsp;**①注册登录 	②论坛 	③抽卡模拟 	④养成计算 	⑤百科图鉴 	⑥查询检索 	⑦活动日历** 
 
-   **⑧截图分享 	⑨上传下载文件 	⑩游戏资讯**
+   &emsp;**⑧截图分享 	⑨上传下载文件 	⑩游戏资讯**
 
 3. Design the main screen of your app. You could either hand-drawn or include a wireframe of the main screen of your app o https://www.mockplus.com/blog/post/free-wireframe-apps 
 
-   **详见附件**
+   &emsp;**详见附件**
 
 4. List the labor division and responsibility at each iteration Name Role (e.g., Leader/Developer /Designer/Tester/Developer & Documentaion) 
 
-   **Concrete Tasks To be continued……**
+   &emsp;**Concrete Tasks To be continued……**
 
 *8 weekly-based progress update before the deadline 2021/3/7 - 2021/3/14: Update of each team member: xxx To be continued……*
