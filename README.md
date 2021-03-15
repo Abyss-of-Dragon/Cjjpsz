@@ -6,11 +6,11 @@
 
 1. List the names and student ids of the members in your group. 
 
-   陈经纬：10195101411 $~~~~$蒋子仪：10195101542 
+   陈经纬：10195101411   蒋子仪：10195101542 
 
-   姜睿宇：10195101443 	$~~~~$			潘义    ：10195101431 
+   姜睿宇：10195101443 	潘义    ：10195101431 
 
-   苏建锐：10195101553 	$~~~~$			张培洋：10195101410
+   苏建锐：10195101553 	张培洋：10195101410
 
 2. Each group should select a unique group name. The group name will be used for the setting up the GitHub repository. List the group name that your group has selected. 
 
@@ -22,7 +22,7 @@
 
 (2) Novelty: o List at least 3 keywords to summarize the purpose of your app 
 
-​  $~~~~$①玩家视角 $~~~~$	②类百科全书 $~~~~$	③多功能工具箱
+​  ①玩家视角 	②类百科全书 	③多功能工具箱
 
 ​	o Perform a search in https://github.com/. Do similar apps that you propose exist? 
 
