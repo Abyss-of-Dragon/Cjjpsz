@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: 1
+    username: 1
+    password: 1
+  thymeleaf:
+    prefix: classpath:/templates/
+    cache: false
+  web:
+    resources:
+      chain:
+        cache: false
+      static-locations: classpath:/static/
