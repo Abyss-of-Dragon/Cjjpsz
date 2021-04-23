@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>注册成功</title>
+    <script type="text/javascript">
+        function redirect() {
+            setTimeout(function (){
+                window.location='/login';
+            }, 4000);
+        }
+    </script>
+</head>
+<body onload="redirect()">
+    <span th:text="'用户'+${user.getUsername()}+'注册成功,正在跳转到登录'"></span>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
+    <link rel="stylesheet" type="text/css" href="/expand/roll.css">
+    <script src="/expand/roll.js" type="text/javascript"></script>
+    <script src="/expand/input.js"></script>
+    <meta charset="UTF-8">
+    <!--网页作者-->
+    <meta name="author" content="the members of Cjjpsz">
+    <!--网页描述-->
+    <meta name="description" content="For the project of Software Engineering Practice">
+    <!--版权声明-->
+    <meta name="copyright" content="本站内容未经允许禁止转载，违者必究">
+    <title>原神助手</title>
+</head>
+
+<body>
+    <div>
+    <a href="/login"><img src="logo.jpg" width="210" height="140"
+            style="position: absolute;top: 50px;left: 0"></a>
+    </div>
+    <div>
+    <img src="head.jpg" width="1100" height="230"
+         style="position: absolute;top: 0;left: 350px">
+    </div>
+    <button style="width: 100px;height: 50px;background-color:lightcyan;color:black;
+    position: absolute; top: 300px;left: 50px">关于本站</button>
+    <button style="width: 100px;height: 50px;background-color:lightcyan;color:black;
+    position: absolute; top: 360px;left: 50px">反馈建议</button>
+    <button style="width: 100px;height: 50px;background-color:lightcyan;color:black;
+    position: absolute; top: 420px;left: 50px">图鉴</button>
+    <button style="width: 100px;height: 50px;background-color:lightcyan;color:black;
+    position: absolute; top: 480px;left: 50px">养成计算器</button>
+    <button style="width: 100px;height: 50px;background-color:lightcyan;color:black;
+    position: absolute; top: 540px;left: 50px">抽卡模拟器</button>
+    <button style="width: 100px;height: 50px;background-color:lightcyan;color:#000000;
+    position: absolute; top: 600px;left: 50px">论坛</button>
+    <body style="background-image: url(back.png);background-size: cover"></body>
+    <form style="position: absolute; top: 300px;left: 1200px">
+        <div><input placeholder="在此输入" onclick="hideplaceholder(this)"><button class="btn">Search</button></div>
+    </form>
+    <div class="warp">
+        <div class="broadcast" id="broadcast">
+            <ul id="img_list">
+                <li><img src="roll1.jpg" alt="1"></li>
+                <li><img src="roll2.jpg" alt="2"></li>
+                <li><img src="roll3.jpg" alt="3"></li>
+                <li><img src="roll4.jpg" alt="4"></li>
+                <li><img src="roll5.jpg" alt="5"></li>
+            </ul>
+            <ol id="button_list"> <!-- 轮播按钮 -->
+                <li class="first-li" id="olli1">1</li>
+                <li id="olli2">2</li>
+                <li id="olli3">3</li>
+                <li id="olli4">4</li>
+                <li id="olli5">5</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

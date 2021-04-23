@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="htttps://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+</head>
+<body>
+    <form action="/register" method="post">
+        <input name="username"><br><input name="password"><br><input name="nickname"><br>
+        <button type="submit">注册</button><a></a>
+        <span th:if="${reg_failed}">注册失败,已存在该用户</span>
+    </form>
+</body>
+</html>
