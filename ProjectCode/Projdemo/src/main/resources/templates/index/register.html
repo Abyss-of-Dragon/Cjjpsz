@@ -15,19 +15,13 @@
     <script src="/Projdemo/static/dist/semantic.min.js" th:src="@{/dist/semantic.min.js}"></script>
 
     <!-- Site Specified Style and Script -->
-    <link rel="stylesheet" type="text/css" href="/ProjectManagement/static/css/register.css" th:href="@{/css/register.css}">
+    <link rel="stylesheet" type="text/css" href="/Projdemo/static/css/register.css" th:href="@{/css/register.css}">
     <script src="/Projdemo/static/js/register.js" th:src="@{/js/register.js}"></script>
 </head>
 
 <body>
 <div class="ui middle aligned center aligned grid">
     <div class="column">
-
-        <h1 class="ui header">
-            <div class="content">
-                注册
-            </div>
-        </h1>
 
         <form th:action="@{/register}" method="post" class="ui large form">
             <div class="ui stacked segment">

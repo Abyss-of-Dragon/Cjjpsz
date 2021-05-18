@@ -15,19 +15,13 @@
     <script src="/Projdemo/static/dist/semantic.min.js" th:src="@{/dist/semantic.min.js}"></script>
 
     <!-- Page Specified Style and Script -->
-    <link rel="stylesheet" type="text/css" href="/ProjectManagement/static/css/login.css" th:href="@{/css/login.css}">
-    <script src="/ProjectManagement/static/js/login.js" th:src="@{/js/login.js}"></script>
+    <link rel="stylesheet" type="text/css" href="/Projdemo/static/css/login.css" th:href="@{/css/login.css}">
+    <script src="/Projdemo/static/js/login.js" th:src="@{/js/login.js}"></script>
 </head>
 
 <body>
 <div class="ui middle aligned center aligned grid">
     <div class="column">
-
-        <h1 class="ui header">
-            <div class="content">
-                登陆
-            </div>
-        </h1>
 
         <form th:action="@{/login}" th:object="${user}" method="post" class="ui large form">
             <div class="ui stacked segment">
