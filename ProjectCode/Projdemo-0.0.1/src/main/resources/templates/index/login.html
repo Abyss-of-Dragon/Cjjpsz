@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Site Properties -->
+    <title>登录</title>
+    <link rel="icon" type="image/x-icon" href="/Projdemo/static/img/logo.png" th:href="@{/img/logo.png}"/>
+    <link rel="stylesheet" type="text/css" href="/Projdemo/static/dist/semantic.min.css" th:href="@{/dist/semantic.min.css}">
+    <script src="/Projdemo/static/js/jquery-3.5.1.min.js" th:src="@{/js/jquery-3.5.1.min.js}"></script>
+    <script src="/Projdemo/static/dist/semantic.min.js" th:src="@{/dist/semantic.min.js}"></script>
+
+    <!-- Page Specified Style and Script -->
+    <link rel="stylesheet" type="text/css" href="/ProjectManagement/static/css/login.css" th:href="@{/css/login.css}">
+    <script src="/ProjectManagement/static/js/login.js" th:src="@{/js/login.js}"></script>
+</head>
+
+<body>
+<div class="ui middle aligned center aligned grid">
+    <div class="column">
+
+        <h1 class="ui header">
+            <div class="content">
+                登陆
+            </div>
+        </h1>
+
+        <form th:action="@{/login}" th:object="${user}" method="post" class="ui large form">
+            <div class="ui stacked segment">
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="user icon"></i>
+                        <label for="uid"></label>
+                        <input type="text" name="uid" id="uid" placeholder="帐号">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <label for="password"></label>
+                        <input type="password" name="password" id="password" placeholder="密码">
+                    </div>
+                </div>
+                <div class="ui fluid large blue submit button">登录</div>
+            </div>
+            <div class="ui error message"></div>
+        </form>
+
+        <div class="ui message">
+            什么，第一次来吗？(。・∀・)ノ <a href="register">注册</a>！
+            <div id="result-msg"></div>
+            <script>
+                window.onload = () => {
+                    let param = new URLSearchParams(window.location.search);
+                    if (param.has("result") && param.get("result") == "WrongPassword") {
+                        alert("Wrong password");
+                    }
+
+                    else if(param.has("result") && param.get("result") == "UserNotFound"){
+                        alert("User not found");
+                    }
+                }
+            </script>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
