@@ -1,0 +1,43 @@
+import junit.util.HelloServlet;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class tritypTest {
+
+    @BeforeEach
+    void setUp() {
+    }
+
+    @AfterEach
+    void tearDown() {
+    }
+
+    @Test public void triang0() {assertEquals(4, HelloServlet.Triang(-1,1,1));}
+    @Test public void triang1() {assertEquals(4, HelloServlet.Triang(1,-1,1));}
+    @Test public void triang2() {assertEquals(4, HelloServlet.Triang(1,1,-1));}
+    @Test public void triang3() {assertEquals(4, HelloServlet.Triang(1,1,2));}
+    @Test public void triang4() {assertEquals(4, HelloServlet.Triang(1,2,1));}
+    @Test public void triang5() {assertEquals(4, HelloServlet.Triang(2,1,1));}
+    @Test public void triang6() {assertEquals(3, HelloServlet.Triang(1,1,1));}
+    @Test public void triang7() {assertEquals(1, HelloServlet.Triang(3,5,7));}
+    @Test public void triang8() {assertEquals(2, HelloServlet.Triang(2,2,3));}
+    @Test public void triang9() {assertEquals(2, HelloServlet.Triang(2,3,2));}
+    @Test public void triang10() {assertEquals(2, HelloServlet.Triang(3,2,2));}
+    @Test public void triang11() {assertEquals(3, HelloServlet.Triang(4,4,4));}
+    @Test public void triang12() {assertEquals(4, HelloServlet.Triang(0,0,0));}
+    @Test public void triang13() {assertEquals(3, HelloServlet.Triang(4444,4444,4444));}
+    @Test public void triang14() {assertEquals(4, HelloServlet.Triang(-1,-1,-1));}
+    @Test public void triang15() {assertEquals(1, HelloServlet.Triang(5,7,3));}
+    @Test public void triang16() {assertEquals(1, HelloServlet.Triang(7,5,3));}
+    @Test public void triang17() {assertEquals(4, HelloServlet.Triang(7,5,2));}
+    @Test public void triang18() {assertEquals(4, HelloServlet.Triang(5,7,2));}
+    @Test public void triang19() {assertEquals(4, HelloServlet.Triang(2,5,7));}
+    @Test public void triang() {assertEquals(4, HelloServlet.Triang(0,0,0));}
+    @Test public void triang20() {assertEquals(4, HelloServlet.Triang(11,1,1));}
+    @Test public void triang21() {assertEquals(4, HelloServlet.Triang(-1,-1,1));}
+    @Test public void triang22() {assertEquals(4, HelloServlet.Triang(1,-1,-1));}
+    @Test public void triang23() {assertEquals(4, HelloServlet.Triang(-1,1,-1));}
+}
