@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Site Properties -->
+    <title>页面 - 通用模板</title>
+    <link rel="icon" type="image/x-icon" href="/Projdemo/static/img/logo.png" th:href="@{/img/logo.png}"/>
+    <link rel="stylesheet" type="text/css" href="/Projdemo/static/dist/semantic.css" th:href="@{/dist/semantic.min.css}">
+    <script src="/Projdemo/static/js/jquery-3.5.1.min.js" th:src="@{/js/jquery-3.5.1.min.js}"></script>
+    <script src="/Projdemo/static/dist/semantic.min.js" th:src="@{/dist/semantic.min.js}"></script>
+
+    <!-- Site Specified Style and Script -->
+    <link rel="stylesheet" type="text/css" href="/Projdemo/static/css/common.css" th:href="@{/css/common.css}">
+    <script src="/Projdemo/static/js/common.js" th:src="@{/js/common.js}"></script>
+</head>
+
+<body>
+
+    <!-- 通用顶部栏 header 片段 -->
+    <div th:fragment="common_header" class="ui fixed large borderless menu">
+        <div class="ui container">
+            <div class="header item">
+                <img class="proj icon" src="/Projdemo/static/img/cjjpsz.png" th:src="@{/img/cjjpsz.png}" alt="Logo">
+                原神Wiki
+            </div>
+            <a href="/" class="header item">
+                首页
+            </a>
+            <a class="right item">
+                <div class="ui icon input">
+                    <i class="search icon"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+            </a>
+            <a href="/logout" class="right item">
+                <div class="ui logout icon">登出</div>
+                <i class="sign out alternate icon"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="ui main container">
+        <div class="ui stackable grid">
+            <div class="ui mobile only four wide column">
+
+                <!-- 通用手机显示菜单 menu 片段， index 为传递进来的参数 -->
+                <div th:fragment="common_mobile_menu(index)" class="ui container">
+                    <div class="ui fluid three item pointing menu container">
+                        <a th:class="${index}==1?'active red item':'item'" class="item" href="/profile">
+                            <h4>个人信息</h4>
+                        </a>
+                        <a th:class="${index}==2?'active red item':'item'" class="item" href="/application">
+                            <h4>项目申报</h4>
+                        </a>
+                        <a th:class="${index}==3?'active red item':'item'" class="item" href="/management">
+                            <h4>项目管理</h4>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="ui computer only tablet only four wide column">
+
+                <!-- 通用左侧菜单 menu 片段， index 为传递进来的参数 -->
+                <div th:fragment="common_menu(index)" class="ui container">
+                    <div class="ui fluid card">
+                        <div class="ui centered image">
+                            <img src="/Projdemo/static/img/youla.png"
+                                 th:src="@{/img/head_user.jpg}"
+                                 alt="Avatar">
+                        </div>
+                        <div class="content">
+                            <div th:text="${user.name}" class="header">用户ID</div>
+                            <div class="meta"><span th:text="${user.uid}" class="uid">帐号</span></div>
+                        </div>
+                        <div class="inline extra content field">
+                            <i class="calendar alternate icon"></i>
+                            <span th:text="'加入自 ' + ${user.getCreationTime()}" class="ui text">加入自 xxxx 年 xx 月</span>
+                        </div>
+                    </div>
+                    <div class="ui vertical fluid stackable menu container">
+                        <a th:class="${index}==1?'active red item':'item'" class="item" href="/Encyclopedia">
+                            <h4>百科图鉴</h4>
+                        </a>
+                        <a th:class="${index}==2?'active red item':'item'" class="item" href="/calculator">
+                            <h4>养成计算</h4>
+                        </a>
+                        <a th:class="${index}==3?'active red item':'item'" class="item" href="/news">
+                            <h4>游戏资讯</h4>
+                        </a>
+                        <a th:class="${index}==3?'active red item':'item'" class="item" href="/gacha">
+                            <h4>抽卡模拟</h4>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 通用底部 footer 片段 -->
+    <div th:fragment="common_footer" class="ui vertical footer segment">
+        <div class="ui center aligned container">
+            <p>
+                Copyright © 2021 Temper.
+            </p>
+            <p>
+                All rights reserved.
+            </p>
+            <div class="ui header">
+                <a href="https://github.com/Abyss-of-Dragon/Cjjpsz" class="ui centered image">
+                    <i class="large grey github icon"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
