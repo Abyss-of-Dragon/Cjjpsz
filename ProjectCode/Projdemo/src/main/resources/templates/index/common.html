@@ -87,41 +87,45 @@
             </div>
 
             <div class="ui twelve wide column">
-                <div class="ui one column grid">
-                    <div class="computer only tablet only column">
-                        <h1 align="center" class="ui computer only header">Welcome to Genshin Impact Imformation Station!</h1>
+                <div class="ui form message">
+                    <div class="ui one column grid">
+                        <div class="computer only tablet only column">
+                            <h1 align="center" class="ui computer only header">Welcome to Genshin Impact Imformation Station!</h1>
+                        </div>
                     </div>
+
+                    <img class="ui big centered circular image" src="/Projdemo/static/img/background1.png">
+    <!--                    <div class="container column"></div>-->
                 </div>
-                <img class="ui big centered circular image" src="/Projdemo/static/img/background1.png">
-<!--                    <div class="container column"></div>-->
-                <form class="ui form" th:action="@{/application}" method="post" enctype="multipart/form-data">
-<!--                    <div class="field">-->
-<!--                        <label for="teammates">选择你的队友</label>-->
-<!--                        <select th:object="${project}" type="text" id="teammates" name="teammates"-->
-<!--                                class="ui fluid search dropdown" multiple>-->
-<!--                            <option th:each="student:${students}"-->
-<!--                                    th:value="${student.uid}"-->
-<!--                                    th:text="${student.name} + ' ' + ${student.uid}">-->
-<!--                            </option>-->
-<!--                        </select>-->
-<!--                    </div>-->
-                    <div class="field">
-                        <label for="profile">
-                            <b>留下你的评论吧</b>
-                        </label>
-                        <textarea th:object="${project}" type="text" id="profile" name="profile" maxlength="200"></textarea>
-                    </div>
-<!--                    <div class="field">-->
-<!--                        <label for="file-button">上传附件</label>-->
-<!--                        <div class="ui file action input">-->
-<!--                            <label for="file-name"></label>-->
-<!--                            <input type="file" id="file" name="file" autocomplete="off">-->
-<!--                            <input type="text" id="file-name" name="file-name" readonly>-->
-<!--                            <div class="ui button" id="file-button">选择文件</div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-                    <input type="submit" value="确认提交" class="ui fluid large blue submit button"/>
-                </form>
+                    <form class="ui form" th:action="@{/application}" method="post" enctype="multipart/form-data">
+    <!--                    <div class="field">-->
+    <!--                        <label for="teammates">选择你的队友</label>-->
+    <!--                        <select th:object="${project}" type="text" id="teammates" name="teammates"-->
+    <!--                                class="ui fluid search dropdown" multiple>-->
+    <!--                            <option th:each="student:${students}"-->
+    <!--                                    th:value="${student.uid}"-->
+    <!--                                    th:text="${student.name} + ' ' + ${student.uid}">-->
+    <!--                            </option>-->
+    <!--                        </select>-->
+    <!--                    </div>-->
+                        <div class="field">
+                            <label for="profile">
+                                <b>留下你的评论吧</b>
+                            </label>
+                            <textarea th:object="${project}" type="text" id="profile" name="profile" maxlength="200"></textarea>
+                        </div>
+    <!--                    <div class="field">-->
+    <!--                        <label for="file-button">上传附件</label>-->
+    <!--                        <div class="ui file action input">-->
+    <!--                            <label for="file-name"></label>-->
+    <!--                            <input type="file" id="file" name="file" autocomplete="off">-->
+    <!--                            <input type="text" id="file-name" name="file-name" readonly>-->
+    <!--                            <div class="ui button" id="file-button">选择文件</div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+                        <input type="submit" value="确认提交" class="ui fluid large blue submit button"/>
+                    </form>
+
             </div>
         </div>
     </div>
