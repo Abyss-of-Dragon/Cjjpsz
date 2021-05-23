@@ -22,7 +22,7 @@
 <body>
 
     <!-- 通用顶部栏 header 片段 -->
-    <div th:fragment="common_header" class="ui fixed large borderless menu">
+    <div th:fragment="common_header" class="ui fixed brown large borderless menu">
         <div class="ui container">
             <div class="header item">
                 <img class="proj icon" src="/Projdemo/static/img/cjjpsz.png" th:src="@{/img/cjjpsz.png}" alt="Logo">
@@ -37,7 +37,7 @@
                     <input type="text" placeholder="Search...">
                 </div>
             </a>
-            <a href="/logout" class="right item">
+            <a href="/logout" class="item">
                 <div class="ui logout icon">登出</div>
                 <i class="sign out alternate icon"></i>
             </a>
@@ -47,8 +47,7 @@
     <div class="ui main container">
         <div class="ui stackable grid">
 
-            <div class="ui computer only tablet only four wide column">
-
+            <div class="ui four wide column">
                 <!-- 通用左侧菜单 menu 片段， index 为传递进来的参数 -->
                 <div th:fragment="common_menu(index)" class="ui container">
                     <div class="ui fluid card">
@@ -60,19 +59,69 @@
                     </div>
                     <div class="ui vertical fluid stackable menu container">
                         <a th:class="${index}==1?'active red item':'item'" class="item" href="/Encyclopedia">
-                            <h4>百科图鉴</h4>
+                            <font size="4px">
+                                <b>百科图鉴</b>
+                            </font>
+                            <i class="large book icon"></i>
                         </a>
                         <a th:class="${index}==2?'active red item':'item'" class="item" href="/calculator">
-                            <h4>养成计算</h4>
+                            <font size="4px">
+                                <b>养成计算</b>
+                            </font>
+                            <i class="large calculator icon"></i>
                         </a>
                         <a th:class="${index}==3?'active red item':'item'" class="item" href="/news">
-                            <h4>游戏资讯</h4>
+                            <font size="4px">
+                                <b>游戏资讯</b>
+                            </font>
+                            <i class="large newspaper outline icon"></i>
                         </a>
                         <a th:class="${index}==3?'active red item':'item'" class="item" href="/gacha">
-                            <h4>抽卡模拟</h4>
+                            <font size="4px">
+                                <b>抽卡模拟</b>
+                            </font>
+                            <i class="large gem outline icon"></i>
                         </a>
                     </div>
                 </div>
+            </div>
+
+            <div class="ui twelve wide column">
+                <div class="ui one column grid">
+                    <div class="computer only tablet only column">
+                        <h1 align="center" class="ui computer only header">Welcome to Genshin Impact Imformation Station!</h1>
+                    </div>
+                </div>
+                <img class="ui big centered circular image" src="/Projdemo/static/img/background1.png">
+<!--                    <div class="container column"></div>-->
+                <form class="ui form" th:action="@{/application}" method="post" enctype="multipart/form-data">
+<!--                    <div class="field">-->
+<!--                        <label for="teammates">选择你的队友</label>-->
+<!--                        <select th:object="${project}" type="text" id="teammates" name="teammates"-->
+<!--                                class="ui fluid search dropdown" multiple>-->
+<!--                            <option th:each="student:${students}"-->
+<!--                                    th:value="${student.uid}"-->
+<!--                                    th:text="${student.name} + ' ' + ${student.uid}">-->
+<!--                            </option>-->
+<!--                        </select>-->
+<!--                    </div>-->
+                    <div class="field">
+                        <label for="profile">
+                            <b>留下你的评论吧</b>
+                        </label>
+                        <textarea th:object="${project}" type="text" id="profile" name="profile" maxlength="200"></textarea>
+                    </div>
+<!--                    <div class="field">-->
+<!--                        <label for="file-button">上传附件</label>-->
+<!--                        <div class="ui file action input">-->
+<!--                            <label for="file-name"></label>-->
+<!--                            <input type="file" id="file" name="file" autocomplete="off">-->
+<!--                            <input type="text" id="file-name" name="file-name" readonly>-->
+<!--                            <div class="ui button" id="file-button">选择文件</div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                    <input type="submit" value="确认提交" class="ui fluid large blue submit button"/>
+                </form>
             </div>
         </div>
     </div>
