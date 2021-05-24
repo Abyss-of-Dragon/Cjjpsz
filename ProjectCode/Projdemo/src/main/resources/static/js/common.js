@@ -33,6 +33,13 @@ $(document)
             $("#file-name").val(files[0].name);
         });
 
+        $('.ui.sticky')
+            .sticky({
+                context: '#example2',
+                pushing: true
+            })
+        ;
+
         // Dropdown UI (application.html)
         $('#tutors').dropdown({maxSelections:1});
         $('#teammates').dropdown({maxSelections:3});
