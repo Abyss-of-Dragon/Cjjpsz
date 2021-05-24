@@ -8,11 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <!-- Site Properties -->
-    <title>页面 - 通用模板</title>
+    <title>主页</title>
     <link rel="icon" type="image/x-icon" href="/Projdemo/static/img/logo.png" th:href="@{/img/logo.png}"/>
     <link rel="stylesheet" type="text/css" href="/Projdemo/static/dist/semantic.css" th:href="@{/dist/semantic.css}">
-    <script src="/Projdemo/static/js/jquery-3.5.1.min.js" th:src="@{/js/jquery-3.5.1.min.js}"></script>
+<!--    <script src="/Projdemo/static/dist/node_modules/jquery/dist/jquery.js" th:herf="@{/dist/node_modules/jquery/dist/jquery.js}"></script>-->
+    <script src="/Projdemo/static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
     <script src="/Projdemo/static/dist/semantic.min.js" th:src="@{/dist/semantic.min.js}"></script>
+
 
     <!-- Site Specified Style and Script -->
     <link rel="stylesheet" type="text/css" href="/Projdemo/static/css/common.css" th:href="@{/css/common.css}">
@@ -137,63 +139,173 @@
                         角色
                     </div>
                 </h3>
-                <!--                <div class="ui small images">-->
-                <!--                    <img style="width: 120px; height: 120px" src="/Projdemo/static/img/hutao_icon.png">-->
-                <!--                    <img style="width: 120px; height: 120px" src="/Projdemo/static/img/rosalia_icon.png">-->
-                <!--                    <img style="width: 120px; height: 120px" src="/Projdemo/static/img/mona_icon.png">-->
-                <!--                    <img style="width: 120px; height: 120px" src="/Projdemo/static/img/youla_icon.png">-->
-                <!--                </div>-->
 
-                <div class="ui five column grid">
-                    <div class="column">
-                        <div class="ui fluid card">
-                            <div class="image">
-                                <img src="/Projdemo/static/img/hutao_icon.png">
-                            </div>
-                            <div class="content">
-                                <a class="header">胡桃</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui fluid card">
-                            <div class="image">
-                                <img src="/Projdemo/static/img/youla_icon.png">
-                            </div>
-                            <div class="content">
-                                <a class="header">优菈</a>
+                <div class="ui pointing menu">
+                    <a class="item active">
+                        五星
+                    </a>
+                    <a class="item">
+                        四星
+                    </a>
+
+                    <div class="right menu">
+                        <div class="item">
+                            <div class="ui transparent icon input">
+                                <input type="text" placeholder="Search...">
+                                <i class="search link icon"></i>
                             </div>
                         </div>
                     </div>
-                    <div class="column">
-                        <div class="ui fluid card">
-                            <div class="image">
-                                <img src="/Projdemo/static/img/rosalia_icon.png">
+                </div>
+                <div class="ui segment">
+                    <div class="ui five column grid">
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/icon_youla2.png">
+                                </div>
+                                <div class="content">
+                                    <a class="header">优菈</a>
+                                </div>
                             </div>
-                            <div class="content">
-                                <a class="header">罗莎莉亚</a>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/icon_hutao.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">胡桃</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/icon_xiao.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">魈</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/icon_ganyu.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">甘雨</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/icon_abeiduo.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">阿贝多</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="column">
-                        <div class="ui fluid card">
-                            <div class="image">
-                                <img src="/Projdemo/static/img/mona_icon.png">
+
+                    <div class="ui five column grid">
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/icon_zhongli.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">钟离</a>
+                                </div>
                             </div>
-                            <div class="content">
-                                <a class="header">莫娜</a>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/icon_dadaliya.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">达达利亚</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/icon_keli.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">可莉</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/icon_wendi.png">
+                                </div>
+                                <div class="content">
+                                    <a class="header">温迪</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/icon_keqing.png">
+                                </div>
+                                <div class="content">
+                                    <a class="header" href="https://google.com">刻晴</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="column">
-                        <div class="ui fluid card">
-                            <div class="image">
-                                <img src="/Projdemo/static/img/ganyu_icon.png">
-                            </div>
-                            <div class="content">
-                                <a class="header">甘雨</a>
+
+                    <div class="ui five column grid">
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/icon_mona.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">莫娜</a>
+                                </div>
                             </div>
                         </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/icon_qiqi.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">七七</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/icon_diluke.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">迪卢克</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/icon_qin.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">琴</a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

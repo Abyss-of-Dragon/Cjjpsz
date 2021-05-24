@@ -1,6 +1,8 @@
 $(document)
     .ready(function() {
 
+        $('.ui .pointing menu').menu();
+
         // Fix main menu to page on passing
         $('.main.menu').visibility({
             type: 'fixed'
