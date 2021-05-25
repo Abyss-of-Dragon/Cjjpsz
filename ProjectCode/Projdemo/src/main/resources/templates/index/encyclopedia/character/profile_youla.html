@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Site Properties -->
+    <title>页面 - 通用模板</title>
+    <link rel="icon" type="image/x-icon" href="/Projdemo/static/img/logo.png" th:href="@{/img/logo.png}"/>
+    <link rel="stylesheet" type="text/css" href="/Projdemo/static/dist/semantic.css" th:href="@{/dist/semantic.css}">
+    <script src="/Projdemo/static/js/jquery-3.5.1.min.js" th:src="@{/js/jquery-3.5.1.min.js}"></script>
+    <script src="/Projdemo/static/dist/semantic.min.js" th:src="@{/dist/semantic.min.js}"></script>
+
+    <!-- Site Specified Style and Script -->
+    <link rel="stylesheet" type="text/css" href="/Projdemo/static/css/common.css" th:href="@{/css/common.css}">
+    <script src="/Projdemo/static/js/common.js" th:src="@{/js/common.js}"></script>
+</head>
+
+<body>
+
+<!-- 通用顶部栏 header 片段 -->
+<div th:fragment="common_header" class="ui fixed brown large borderless menu">
+    <div class="ui container">
+        <div class="header item">
+            <img class="proj icon" src="/Projdemo/static/img/cjjpsz.png" th:src="@{/img/cjjpsz.png}" alt="Logo">
+            原神Wiki
+        </div>
+        <a href="mainpage.html" class="header item">
+            首页
+        </a>
+        <a class="right item">
+            <div class="ui icon input">
+                <i class="search icon"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+        </a>
+        <a href="login.html" class="item">
+            <div class="ui logout icon">登出</div>
+            <i class="sign out alternate icon"></i>
+        </a>
+    </div>
+</div>
+
+<div class="ui main container">
+    <div class="ui stackable grid">
+
+        <div class="ui ten wide column">
+<!--            &lt;!&ndash; 通用左侧菜单 menu 片段， index 为传递进来的参数 &ndash;&gt;-->
+<!--            <div th:fragment="common_menu(index)" class="ui container">-->
+            <div class="ui form message">
+                <table class="ui celled structured table">
+                    <thead>
+                    <tr>
+                        <th colspan="3">
+                            <h3 align="center">优菈</h3>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td rowspan="4" class="collapsing">
+                            <img class="ui small image" src="/Projdemo/static/img/character/icon_youla.png">
+                        </td>
+                        <td class="collapsing">
+                            <b>所属</b>
+                        </td>
+                        <td>西风骑士团</td>
+                    </tr>
+                    <tr>
+                        <td class="collapsing">
+                            <b>神之眼</b>
+                        </td>
+                        <td>冰</td>
+                    </tr>
+                    <tr>
+                        <td class="collapsing">
+                            <b>武器类型</b>
+                        </td>
+                        <td>双手剑</td>
+                    </tr>
+                    <tr>
+                        <td class="collapsing">
+                            <b>命之座</b>
+                        </td>
+                        <td>浪沫座</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <p><b>角色介绍:</b> 优拉在西风骑士团担任「游击小队」队长一职。</p>
+                            <p>因职责需要，她长期率队在外追猎魔物和深渊教团，不常返回蒙德城内。</p>
+                            <p>有「浪花骑士」之称的优拉不仅剑术精湛，更兼备谋略与胆识。大团长法尔伽曾给予她极高的评价，称她为可与「蒲公英骑士」比肩的优秀战士。</p>
+                            <p>两位优秀的骑士共同守护蒙德，本是件值得庆幸的好事。然而，优拉与琴有着根本的区别。</p>
+                            <p>她是旧贵族劳伦斯家的末裔，体内流淌着与从前那些将蒙德桎梏在黑暗中的罪人们相同的血。</p>
+                            <p>因为出身，优拉在蒙德民间的风评极差。劳伦斯家族象征着旧蒙德的愚昧与暴(姆) 政，等同于人们心底永恒的痛苦。</p>
+                            <p>优拉每每露面，都像是把古老的伤口再次撕开。人们厌恶旧贵族，自然不会给她什么好脸色。</p>
+                            <p>然而，这样的优拉却毅然加入骑士团，晋升到了队长职位。</p>
+                            <p>面对城内种种惊疑，她毫不掩饰，称自己的作为全是「复仇」。人们畏惧于如此坦率的自白，一度认为她是骑士团的「内鬼」。</p>
+                            <p>西风骑士团代理团长琴对此则有着不同看法。谈及优拉，她的态度相当友好。</p>
+                            <p>「传言并不属实，人们只是还不了解真正的浪花骑士而已。」</p>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table class="ui celled table">
+                    <thead>
+                        <tr>
+                            <th colspan="2">
+                                <h3 align="center">基础属性</h3>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><b>攻击方式</b></td>
+                        <td>近战</td>
+                    </tr>
+                    <tr>
+                        <td><b>生命值</b></td>
+                        <td>1030</td>
+                    </tr>
+                    <tr>
+                        <td><b>攻击力</b></td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td><b>防御力</b></td>
+                        <td>58</td>
+                    </tr>
+                    <tr>
+                        <td><b>元素精通</b></td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td><b>暴击率</b></td>
+                        <td>5.0%</td>
+                    </tr>
+                    <tr>
+                        <td><b>暴击伤害</b></td>
+                        <td>50.0%</td>
+                    </tr>
+                    <tr>
+                        <td><b>治疗加成</b></td>
+                        <td>0.0%</td>
+                    </tr>
+                    <tr>
+                        <td><b>受治疗加成</b></td>
+                        <td>0.0%</td>
+                    </tr>
+                    <tr>
+                        <td><b>元素充能效率</b></td>
+                        <td>100.0%</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <table class="ui celled table">
+                    <thead>
+                    <tr>
+                        <th>
+                            <h3 align="center">命之座</h3>
+                        </th>
+                    </tr>
+                    </thead>
+                </table>
+                <div class="ui grid">
+                    <div class="four wide column">
+                        <div class="ui vertical fluid tabular menu">
+                            <a class="item" data-tab="1">
+                                光潮的幻象
+                            </a>
+                            <a class="item" data-tab="2">
+                                海沫的少女
+                            </a>
+                            <a class="item" data-tab="3">
+                                劳伦斯的血脉
+                            </a>
+                            <a class="item" data-tab="4">
+                                自卑者的逞强
+                            </a>
+                            <a class="item" data-tab="5">
+                                骑士的素质
+                            </a>
+                            <a class="item" data-tab="6">
+                                高贵者的义务
+                            </a>
+                        </div>
+<!--                        <div class="ui twelve wide stretched segment" data-tab="1">-->
+<!--                            <div class="text">消耗冰潮的涡旋的冷酷之心效果后，优莅的物理伤害加成提高30%，持续6秒，每消耗一层冷酷之心，都会使这个效果的持续时间延长6秒，最多不会超过18秒。-->
+<!--                            </div>-->
+<!--                        </div>-->
+                    </div>
+                    <div class="twelve wide stretched column ">
+                        <div class="ui tab segment" data-tab="1">
+                            消耗冰潮的涡旋的冷酷之心效果后，优莅的物理伤害加成提高30%，持续6秒，每消耗一层冷酷之心，都会使这个效果的持续时间延长6秒，最多不会超过18秒。
+                        </div>
+                        <div class="ui tab segment" data-tab="2">
+                            缩短冰潮的涡旋长按的冷却时间，使其降低至与点按的冷却时间相同。
+                        </div>
+                        <div class="ui tab segment" data-tab="3">
+                            凝浪之光剑的技能等级提高3级。至多提升至15级。
+                        </div>
+                        <div class="ui tab segment" data-tab="4">
+                            对生命值低于50%的敌人，光降之剑造成的伤害提高25%。
+                        </div>
+                        <div class="ui tab segment" data-tab="5">
+                            冰潮的涡旋的技能等级提高3级。至多提升至15级。
+                        </div>
+                        <div class="ui tab segment" data-tab="6">
+                            凝浪之光剑创造的光降之剑立即获得5层能量。普通攻击、元素战技或元素爆发造成伤害使其积蓄能量层数时，有50%的概率额外获得一层。
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <form class="ui form" th:action="@{/application}" method="post" enctype="multipart/form-data">
+                <div class="field">
+                    <label for="profile">
+                        <b>留下你的评论吧</b>
+                    </label>
+                    <textarea th:object="${project}" type="text" id="profile" name="profile" maxlength="200"></textarea>
+                </div>
+                <input type="submit" value="确认提交" class="ui fluid large blue submit button"/>
+            </form>
+        </div>
+
+        <div class="ui six wide column">
+            <div class="ui form message">
+
+                <img class="ui image" src="/Projdemo/static/img/youla_tachie.jpg">
+                <!--                    <div class="container column"></div>-->
+            </div>
+            <div class="ui vertical fluid stackable sticky menu container">
+                <a th:class="${index}==1?'active red item':'item'" class="item" href="Encyclopedia.html">
+                    <font size="4px">
+                        <b>百科图鉴</b>
+                    </font>
+                    <i class="large book icon"></i>
+                </a>
+                <a th:class="${index}==2?'active red item':'item'" class="item" href="calculator.html">
+                    <font size="4px">
+                        <b>养成计算</b>
+                    </font>
+                    <i class="large calculator icon"></i>
+                </a>
+                <a th:class="${index}==3?'active red item':'item'" class="item" href="news.html">
+                    <font size="4px">
+                        <b>游戏资讯</b>
+                    </font>
+                    <i class="large newspaper outline icon"></i>
+                </a>
+                <a th:class="${index}==4?'active red item':'item'" class="item" href="gacha.html">
+                    <font size="4px">
+                        <b>抽卡模拟</b>
+                    </font>
+                    <i class="large gem outline icon"></i>
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+<!-- 通用底部 footer 片段 -->
+<div th:fragment="common_footer" class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <p>
+            Copyright © 2021 Temper.
+        </p>
+        <p>
+            All rights reserved.
+        </p>
+        <div class="ui header">
+            <a href="https://github.com/Abyss-of-Dragon/Cjjpsz" class="ui centered image">
+                <i class="large grey github icon"></i>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

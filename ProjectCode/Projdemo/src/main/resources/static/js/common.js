@@ -2,6 +2,7 @@ $(document)
     .ready(function() {
 
         $(".tabular.menu .item").tab();
+        $(".pointing.menu .item").tab();
 
         $('.ui .pointing .menu').menu({
             type:'fixed'
