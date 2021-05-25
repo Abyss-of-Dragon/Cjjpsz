@@ -11,9 +11,11 @@
     <title>主页</title>
     <link rel="icon" type="image/x-icon" href="/Projdemo/static/img/logo.png" th:href="@{/img/logo.png}"/>
     <link rel="stylesheet" type="text/css" href="/Projdemo/static/dist/semantic.css" th:href="@{/dist/semantic.css}">
-<!--    <script src="/Projdemo/static/dist/node_modules/jquery/dist/jquery.js" th:herf="@{/dist/node_modules/jquery/dist/jquery.js}"></script>-->
-    <script src="/Projdemo/static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
-    <script src="/Projdemo/static/dist/semantic.min.js" th:src="@{/dist/semantic.min.js}"></script>
+
+<!--    <script src="/Projdemo/static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>-->
+<!--    <script src="/Projdemo/static/dist/semantic.min.js" th:src="@{/dist/semantic.min.js}"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 
 
     <!-- Site Specified Style and Script -->
@@ -110,16 +112,16 @@
 
                     <ul class="ul_img">
                         <a href="https://google.com">
+                            <li class="li_img"><img src="/Projdemo/static/img/ver1.5.jpg" /></li>
+                        </a>
+                        <a href="https://google.com">
+                            <li class="li_img"><img src="/Projdemo/static/img/up_character.jpg" /></li>
+                        </a>
+                        <a href="https://google.com">
+                            <li class="li_img"><img src="/Projdemo/static/img/up_weapon.jpg" /></li>
+                        </a>
+                        <a href="https://google.com">
                             <li class="li_img"><img src="/Projdemo/static/img/background1.png" /></li>
-                        </a>
-                        <a href="https://google.com">
-                            <li class="li_img"><img src="/Projdemo/static/img/background2.png" /></li>
-                        </a>
-                        <a href="https://google.com">
-                            <li class="li_img"><img src="/Projdemo/static/img/background1.png" /></li>
-                        </a>
-                        <a href="https://google.com">
-                            <li class="li_img"><img src="/Projdemo/static/img/background2.png" /></li>
                         </a>
                     </ul>
                 </div>
@@ -138,31 +140,31 @@
                     <div class="content">
                         角色
                     </div>
+
                 </h3>
 
-                <div class="ui pointing menu">
-                    <a class="item active">
+                <div class="ui top attached tabular menu">
+                    <a class="item active" data-tab="wuxing">
                         五星
                     </a>
-                    <a class="item">
+                    <a class="item" data-tab="sixing">
                         四星
                     </a>
 
                     <div class="right menu">
                         <div class="item">
-                            <div class="ui transparent icon input">
-                                <input type="text" placeholder="Search...">
-                                <i class="search link icon"></i>
+                            <div style="float: right">
+                                <a href="Encyclopedia.html">查看更多</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="ui segment">
+                <div class="ui botton attached tab segment" data-tab="wuxing">
                     <div class="ui five column grid">
                         <div class="column">
                             <div class="ui fluid card">
                                 <div class="image">
-                                    <img src="/Projdemo/static/img/icon_youla2.png">
+                                    <img src="/Projdemo/static/img/character/icon_youla2.png">
                                 </div>
                                 <div class="content">
                                     <a class="header">优菈</a>
@@ -172,7 +174,7 @@
                         <div class="column">
                             <div class="ui fluid card">
                                 <div class="image">
-                                    <img src="/Projdemo/static/img/icon_hutao.jpg">
+                                    <img src="/Projdemo/static/img/character/icon_hutao.jpg">
                                 </div>
                                 <div class="content">
                                     <a class="header">胡桃</a>
@@ -182,7 +184,7 @@
                         <div class="column">
                             <div class="ui fluid card">
                                 <div class="image">
-                                    <img src="/Projdemo/static/img/icon_xiao.jpg">
+                                    <img src="/Projdemo/static/img/character/icon_xiao.jpg">
                                 </div>
                                 <div class="content">
                                     <a class="header">魈</a>
@@ -192,7 +194,7 @@
                         <div class="column">
                             <div class="ui fluid card">
                                 <div class="image">
-                                    <img src="/Projdemo/static/img/icon_ganyu.jpg">
+                                    <img src="/Projdemo/static/img/character/icon_ganyu.jpg">
                                 </div>
                                 <div class="content">
                                     <a class="header">甘雨</a>
@@ -202,7 +204,7 @@
                         <div class="column">
                             <div class="ui fluid card">
                                 <div class="image">
-                                    <img src="/Projdemo/static/img/icon_abeiduo.jpg">
+                                    <img src="/Projdemo/static/img/character/icon_abeiduo.jpg">
                                 </div>
                                 <div class="content">
                                     <a class="header">阿贝多</a>
@@ -215,7 +217,7 @@
                         <div class="column">
                             <div class="ui fluid card">
                                 <div class="image">
-                                    <img src="/Projdemo/static/img/icon_zhongli.jpg">
+                                    <img src="/Projdemo/static/img/character/icon_zhongli.jpg">
                                 </div>
                                 <div class="content">
                                     <a class="header">钟离</a>
@@ -225,7 +227,7 @@
                         <div class="column">
                             <div class="ui fluid card">
                                 <div class="image">
-                                    <img src="/Projdemo/static/img/icon_dadaliya.jpg">
+                                    <img src="/Projdemo/static/img/character/icon_dadaliya.jpg">
                                 </div>
                                 <div class="content">
                                     <a class="header">达达利亚</a>
@@ -235,7 +237,7 @@
                         <div class="column">
                             <div class="ui fluid card">
                                 <div class="image">
-                                    <img src="/Projdemo/static/img/icon_keli.jpg">
+                                    <img src="/Projdemo/static/img/character/icon_keli.jpg">
                                 </div>
                                 <div class="content">
                                     <a class="header">可莉</a>
@@ -245,7 +247,7 @@
                         <div class="column">
                             <div class="ui fluid card">
                                 <div class="image">
-                                    <img src="/Projdemo/static/img/icon_wendi.png">
+                                    <img src="/Projdemo/static/img/character/icon_wendi.png">
                                 </div>
                                 <div class="content">
                                     <a class="header">温迪</a>
@@ -255,7 +257,7 @@
                         <div class="column">
                             <div class="ui fluid card">
                                 <div class="image">
-                                    <img src="/Projdemo/static/img/icon_keqing.png">
+                                    <img src="/Projdemo/static/img/character/icon_keqing.png">
                                 </div>
                                 <div class="content">
                                     <a class="header" href="https://google.com">刻晴</a>
@@ -268,7 +270,7 @@
                         <div class="column">
                             <div class="ui fluid card">
                                 <div class="image">
-                                    <img src="/Projdemo/static/img/icon_mona.jpg">
+                                    <img src="/Projdemo/static/img/character/icon_mona.jpg">
                                 </div>
                                 <div class="content">
                                     <a class="header">莫娜</a>
@@ -278,7 +280,7 @@
                         <div class="column">
                             <div class="ui fluid card">
                                 <div class="image">
-                                    <img src="/Projdemo/static/img/icon_qiqi.jpg">
+                                    <img src="/Projdemo/static/img/character/icon_qiqi.jpg">
                                 </div>
                                 <div class="content">
                                     <a class="header">七七</a>
@@ -288,7 +290,7 @@
                         <div class="column">
                             <div class="ui fluid card">
                                 <div class="image">
-                                    <img src="/Projdemo/static/img/icon_diluke.jpg">
+                                    <img src="/Projdemo/static/img/character/icon_diluke.jpg">
                                 </div>
                                 <div class="content">
                                     <a class="header">迪卢克</a>
@@ -298,7 +300,7 @@
                         <div class="column">
                             <div class="ui fluid card">
                                 <div class="image">
-                                    <img src="/Projdemo/static/img/icon_qin.jpg">
+                                    <img src="/Projdemo/static/img/character/icon_qin.jpg">
                                 </div>
                                 <div class="content">
                                     <a class="header">琴</a>
@@ -306,6 +308,166 @@
                             </div>
                         </div>
 
+                    </div>
+                </div>
+                <div class="ui botton attached tab segment" data-tab="sixing">
+                    <div class="ui five column grid">
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/character/icon_yanfei.png">
+                                </div>
+                                <div class="content">
+                                    <a class="header">烟绯</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/character/icon_rosalia.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">罗莎莉亚</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/character/icon_xinyan.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">辛焱</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/character/icon_diaona.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">迪奥娜</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/character/icon_shatang.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">砂糖</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui five column grid">
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/character/icon_chongyun.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">重云</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/character/icon_noaier.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">诺艾尔</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/character/icon_bannite.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">班尼特</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/character/icon_feixieer.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">菲谢尔</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/character/icon_ningguang.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header" href="https://google.com">凝光</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui five column grid">
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/character/icon_xingqiu.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">行秋</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/character/icon_beidou.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">北斗</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/character/icon_xiangling.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">香菱</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/character/icon_leize.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">雷泽</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/Projdemo/static/img/character/icon_babala.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">芭芭拉</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

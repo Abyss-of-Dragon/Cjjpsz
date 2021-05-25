@@ -1,7 +1,11 @@
 $(document)
     .ready(function() {
 
-        $('.ui .pointing menu').menu();
+        $(".tabular.menu .item").tab();
+
+        $('.ui .pointing .menu').menu({
+            type:'fixed'
+        });
 
         // Fix main menu to page on passing
         $('.main.menu').visibility({
