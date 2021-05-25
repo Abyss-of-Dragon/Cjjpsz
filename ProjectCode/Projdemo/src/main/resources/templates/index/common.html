@@ -28,7 +28,7 @@
                 <img class="proj icon" src="/Projdemo/static/img/cjjpsz.png" th:src="@{/img/cjjpsz.png}" alt="Logo">
                 原神Wiki
             </div>
-            <a href="/" class="header item">
+            <a href="mainpage.html" class="header item">
                 首页
             </a>
             <a class="right item">
@@ -37,7 +37,7 @@
                     <input type="text" placeholder="Search...">
                 </div>
             </a>
-            <a href="/logout" class="item">
+            <a href="login.html" class="item">
                 <div class="ui logout icon">登出</div>
                 <i class="sign out alternate icon"></i>
             </a>
@@ -58,25 +58,25 @@
                         </div>
                     </div>
                     <div class="ui vertical fluid stackable sticky menu container">
-                        <a th:class="${index}==1?'active red item':'item'" class="item" href="/Encyclopedia">
+                        <a th:class="${index}==1?'active red item':'item'" class="item" href="Encyclopedia.html">
                             <font size="4px">
                                 <b>百科图鉴</b>
                             </font>
                             <i class="large book icon"></i>
                         </a>
-                        <a th:class="${index}==2?'active red item':'item'" class="item" href="/calculator">
+                        <a th:class="${index}==2?'active red item':'item'" class="item" href="calculator.html">
                             <font size="4px">
                                 <b>养成计算</b>
                             </font>
                             <i class="large calculator icon"></i>
                         </a>
-                        <a th:class="${index}==3?'active red item':'item'" class="item" href="/news">
+                        <a th:class="${index}==3?'active red item':'item'" class="item" href="news.html">
                             <font size="4px">
                                 <b>游戏资讯</b>
                             </font>
                             <i class="large newspaper outline icon"></i>
                         </a>
-                        <a th:class="${index}==3?'active red item':'item'" class="item" href="/gacha">
+                        <a th:class="${index}==4?'active red item':'item'" class="item" href="gacha.html">
                             <font size="4px">
                                 <b>抽卡模拟</b>
                             </font>
