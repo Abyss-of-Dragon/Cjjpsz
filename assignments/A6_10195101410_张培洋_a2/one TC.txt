@@ -1,0 +1,8 @@
+side 1:2
+side 2:2
+side 3:4
+expr: 4
+result:2
+ 
+wrong!
+catch!
