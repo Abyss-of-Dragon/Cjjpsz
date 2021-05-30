@@ -2,12 +2,9 @@ package com.service;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.stereotype.Service;
-import com.entity.Role;
 import com.entity.User;
 import com.repository.UserRepository;
 
-import java.util.ArrayList;
 import java.util.Optional;
 
 /**
@@ -67,4 +64,6 @@ public class UserService {
     public Page<User> pageQuery(int pageNum, int pageSize) {
         return userRepository.findAll(PageRequest.of(pageNum - 1, pageSize));
     }
+
+
 }

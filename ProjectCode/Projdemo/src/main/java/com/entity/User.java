@@ -5,6 +5,9 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 
 @Entity
 @Data
@@ -33,11 +36,25 @@ public class User implements Serializable {
      * 用户姓名 User name
      */
     @Column
-    private String name = "N/A";
+    private String username = "N/A";
 
     /**
      * 密码 Password
      */
     @Column
     private String password = "N/A";
+
+    /**
+     * 创建时间 Date of Creation
+     */
+    @Column
+    private Date ctime = new Date();
+
+    /**
+     * 修改时间 Date of Modification
+     */
+    @Column
+    private Date mtime = new Date();
+
+
 }
