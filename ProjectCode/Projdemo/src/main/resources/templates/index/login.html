@@ -23,7 +23,8 @@
 <div class="ui middle aligned center aligned grid">
     <div class="column">
 
-        <form th:action="@{/login}" th:object="${user}" method="post" class="ui large form">
+        <!--/*@thymesVar id="user" type="com.entity.User"*/-->
+        <form th:action="@{/login}"  th:object="${user}" method="post" class="ui large form">
             <div class="ui stacked segment">
                 <div class="field">
                     <div class="ui left icon input">
@@ -45,7 +46,7 @@
         </form>
 
         <div class="ui message">
-            什么，第一次来吗？(。・∀・)ノ <a href="register">注册</a>！
+            什么，第一次来吗？(。・∀・)ノ <a href="register.html">注册</a>！
             <div id="result-msg"></div>
             <script>
                 window.onload = () => {

@@ -40,12 +40,14 @@
                 <div class="field">
                     <div class="ui input">
                         <label for="name"></label>
+                        <!--/*@thymesVar id="user" type="com.entity.User"*/-->
                         <input th:object="${user}" type="text" id="name" name="name" placeholder="昵称">
                     </div>
                 </div>
                 <div class="field">
                     <div class="ui input">
                         <label for="password"></label>
+                        <!--/*@thymesVar id="user" type="com.entity.User"*/-->
                         <input th:object="${user}" type="password" id="password" name="password" placeholder="密码">
                     </div>
                 </div>
@@ -61,7 +63,7 @@
         </form>
 
         <div class="ui message">
-            什么，你来过这里？(*￣3￣)╭ <a href="login">登录</a>！
+            什么，你来过这里？(*￣3￣)╭ <a href="login.html">登录</a>！
         </div>
 
     </div>
