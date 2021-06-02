@@ -5,35 +5,40 @@ import com.entity.User;
 import com.mapper.UserMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Objects;
 
 @Slf4j
 @RequestMapping("user")
-@RestController
+@Controller
 public class UserController {
 
     @Autowired
     private UserMapper userMapper;
 
-    @GetMapping("login")
+    @GetMapping("logintest")
     public String login(String name,String password){
 
         User user=userMapper.selectUser(name);
         //用户名为空
         if(user==null){
-            return "login failed.";
+            return "index/login";
         }
         //登陆成功
         if(Objects.equals(password,user.getPassword())){
-            return "login success";
+            return "index/mainpage";
         }
-        return "login failed, password is wrong.";
+        return "index/login";
     }
+
+
 
     @GetMapping("register")
     public String register(String name,String password){

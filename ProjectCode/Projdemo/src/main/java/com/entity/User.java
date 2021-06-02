@@ -4,6 +4,7 @@ package com.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

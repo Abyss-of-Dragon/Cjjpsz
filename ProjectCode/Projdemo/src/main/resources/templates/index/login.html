@@ -24,13 +24,13 @@
     <div class="column">
 
         <!--/*@thymesVar id="user" type="com.entity.User"*/-->
-        <form th:action="@{/login}"  th:object="${user}" method="post" class="ui large form">
+        <form  th:action="@{/login}" th:object="${user}"  th:method="post" class="ui large form">
             <div class="ui stacked segment">
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="user icon"></i>
-                        <label for="uid"></label>
-                        <input type="text" name="uid" id="uid" placeholder="帐号">
+                        <label for="name"></label>
+                        <input type="text" name="name" id="name" placeholder="用户名">
                     </div>
                 </div>
                 <div class="field">
@@ -40,7 +40,7 @@
                         <input type="password" name="password" id="password" placeholder="密码">
                     </div>
                 </div>
-                <div class="ui fluid large blue submit button">登录</div>
+                <div class="ui fluid large blue submit button" th:type="submit">登录</div>
             </div>
             <div class="ui error message"></div>
         </form>
