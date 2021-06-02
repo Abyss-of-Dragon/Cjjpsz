@@ -3,8 +3,8 @@ $(document)
         $('.ui.form')
             .form({
                 fields: {
-                    username: {
-                        identifier  : 'username',
+                    name: {
+                        identifier  : 'name',
                         rules: [
                             {
                                 type   : 'empty',
