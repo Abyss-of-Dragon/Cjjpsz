@@ -1,0 +1,22 @@
+body {
+    background-image: url("../img/background2.png");
+    background-size: 100%, 100%;
+    background-attachment:fixed;
+    font-family:
+            'Open Sans', 'Helvetica Neue', "PingFang SC", "Hiragino Sans GB",
+            "Microsoft YaHei", "Hiragino Kaku Gothic Pro", Meiryo,
+            "Noto Sans CJK SC", "WenQuanYi Micro Hei", Arial, Helvetica, sans-serif;
+}
+
+html,body {
+    height: 100%;
+    width: 100%;
+}
+
+body > .grid {
+    height: 100%;
+}
+
+.column {
+    max-width: 450px;
+}

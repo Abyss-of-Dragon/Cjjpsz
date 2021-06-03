@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <!-- Standard Meta -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+  <title>百科图鉴-角色-魈</title>
+  <link rel="icon" type="image/x-icon" href="/Projdemo/static/img/logo.png" th:href="@{/img/logo.png}"/>
+  <link rel="stylesheet" type="text/css" href="/Projdemo/static/dist/semantic.css" th:href="@{/dist/semantic.css}">
+  <script src="/Projdemo/static/js/jquery-3.5.1.min.js" th:src="@{/js/jquery-3.5.1.min.js}"></script>
+  <script src="/Projdemo/static/dist/semantic.min.js" th:src="@{/dist/semantic.min.js}"></script>
+
+  <!-- Site Specified Style and Script -->
+  <link rel="stylesheet" type="text/css" href="/Projdemo/static/css/common.css" th:href="@{/css/common.css}">
+  <script src="/Projdemo/static/js/common.js" th:src="@{/js/common.js}"></script>
+</head>
+
+<body>
+
+<!-- 通用顶部栏 header 片段 -->
+<div th:fragment="common_header" class="ui fixed brown large borderless menu">
+  <div class="ui container">
+    <div class="header item">
+      <img class="proj icon" src="/Projdemo/static/img/cjjpsz.png" th:src="@{/img/cjjpsz.png}" alt="Logo">
+      原神Wiki
+    </div>
+    <a href="mainpage.html" class="header item">
+      首页
+    </a>
+    <a class="right item">
+      <div class="ui icon input">
+        <i class="search icon"></i>
+        <input type="text" placeholder="Search...">
+      </div>
+    </a>
+    <a href="login.html" class="item">
+      <div class="ui logout icon">登出</div>
+      <i class="sign out alternate icon"></i>
+    </a>
+  </div>
+</div>
+
+<div class="ui main container">
+  <div class="ui stackable grid">
+
+    <div class="ui ten wide column">
+      <!--            &lt;!&ndash; 通用左侧菜单 menu 片段， index 为传递进来的参数 &ndash;&gt;-->
+      <!--            <div th:fragment="common_menu(index)" class="ui container">-->
+      <div class="ui raised segment">
+        <table class="ui celled structured table">
+          <thead>
+          <tr>
+            <th colspan="3">
+              <h3 align="center">魈</h3>
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td rowspan="4" class="collapsing">
+              <img class="ui small image" src="/Projdemo/static/img/character/icon_xiao.jpg">
+            </td>
+            <td class="collapsing">
+              <b>所属</b>
+            </td>
+            <td>璃月仙人</td>
+          </tr>
+          <tr>
+            <td class="collapsing">
+              <b>神之眼</b>
+            </td>
+            <td>风</td>
+          </tr>
+          <tr>
+            <td class="collapsing">
+              <b>武器类型</b>
+            </td>
+            <td>长柄武器</td>
+          </tr>
+          <tr>
+            <td class="collapsing">
+              <b>命之座</b>
+            </td>
+            <td>金翅鹏王座</td>
+          </tr>
+          <tr>
+            <td colspan="3">
+              <p><b>角色介绍:</b> 外表虽是少年人，魈的真实年纪却已超过两千岁。</p>
+              <p>好在没有人单看外表就轻慢他，只要打过照面，任谁都能明白,他是个狠角色。——危险、寡言。眼神锐利如刀。</p>
+              <p>在仙人之间，魈的辈分与声望堪称翘楚，但在人间，他的名望并不高。</p>
+              <p>因为他既非招揽富贵、庇佑世人安康的福星；也非手握仙道，高居在绝云间的圣众。</p>
+              <p>能见到魈施展神通的人，必定是九死一生、身处险境之人。</p>
+              <p>并非魈要加害于人，而是他始终在与足以吞没璃月万家灯火的黑暗战斗。普通人若是目击到战斗现场，难免会被殃及。</p>
+              <p>当然，这并不是什么需要灭口的秘密啦。</p>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <table class="ui celled table">
+          <thead>
+          <tr>
+            <th colspan="2">
+              <h3 align="center">基础属性</h3>
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><b>攻击方式</b></td>
+            <td>近战</td>
+          </tr>
+          <tr>
+            <td><b>生命值</b></td>
+            <td>991</td>
+          </tr>
+          <tr>
+            <td><b>攻击力</b></td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td><b>防御力</b></td>
+            <td>62</td>
+          </tr>
+          <tr>
+            <td><b>元素精通</b></td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td><b>暴击率</b></td>
+            <td>5.0%</td>
+          </tr>
+          <tr>
+            <td><b>暴击伤害</b></td>
+            <td>50.0%</td>
+          </tr>
+          <tr>
+            <td><b>治疗加成</b></td>
+            <td>0.0%</td>
+          </tr>
+          <tr>
+            <td><b>受治疗加成</b></td>
+            <td>0.0%</td>
+          </tr>
+          <tr>
+            <td><b>元素充能效率</b></td>
+            <td>100.0%</td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="ui celled table">
+          <thead>
+          <tr>
+            <th>
+              <h3 align="center">命之座</h3>
+            </th>
+          </tr>
+          </thead>
+        </table>
+        <div class="ui grid">
+          <div class="four wide column">
+            <div class="ui vertical fluid tabular menu">
+              <a class="item active" data-tab="1">
+                坏劫·毁坏三界
+              </a>
+              <a class="item" data-tab="2">
+                空劫·虚空华开敷变
+              </a>
+              <a class="item" data-tab="3">
+                降魔·忿怒显相
+              </a>
+              <a class="item" data-tab="4">
+                神通·诸苦灭尽
+              </a>
+              <a class="item" data-tab="5">
+                成劫·无明增长
+              </a>
+              <a class="item" data-tab="6">
+                降魔·护法夜叉
+              </a>
+            </div>
+            <!--                        <div class="ui twelve wide stretched segment" data-tab="1">-->
+            <!--                            <div class="text">消耗冰潮的涡旋的冷酷之心效果后，优莅的物理伤害加成提高30%，持续6秒，每消耗一层冷酷之心，都会使这个效果的持续时间延长6秒，最多不会超过18秒。-->
+            <!--                            </div>-->
+            <!--                        </div>-->
+          </div>
+          <div class="twelve wide stretched column ">
+            <div class="ui tab segment" data-tab="1">
+              风轮两立的可使用次数增加1次。
+            </div>
+            <div class="ui tab segment" data-tab="2">
+              处在队伍后台时，魈自己的元素充能效率提高25％。
+            </div>
+            <div class="ui tab segment" data-tab="3">
+              风轮两立的技能等级提高3级。 至多提升至15级。
+            </div>
+            <div class="ui tab segment" data-tab="4">
+              魈的生命值低于50％时，获得100％的防御力提升。
+            </div>
+            <div class="ui tab segment" data-tab="5">
+              靖妖傩舞的技能等级提高3级。 至多提升至15级。
+            </div>
+            <div class="ui tab segment" data-tab="6">
+              在靖妖傩舞状态下，下落攻击命中至少2个敌人时，风轮两立立刻获得1次可使用次数，并且在接下来1秒内，可以无视冷却时间施放风轮两立。
+            </div>
+          </div>
+        </div>
+
+        <table class="ui celled table">
+          <thead>
+          <tr>
+            <th>
+              <h3 align="center">战斗天赋</h3>
+            </th>
+          </tr>
+          </thead>
+        </table>
+        <div class="ui six pointing menu">
+          <a class="item active" data-tab="normal">卷积微尘</a>
+          <a class="item" data-tab="special">风轮两立</a>
+          <a class="item" data-tab="clutch">靖妖傩舞</a>
+          <a class="item" data-tab="gift1">降魔·平妖大圣</a>
+          <a class="item" data-tab="gift2">坏劫·国土碾尘</a>
+          <a class="item" data-tab="gift3">神通·空中自在法</a>
+        </div>
+        <div class="ui tab segment" data-tab="normal">
+          <p><b>普通攻击</b></p>
+          <p>进行至多六段的连续枪击。</p>
+          <p><b>重击</b></p>
+          <p>消耗一定体力，进行上挑攻击。</p>
+          <p><b>下落攻击</b></p>
+          <p>从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成范围伤害。魈进行下落攻击时，不会承受坠落伤害。</p>
+        </div>
+        <div class="ui tab segment" data-tab="special">
+          <p>疾速突进，对路径上的敌人造成风元素伤害。可以在空中施放。</p>
+          <p>初始拥有2次可使用次数。</p>
+          <p><i>在他乡的传说里，世界会被两大风轮碾碎，魈的枪术已臻化境，来回之间仿佛两座风轮同时撕裂敌人。</i></p>
+        </div>
+        <div class="ui tab segment" data-tab="clutch">
+          <img class="ui image" src="/Projdemo/static/img/clutch_xiao.gif">
+          <p>展现数千年前令神魔精妖睹之胆颤的夜叉傩面。</p>
+          <p><b>夜叉傩面</b></p>
+          <p>·大幅提升魈的跳跃能力；</p>
+          <p>·提高攻击范围与攻击伤害；</p>
+          <p>·将攻击伤害转为风元素伤害，该元素转化无法被附魔覆盖；</p>
+          <p><b>在这个状态下,魈会持续损失生命值。效果将在魈退场时解除。</b></p>
+          <p><i>戴上降魔的傩面，现出令诸恶胆寒，除尽妖魔奸邪的「护法夜叉」之姿。获得强大的力量，也会引导出巨大的痛苦。其式既名「靖妖傩舞」。</i></p>
+        </div>
+        <div class="ui tab segment" data-tab="gift1">
+          在靖妖傩舞状态下，魈造成的所有伤害提高5%。此后，在技能持续时间内，每经过3秒，造成的伤害再额外提高5%。至多获得25%伤害加成。
+        </div>
+        <div class="ui tab segment" data-tab="gift2">
+          施放风轮两立会使之后7秒内的风轮两立造成的伤害提高15%。
+          该效果持续7秒,最多叠加3次,叠加时刷新持续时间。
+        </div>
+        <div class="ui tab segment" data-tab="gift3">
+          队伍中自己的角色攀爬消耗的体力降低20%。
+          无法与效果完全相同的固有天赋叠加。
+        </div>
+
+      </div>
+
+
+      <form class="ui form" th:action="@{/application}" method="post" enctype="multipart/form-data">
+        <div class="field">
+          <label for="profile">
+            <b>留下你的评论吧</b>
+          </label>
+          <textarea th:object="${project}" type="text" id="profile" name="profile" maxlength="200"></textarea>
+        </div>
+        <input type="submit" value="确认提交" class="ui fluid large blue submit button"/>
+      </form>
+    </div>
+
+    <div class="ui six wide column">
+      <div class="ui form message">
+
+        <img class="ui image" src="/Projdemo/static/img/character/tachie_xiao.png">
+        <!--                    <div class="container column"></div>-->
+      </div>
+      <div class="ui vertical fluid stackable sticky menu container">
+        <a th:class="${index}==1?'active red item':'item'" class="item" href="Encyclopedia.html">
+          <font size="4px">
+            <b>百科图鉴</b>
+          </font>
+          <i class="large book icon"></i>
+        </a>
+        <a th:class="${index}==2?'active red item':'item'" class="item" href="calculator.html">
+          <font size="4px">
+            <b>养成计算</b>
+          </font>
+          <i class="large calculator icon"></i>
+        </a>
+        <a th:class="${index}==3?'active red item':'item'" class="item" href="news.html">
+          <font size="4px">
+            <b>游戏资讯</b>
+          </font>
+          <i class="large newspaper outline icon"></i>
+        </a>
+        <a th:class="${index}==4?'active red item':'item'" class="item" href="gacha.html">
+          <font size="4px">
+            <b>抽卡模拟</b>
+          </font>
+          <i class="large gem outline icon"></i>
+        </a>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+<!-- 通用底部 footer 片段 -->
+<div th:fragment="common_footer" class="ui vertical footer segment">
+  <div class="ui center aligned container">
+    <p>
+      Copyright © 2021 Temper.
+    </p>
+    <p>
+      All rights reserved.
+    </p>
+    <div class="ui header">
+      <a href="https://github.com/Abyss-of-Dragon/Cjjpsz" class="ui centered image">
+        <i class="large grey github icon"></i>
+      </a>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>
