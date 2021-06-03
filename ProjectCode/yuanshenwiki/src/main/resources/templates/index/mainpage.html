@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Site Properties -->
+    <title>主页</title>
+    <link rel="icon" type="image/x-icon" th:href="${loginUser.getAvatar()}"/>
+    <link rel="stylesheet" type="text/css" href="/dist/semantic.css" th:href="@{/dist/semantic.css}">
+
+    <script src="/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+    <script src="/dist/semantic.min.js" th:src="@{/dist/semantic.min.js}"></script>
+
+
+    <!-- Site Specified Style and Script -->
+    <link rel="stylesheet" type="text/css" href="/css/common.css" th:href="@{/css/common.css}">
+    <link rel="stylesheet" type="text/css" href="/css/img_roll.css" th:href="@{/css/img_roll.css}">
+
+    <script src="/js/common.js" th:src="@{/js/common.js}"></script>
+    <script src="/js/img_roll.js" th:src="@{/js/img_roll.js}"></script>
+
+
+</head>
+
+<body>
+
+<!-- 通用顶部栏 header 片段 -->
+<div th:fragment="common_header" class="ui fixed brown large borderless menu">
+    <div class="ui container">
+        <div class="header item">
+            <img class="proj icon" src="/img/cjjpsz.png" th:src="@{/img/cjjpsz.png}" alt="Logo">
+            原神Wiki
+        </div>
+        <a href="/mainpage" class="header item">
+            首页
+        </a>
+        <a class="right item">
+            <form style="margin: auto;outline: none" method="get" action="/search" id="searchForm">
+                <div class="ui icon input">
+                    <i class="search icon"></i>
+                    <input type="text" name="key" placeholder="Search..." onkeypress="(e)=>{if(e.keyCode===13){document.getElementById('searchForm').submit()}}">
+                </div>
+            </form>
+        </a>
+        <a href="/logout" class="item">
+            <div class="ui logout icon">登出</div>
+            <i class="sign out alternate icon"></i>
+        </a>
+    </div>
+</div>
+
+<div class="ui main container">
+    <div class="ui stackable grid">
+
+        <div class="ui four wide column">
+            <!-- 通用左侧菜单 menu 片段， index 为传递进来的参数 -->
+            <div th:fragment="common_menu(index)" class="ui container">
+                <div class="ui fluid card">
+                    <div class="ui centered image">
+                        <img src="/img/title2.png"
+                             th:src="@{/img/head_user.jpg}"
+                             alt="Avatar">
+                    </div>
+                </div>
+                <div class="ui vertical fluid stackable menu container">
+                    <a th:class="${index}==1?'active red item':'item'" class="item" href="/Encyclopedia">
+                        <font size="4px">
+                            <b>百科图鉴</b>
+                        </font>
+                        <i class="large book icon"></i>
+                    </a>
+                    <a th:class="${index}==2?'active red item':'item'" class="item" href="/calculator">
+                        <font size="4px">
+                            <b>养成计算</b>
+                        </font>
+                        <i class="large calculator icon"></i>
+                    </a>
+                    <a th:class="${index}==3?'active red item':'item'" class="item" href="/news">
+                        <font size="4px">
+                            <b>游戏资讯</b>
+                        </font>
+                        <i class="large newspaper outline icon"></i>
+                    </a>
+                    <a th:class="${index}==4?'active red item':'item'" class="item" href="/gacha">
+                        <font size="4px">
+                            <b>抽卡模拟</b>
+                        </font>
+                        <i class="large gem outline icon"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui twelve wide column">
+
+            <div class="ui one column grid">
+                <div class="computer only tablet only column">
+                    <h1 align="center" class="ui computer only header">Welcome to Genshin Impact Imformation Station!</h1>
+                </div>
+            </div>
+
+            <div class="ui segment">
+                <div class="main_div">
+                    <div class="arrows">
+                        <span title="1" class="arrow"><</span>
+                        <span title="0" class="arrow" style="float: right">></span>
+                    </div>
+
+                    <ul class="ul_img">
+                        <a href="https://google.com">
+                            <li class="li_img"><img src="/img/ver1.5.jpg" /></li>
+                        </a>
+                        <a href="https://google.com">
+                            <li class="li_img"><img src="/img/up_character.png" /></li>
+                        </a>
+                        <a href="https://google.com">
+                            <li class="li_img"><img src="/img/up_weapon.png" /></li>
+                        </a>
+                        <a href="https://google.com">
+                            <li class="li_img"><img src="/img/background1.png" /></li>
+                        </a>
+                    </ul>
+                </div>
+
+                <div style="margin-left: 330px">
+                    <div class="div_btn"></div>
+                    <div class="div_btn"></div>
+                    <div class="div_btn"></div>
+                    <div class="div_btn"></div>
+                </div>
+                <br>
+            </div>
+            <div class="ui raised segment">
+                <h3 class="ui header">
+                    <i class="calendar alternate outline icon"></i>
+                    <div class="content">
+                        当期活动
+                    </div>
+                </h3>
+                <img class="ui fluid image" src="/img/event_1.6.png">
+
+                <h3 class="ui header">
+                    <i class="user circle icon"></i>
+                    <div class="content">
+                        角色
+                    </div>
+                </h3>
+
+                <div class="ui top attached tabular menu">
+                    <a class="item active" data-tab="wuxing">
+                        五星
+                    </a>
+                    <a class="item" data-tab="sixing">
+                        四星
+                    </a>
+
+                    <div class="right menu">
+                        <div class="item">
+                            <div style="float: right">
+                                <a href="/Encyclopedia">查看更多</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui botton attached tab segment" data-tab="wuxing">
+                    <div class="ui five column grid">
+                        <div class="column" th:each="chara:${stars5}">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img th:src="${chara.getAvatar()}">
+                                </div>
+                                <div class="content">
+                                    <a th:href="'/chara?id='+${chara.getId()}" th:text="${chara.getName()}" class="header"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="ui botton attached tab segment" data-tab="sixing">
+                    <div class="ui five column grid">
+                        <div class="column" th:each="chara:${stars4}">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img th:src="${chara.getAvatar()}">
+                                </div>
+                                <div class="content">
+                                    <a th:href="'/chara?id='+${chara.getId()}" th:text="${chara.getName()}" class="header"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="ui header">
+                    <i class="ui gavel icon"></i>
+                    <div class="content">
+                        武器
+                    </div>
+                </h3>
+
+                <div class="ui top attached tabular menu">
+                    <a class="item active" data-tab="5">
+                        五星
+                    </a>
+                    <a class="item" data-tab="4">
+                        四星
+                    </a>
+                    <a class="item" data-tab="3">
+                        三星
+                    </a>
+                    <a class="item" data-tab="2">
+                        二星
+                    </a>
+                    <a class="item" data-tab="1">
+                        一星
+                    </a>
+
+                    <div class="right menu">
+                        <div class="item">
+                            <div style="float: right">
+                                <a href="/Encyclopedia">查看更多</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui botton attached tab segment" data-tab="5">
+                    <div class="ui five column grid">
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_youla2.png">
+                                </div>
+                                <div class="content">
+                                    <a class="header">优菈</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_hutao.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">胡桃</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_xiao.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">魈</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_ganyu.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">甘雨</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_abeiduo.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">阿贝多</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui botton attached tab segment" data-tab="4">
+                    <div class="ui five column grid">
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_youla2.png">
+                                </div>
+                                <div class="content">
+                                    <a class="header">优菈</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_hutao.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">胡桃</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_xiao.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">魈</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_ganyu.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">甘雨</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_abeiduo.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">阿贝多</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui botton attached tab segment" data-tab="3">
+                    <div class="ui five column grid">
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_youla2.png">
+                                </div>
+                                <div class="content">
+                                    <a class="header">优菈</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_hutao.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">胡桃</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_xiao.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">魈</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_ganyu.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">甘雨</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_abeiduo.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">阿贝多</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui botton attached tab segment" data-tab="2">
+                    <div class="ui five column grid">
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_youla2.png">
+                                </div>
+                                <div class="content">
+                                    <a class="header">优菈</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_hutao.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">胡桃</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_xiao.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">魈</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_ganyu.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">甘雨</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_abeiduo.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">阿贝多</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui botton attached tab segment" data-tab="1">
+                    <div class="ui five column grid">
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_youla2.png">
+                                </div>
+                                <div class="content">
+                                    <a class="header">优菈</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_hutao.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">胡桃</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_xiao.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">魈</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_ganyu.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">甘雨</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="/img/character/icon_abeiduo.jpg">
+                                </div>
+                                <div class="content">
+                                    <a class="header">阿贝多</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <form class="ui form" th:action="@{/application}" method="post" enctype="multipart/form-data">
+                <!--                    <div class="field">-->
+                <!--                        <label for="teammates">选择你的队友</label>-->
+                <!--                        <select th:object="${project}" type="text" id="teammates" name="teammates"-->
+                <!--                                class="ui fluid search dropdown" multiple>-->
+                <!--                            <option th:each="student:${students}"-->
+                <!--                                    th:value="${student.uid}"-->
+                <!--                                    th:text="${student.name} + ' ' + ${student.uid}">-->
+                <!--                            </option>-->
+                <!--                        </select>-->
+                <!--                    </div>-->
+                <div class="field">
+                    <label for="profile">
+                        <b>留下你的评论吧</b>
+                    </label>
+                    <textarea th:object="${project}" type="text" id="profile" name="profile" maxlength="200"></textarea>
+                </div>
+                <!--                    <div class="field">-->
+                <!--                        <label for="file-button">上传附件</label>-->
+                <!--                        <div class="ui file action input">-->
+                <!--                            <label for="file-name"></label>-->
+                <!--                            <input type="file" id="file" name="file" autocomplete="off">-->
+                <!--                            <input type="text" id="file-name" name="file-name" readonly>-->
+                <!--                            <div class="ui button" id="file-button">选择文件</div>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <input type="submit" value="确认提交" class="ui fluid large blue submit button"/>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- 通用底部 footer 片段 -->
+<div th:fragment="common_footer" class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <p>
+            Copyright © 2021 Temper.
+        </p>
+        <p>
+            All rights reserved.
+        </p>
+        <div class="ui header">
+            <a href="https://github.com/Abyss-of-Dragon/Cjjpsz" class="ui centered image">
+                <i class="large grey github icon"></i>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <!-- Standard Meta -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+  <title>页面 - 通用模板</title>
+  <link rel="icon" type="image/x-icon" href="/Projdemo/static/img/logo.png" th:href="@{/img/logo.png}"/>
+  <link rel="stylesheet" type="text/css" href="/Projdemo/static/dist/semantic.css" th:href="@{/dist/semantic.css}">
+  <script src="/Projdemo/static/js/jquery-3.5.1.min.js" th:src="@{/js/jquery-3.5.1.min.js}"></script>
+  <script src="/Projdemo/static/dist/semantic.min.js" th:src="@{/dist/semantic.min.js}"></script>
+
+  <!-- Site Specified Style and Script -->
+  <link rel="stylesheet" type="text/css" href="/Projdemo/static/css/common.css" th:href="@{/css/common.css}">
+  <script src="/Projdemo/static/js/common.js" th:src="@{/js/common.js}"></script>
+</head>
+<body>
+  <div th:fragment="common_header" class="ui fixed brown large borderless menu">
+    <div class="ui container">
+      <div class="header item">
+        <img class="proj icon" src="/Projdemo/static/img/cjjpsz.png" th:src="@{/img/cjjpsz.png}" alt="Logo">
+        原神Wiki
+      </div>
+      <a href="mainpage.html" class="header item">
+        首页
+      </a>
+      <a class="right item">
+        <div class="ui icon input">
+          <i class="search icon"></i>
+          <input type="text" placeholder="Search...">
+        </div>
+      </a>
+      <a href="login.html" class="item">
+        <div class="ui logout icon">登出</div>
+        <i class="sign out alternate icon"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="ui main container">
+    <div><h2 align="center">磐岩结绿</h2></div>
+    <br>
+    <div class="ui raised segment">
+      <div class="ui stackable grid">
+        <div class="ui nine wide column">
+          <table class="ui celled structured table">
+            <tbody>
+              <tr>
+                <td rowspan="4" class="collapsing">
+                  <img class="ui small image" src="/Projdemo/static/img/weapon/icon_panyan.png">
+                </td>
+                <td><b>名称：</b>磐岩结绿</td>
+              </tr>
+              <tr>
+                <td><b>装备类型：</b>单手剑</td>
+              </tr>
+              <tr>
+                <td><b>稀有度：</b>五星</td>
+              </tr>
+              <tr>
+                <td><b>获取途径：</b>祈愿</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="ui segments">
+            <div class="ui segment">
+              <h3 align="center">武器技能</h3>
+            </div>
+            <div class="ui segments">
+              <div class="ui segment">
+                <p><b>护国的无垢之心：</b>生命值提升20%/25%/30%/35%/40%。</p>
+                <p>此外，基于装备该武器的角色生命值上限的1.2%/1.5%/1.8%/2.1%/2.4%,获得攻击力加成。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ui seven wide column">
+          <div class="ui segments">
+            <div class="ui segment">
+              <h3 align="center">基本属性</h3>
+            </div>
+            <table class="ui celled structured table">
+              <tbody>
+                <tr><td><b>初始基础属性1：</b>暴击率9.6%</td></tr>
+                <tr><td><b>基础攻击力：</b>44</td></tr>
+                <tr><td><b>满级攻击力：</b>542</td></tr>
+                <tr><td><b>副属性(MAX)：</b>暴击率44.1%</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
