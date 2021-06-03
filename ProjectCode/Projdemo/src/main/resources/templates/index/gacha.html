@@ -119,6 +119,20 @@
                     <tr>
                         <td>
                             <h4 class="ui image header">
+                                <img src="/Projdemo/static/img/gucha/rmb.png" class="ui mini rounded image">
+                                <div class="content">
+                                    RMB
+                                    <div class="sub header">￥
+                                    </div>
+                                </div>
+                            </h4></td>
+                        <td>
+                            <p id="result_rmb">0</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4 class="ui image header">
                                 <img src="/Projdemo/static/img/gucha/genesis_crystal.png" class="ui mini rounded image">
                                 <div class="content">
                                     创世结晶
@@ -141,7 +155,8 @@
                                 </div>
                             </h4></td>
                         <td>
-                            <p id="result_crystal"></p>
+                            <p id="result_crystal">0</p>
+                            可购买最大值<p id="result_purchase">0</p>
                         </td>
                     </tr>
                     <tr>
@@ -155,8 +170,8 @@
                                 </div>
                             </h4></td>
                         <td>
-                            <p id="result_interwined"></p><br>
-                            <button class="ui button">原石购买</button>
+                            <p id="result_interwined">0</p>
+                            <button class="ui button" onclick="purchase_interwined()">原石购买</button>
                         </td>
                     </tr>
                     <tr>
@@ -170,8 +185,8 @@
                                 </div>
                             </h4></td>
                         <td>
-                            <p id="result_acquaint"></p>
-                            <br><button class="ui button">原石购买</button>
+                            <p id="result_acquaint">0</p>
+                            <button class="ui button" onclick="purchase_acquaint()">原石购买</button>
                         </td>
                     </tr>
                     </tbody>
