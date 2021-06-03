@@ -6,6 +6,25 @@
     let cnt_rmb=0;
     let cnt_purchase=0;
 
+    <!--祈愿 wish-->
+    function wish_1(){
+        if(cnt_acquaint<1){
+            alert("缺少1个相遇之缘，是否消耗160原石购买?");
+        }else{
+            cnt_acquaint=cnt_acquaint-1;
+            sendResult_acquaint(cnt_acquaint)
+        }
+
+    }
+    function wish_10(){
+        if(cnt_acquaint<10){
+            alert("缺少10个相遇之缘，是否消耗1600原石购买?");
+        }else{
+            cnt_acquaint=cnt_acquaint-10;
+            sendResult_acquaint(cnt_acquaint)
+        }
+
+    }
     <!--充值 recharge-->
     function recharge_6(){
     cnt_genesis=cnt_genesis+60;
@@ -85,7 +104,7 @@
                 sendResult_acquaint(cnt_acquaint);
                 sendResult_crystal(cnt_crystal);
             }else if(cnt>cnt_crystal/160||cnt_crystal<160){
-                alert("原石不足，是否充值？")
+                alert("所需原石不足，是否凝取结晶？")
             }
 }
     function purchase_interwined (){
@@ -99,7 +118,7 @@
             sendResult_interwined(cnt_interwined);
             sendResult_crystal(cnt_crystal);
         }else if(cnt>cnt_crystal/160||cnt_crystal<160){
-            alert("原石不足，是否充值？")
+            alert("所需原石不足，是否凝取结晶？")
         }
     }
     function sendResult_purchase(cnt_purchase) {
