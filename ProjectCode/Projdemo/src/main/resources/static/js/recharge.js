@@ -5,6 +5,8 @@
     let cnt_crystal=0;
     let cnt_rmb=0;
     let cnt_purchase=0;
+    let cnt_ssrwish=0;
+    let cnt_srwish=0;
 
     <!--祈愿 wish-->
     function wish_1(){
@@ -12,7 +14,8 @@
             alert("缺少1个相遇之缘，是否消耗160原石购买?");
         }else{
             cnt_acquaint=cnt_acquaint-1;
-            sendResult_acquaint(cnt_acquaint)
+            sendResult_acquaint(cnt_acquaint);
+            wish();
         }
 
     }
@@ -22,7 +25,19 @@
         }else{
             cnt_acquaint=cnt_acquaint-10;
             sendResult_acquaint(cnt_acquaint)
+            for(let i=0;i<10;i++){
+                wish();
+            }
         }
+
+    }
+    function wish(){
+        cnt_ssrwish=cnt_ssrwish+1;
+        cnt_srwish=cnt_srwish+1;
+
+        let temp=Math.floor(Math.random()*10);
+        //floor() 返回小于等于x的最大整数
+        //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机数
 
     }
     <!--充值 recharge-->
