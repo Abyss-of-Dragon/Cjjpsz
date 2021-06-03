@@ -197,70 +197,410 @@
                     <button class="ui button" onclick="wish_10()">祈愿10次</button>
                 </div>
                 <!--祈愿一览-->
-                <table class="ui very basic collapsing celled table">
-                    <thead>
-                    <tr><th>Employee</th>
-                        <th>Correct Guesses</th>
-                    </tr></thead>
-                    <tbody>
-                    <tr>
-                        <td>
-                            <h4 class="ui image header">
-                                <img src="/images/avatar2/small/lena.png" class="ui mini rounded image">
-                                <div class="content">
-                                    Lena
-                                    <div class="sub header">Human Resources
-                                    </div>
-                                </div>
-                            </h4></td>
-                        <td>
-                            22
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h4 class="ui image header">
-                                <img src="/images/avatar2/small/matthew.png" class="ui mini rounded image">
-                                <div class="content">
-                                    Matthew
-                                    <div class="sub header">Fabric Design
-                                    </div>
-                                </div>
-                            </h4></td>
-                        <td>
-                            15
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h4 class="ui image header">
-                                <img src="/images/avatar2/small/lindsay.png" class="ui mini rounded image">
-                                <div class="content">
-                                    Lindsay
-                                    <div class="sub header">Entertainment
-                                    </div>
-                                </div>
-                            </h4></td>
-                        <td>
-                            12
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <h4 class="ui image header">
-                                <img src="/images/avatar2/small/mark.png" class="ui mini rounded image">
-                                <div class="content">
-                                    Mark
-                                    <div class="sub header">Executive
-                                    </div>
-                                </div>
-                            </h4></td>
-                        <td>
-                            11
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                <div class="ui top attached tabular menu">
+                    <a class="item active" data-tab="wuxingjuese">
+                        五星角色
+                    </a>
+                    <a class="item active" data-tab="wuxingwuqi">
+                        五星武器
+                    </a>
+                    <a class="item" data-tab="sixingjuese">
+                        四星角色
+                    </a>
+                    <a class="item" data-tab="sixingwuqi">
+                        四星武器
+                    </a>
+                    <a class="item" data-tab="sanxingwuqi">
+                        三星武器
+                    </a>
+                </div>
+                <div class="ui botton attached tab segment" data-tab="wuxingjuese">
+                    <div class="ui five column grid">
+                        <table class="ui very basic collapsing celled table">
+                            <thead>
+                            <tr><th>品质</th>
+                                <th>类型</th>
+                                <th>名称</th>
+                                <th>次数</th>
+                            </tr></thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    五星
+                                </td>
+                                <td>
+                                    角色
+                                </td>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/Projdemo/static/img/character/icon_keqing.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            刻晴
+                                            <div class="sub header">璃月七星之一,玉衡星。
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    <p id="result_keqing">0</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    五星
+                                </td>
+                                <td>
+                                    角色
+                                </td>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/Projdemo/static/img/character/icon_mona.JPG" class="ui mini rounded image">
+                                        <div class="content">
+                                            莫娜
+                                            <div class="sub header">璃月七星之一,玉衡星。
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    <p id="result_mona">0</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    五星
+                                </td>
+                                <td>
+                                    角色
+                                </td>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/Projdemo/static/img/character/icon_qiqi.JPG" class="ui mini rounded image">
+                                        <div class="content">
+                                            七七
+                                            <div class="sub header">璃月七星之一,玉衡星。
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    <p id="result_qiqi">0</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    五星
+                                </td>
+                                <td>
+                                    角色
+                                </td>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/Projdemo/static/img/character/icon_diluke.JPG" class="ui mini rounded image">
+                                        <div class="content">
+                                            迪卢克
+                                            <div class="sub header">璃月七星之一,玉衡星。
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    <p id="result_diluke">0</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    五星
+                                </td>
+                                <td>
+                                    角色
+                                </td>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/Projdemo/static/img/character/icon_qin.JPG" class="ui mini rounded image">
+                                        <div class="content">
+                                            琴
+                                            <div class="sub header">璃月七星之一,玉衡星。
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    <p id="result_qin">0</p>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="ui botton attached tab segment" data-tab="wuxingwuqi">
+                    <div class="ui five column grid">
+                        <table class="ui very basic collapsing celled table">
+                            <thead>
+                            <tr><th>Employee</th>
+                                <th>Correct Guesses</th>
+                            </tr></thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/lena.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Lena
+                                            <div class="sub header">Human Resources
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    22
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/matthew.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Matthew
+                                            <div class="sub header">Fabric Design
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    15
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/lindsay.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Lindsay
+                                            <div class="sub header">Entertainment
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    12
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/mark.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Mark
+                                            <div class="sub header">Executive
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    11
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="ui botton attached tab segment" data-tab="sixingjuese">
+                    <div class="ui five column grid">
+                        <table class="ui very basic collapsing celled table">
+                            <thead>
+                            <tr><th>Employee</th>
+                                <th>Correct Guesses</th>
+                            </tr></thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/lena.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Lena
+                                            <div class="sub header">Human Resources
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    22
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/matthew.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Matthew
+                                            <div class="sub header">Fabric Design
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    15
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/lindsay.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Lindsay
+                                            <div class="sub header">Entertainment
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    12
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/mark.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Mark
+                                            <div class="sub header">Executive
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    11
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="ui botton attached tab segment" data-tab="sixingwuqi">
+                    <div class="ui five column grid">
+                        <table class="ui very basic collapsing celled table">
+                            <thead>
+                            <tr><th>Employee</th>
+                                <th>Correct Guesses</th>
+                            </tr></thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/lena.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Lena
+                                            <div class="sub header">Human Resources
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    22
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/matthew.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Matthew
+                                            <div class="sub header">Fabric Design
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    15
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/lindsay.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Lindsay
+                                            <div class="sub header">Entertainment
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    12
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/mark.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Mark
+                                            <div class="sub header">Executive
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    11
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="ui botton attached tab segment" data-tab="sanxingwuqi">
+                    <div class="ui five column grid">
+                        <table class="ui very basic collapsing celled table">
+                            <thead>
+                            <tr><th>Employee</th>
+                                <th>Correct Guesses</th>
+                            </tr></thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/lena.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Lena
+                                            <div class="sub header">Human Resources
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    22
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/matthew.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Matthew
+                                            <div class="sub header">Fabric Design
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    15
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/lindsay.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Lindsay
+                                            <div class="sub header">Entertainment
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    12
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/mark.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Mark
+                                            <div class="sub header">Executive
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    11
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
 
 
 
