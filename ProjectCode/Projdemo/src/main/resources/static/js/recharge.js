@@ -8,24 +8,9 @@
     let cnt_ssrwish=0;
     let cnt_srwish=0;
     let cnt_ssrjuese=0;
-    let cnt_srjuese=0;
+    //let cnt_srjuese=0;
     let cnt_keqing=0;
     let cnt_mona=0;
-
-    <!--祈愿获得各物品的次数-->
-        // <!--五星角色-->
-            let cnt_keqing=0;
-            let cnt_mona=0;
-            let cnt_qiqi=0;
-            let cnt_diluke=0;
-            let cnt_qin=0;
-        // <!--五星武器-->
-            let cnt_=0;
-            let cnt_amosizhigong=0;
-            let cnt_tiankongzhiyi=0;
-            let cnt_diluke=0;
-            let cnt_qin=0;
-
 
     <!--祈愿 wish-->
     function wish_1(){
@@ -59,7 +44,7 @@
     function wish01(){
         cnt_ssrwish=cnt_ssrwish+1;
         cnt_srwish=cnt_srwish+1;
-        if(cnt_ssrwish=90){
+        if(cnt_ssrwish == 90){
             cnt_ssrwish=0;//ssr保底重置
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SSR");
@@ -69,15 +54,165 @@
             let x="未获得SSR";
             sendResult_wish01(x);
         }
-
-
-        let temp=Math.floor(Math.random()*10);
+        // temp=Math.floor(Math.random()*1);
         //floor() 返回小于等于x的最大整数
-        //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机数
-
+        //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机
+    }
+    function wish02(){
+        cnt_ssrwish=cnt_ssrwish+1;
+        cnt_srwish=cnt_srwish+1;
+        if(cnt_ssrwish==90){
+            cnt_ssrwish=0;//ssr保底重置
+            cnt_srwish=0;//sr保底重置
+            alert("恭喜您通过保底获得了SSR");
+            let x=random_ssr();//随机获得一张ssr
+            sendResult_wish02(x);
+        }else{
+            let x="未获得SSR";
+            sendResult_wish02(x);
+        }
+        // temp=Math.floor(Math.random()*1);
+        //floor() 返回小于等于x的最大整数
+        //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机
+    }
+    function wish03(){
+        cnt_ssrwish=cnt_ssrwish+1;
+        cnt_srwish=cnt_srwish+1;
+        if(cnt_ssrwish==90){
+            cnt_ssrwish=0;//ssr保底重置
+            cnt_srwish=0;//sr保底重置
+            alert("恭喜您通过保底获得了SSR");
+            let x=random_ssr();//随机获得一张ssr
+            sendResult_wish03(x);
+        }else{
+            let x="未获得SSR";
+            sendResult_wish03(x);
+        }
+        // temp=Math.floor(Math.random()*1);
+        //floor() 返回小于等于x的最大整数
+        //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机
+    }
+    function wish04(){
+        cnt_ssrwish=cnt_ssrwish+1;
+        cnt_srwish=cnt_srwish+1;
+        if(cnt_ssrwish==90){
+            cnt_ssrwish=0;//ssr保底重置
+            cnt_srwish=0;//sr保底重置
+            alert("恭喜您通过保底获得了SSR");
+            let x=random_ssr();//随机获得一张ssr
+            sendResult_wish04(x);
+        }else{
+            let x="未获得SSR";
+            sendResult_wish04(x);
+        }
+        // temp=Math.floor(Math.random()*1);
+        //floor() 返回小于等于x的最大整数
+        //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机
+    }
+    function wish05(){
+        cnt_ssrwish=cnt_ssrwish+1;
+        cnt_srwish=cnt_srwish+1;
+        if(cnt_ssrwish==90){
+            cnt_ssrwish=0;//ssr保底重置
+            cnt_srwish=0;//sr保底重置
+            alert("恭喜您通过保底获得了SSR");
+            let x=random_ssr();//随机获得一张ssr
+            sendResult_wish05(x);
+        }else{
+            let x="未获得SSR";
+            sendResult_wish05(x);
+        }
+        // temp=Math.floor(Math.random()*1);
+        //floor() 返回小于等于x的最大整数
+        //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机
+    }
+    function wish06(){
+        cnt_ssrwish=cnt_ssrwish+1;
+        cnt_srwish=cnt_srwish+1;
+        if(cnt_ssrwish==90){
+            cnt_ssrwish=0;//ssr保底重置
+            cnt_srwish=0;//sr保底重置
+            alert("恭喜您通过保底获得了SSR");
+            let x=random_ssr();//随机获得一张ssr
+            sendResult_wish06(x);
+        }else{
+            let x="未获得SSR";
+            sendResult_wish06(x);
+        }
+        // temp=Math.floor(Math.random()*1);
+        //floor() 返回小于等于x的最大整数
+        //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机
+    }
+    function wish07(){
+        cnt_ssrwish=cnt_ssrwish+1;
+        cnt_srwish=cnt_srwish+1;
+        if(cnt_ssrwish==90){
+            cnt_ssrwish=0;//ssr保底重置
+            cnt_srwish=0;//sr保底重置
+            alert("恭喜您通过保底获得了SSR");
+            let x=random_ssr();//随机获得一张ssr
+            sendResult_wish07(x);
+        }else{
+            let x="未获得SSR";
+            sendResult_wish07(x);
+        }
+        // temp=Math.floor(Math.random()*1);
+        //floor() 返回小于等于x的最大整数
+        //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机
+    }
+    function wish08(){
+        cnt_ssrwish=cnt_ssrwish+1;
+        cnt_srwish=cnt_srwish+1;
+        if(cnt_ssrwish==90){
+            cnt_ssrwish=0;//ssr保底重置
+            cnt_srwish=0;//sr保底重置
+            alert("恭喜您通过保底获得了SSR");
+            let x=random_ssr();//随机获得一张ssr
+            sendResult_wish08(x);
+        }else{
+            let x="未获得SSR";
+            sendResult_wish08(x);
+        }
+        // temp=Math.floor(Math.random()*1);
+        //floor() 返回小于等于x的最大整数
+        //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机
+    }
+    function wish09(){
+        cnt_ssrwish=cnt_ssrwish+1;
+        cnt_srwish=cnt_srwish+1;
+        if(cnt_ssrwish==90){
+            cnt_ssrwish=0;//ssr保底重置
+            cnt_srwish=0;//sr保底重置
+            alert("恭喜您通过保底获得了SSR");
+            let x=random_ssr();//随机获得一张ssr
+            sendResult_wish09(x);
+        }else{
+            let x="未获得SSR";
+            sendResult_wish09(x);
+        }
+        // temp=Math.floor(Math.random()*1);
+        //floor() 返回小于等于x的最大整数
+        //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机
+    }
+    function wish10(){
+        cnt_ssrwish=cnt_ssrwish+1;
+        cnt_srwish=cnt_srwish+1;
+        if(cnt_ssrwish==90){
+            cnt_ssrwish=0;//ssr保底重置
+            cnt_srwish=0;//sr保底重置
+            alert("恭喜您通过保底获得了SSR");
+            let x=random_ssr();//随机获得一张ssr
+            sendResult_wish10(x);
+        }else{
+            let x="未获得SSR";
+            sendResult_wish10(x);
+        }
+        // temp=Math.floor(Math.random()*1);
+        //floor() 返回小于等于x的最大整数
+        //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机
     }
     function random_ssr(){
-        let tempRandomSsr=Math.floor(Math.random()*15);
+        let tempRandomSsr=Math.floor(Math.random()*1);
         let ssr;
             switch (tempRandomSsr) {
             case 0:
@@ -273,5 +408,41 @@
     }
     function sendResult_wish01(x) {
         let num = document.getElementById("wish_1")
+        num.innerHTML = x;
+    }
+    function sendResult_wish02(x) {
+        let num = document.getElementById("wish_2")
+        num.innerHTML = x;
+    }
+    function sendResult_wish03(x) {
+        let num = document.getElementById("wish_3")
+        num.innerHTML = x;
+    }
+    function sendResult_wish04(x) {
+        let num = document.getElementById("wish_4")
+        num.innerHTML = x;
+    }
+    function sendResult_wish05(x) {
+        let num = document.getElementById("wish_5")
+        num.innerHTML = x;
+    }
+    function sendResult_wish06(x) {
+        let num = document.getElementById("wish_6")
+        num.innerHTML = x;
+    }
+    function sendResult_wish07(x) {
+        let num = document.getElementById("wish_7")
+        num.innerHTML = x;
+    }
+    function sendResult_wish08(x) {
+        let num = document.getElementById("wish_8")
+        num.innerHTML = x;
+    }
+    function sendResult_wish09(x) {
+        let num = document.getElementById("wish_9")
+        num.innerHTML = x;
+    }
+    function sendResult_wish10(x) {
+        let num = document.getElementById("wish_10")
         num.innerHTML = x;
     }
