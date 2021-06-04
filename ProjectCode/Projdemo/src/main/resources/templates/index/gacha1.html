@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<p id="demo"></p>
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Site Properties -->
+    <title>抽卡模拟</title>
+    <link rel="icon" type="image/x-icon" href="/Projdemo/static/img/logo.png" th:href="@{/img/logo.png}"/>
+    <link rel="stylesheet" type="text/css" href="/Projdemo/static/dist/semantic.css" th:href="@{/dist/semantic.css}">
+    <script src="/Projdemo/static/js/jquery-3.5.1.min.js" th:src="@{/js/jquery-3.5.1.min.js}"></script>
+    <script src="/Projdemo/static/dist/semantic.min.js" th:src="@{/dist/semantic.min.js}"></script>
+    <script src="/Projdemo/static/js/recharge.js" th:src="@{/js/recharge.js}"></script>
+
+    <!-- Site Specified Style and Script -->
+    <link rel="stylesheet" type="text/css" href="/Projdemo/static/css/common.css" th:href="@{/css/common.css}">
+    <script src="/Projdemo/static/js/common.js" th:src="@{/js/common.js}"></script>
+</head>
+
+<body>
+
+<!-- 通用顶部栏 header 片段 -->
+<div th:fragment="common_header" class="ui fixed brown large borderless menu">
+    <div class="ui container">
+        <div class="header item">
+            <img class="proj icon" src="/Projdemo/static/img/cjjpsz.png" th:src="@{/img/cjjpsz.png}" alt="Logo">
+            原神Wiki
+        </div>
+        <a href="mainpage.html" class="header item">
+            首页
+        </a>
+        <a class="right item">
+            <div class="ui icon input">
+                <i class="search icon"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+        </a>
+        <a href="login.html" class="item">
+            <div class="ui logout icon">登出</div>
+            <i class="sign out alternate icon"></i>
+        </a>
+    </div>
+</div>
+
+<div class="ui main container">
+    <div class="ui stackable grid">
+
+        <div class="ui four wide column">
+            <!-- 通用左侧菜单 menu 片段， index 为传递进来的参数 -->
+            <div th:fragment="common_menu(index)" class="ui container">
+                <div class="ui fluid card">
+                    <div class="ui centered image">
+                        <img src="/Projdemo/static/img/title2.png"
+                             th:src="@{/img/head_user.jpg}"
+                             alt="Avatar">
+                    </div>
+                </div>
+                <div class="ui vertical fluid stackable sticky menu container">
+                    <a th:class="${index}==1?'active red item':'item'" class="item" href="Encyclopedia.html">
+                        <font size="4px">
+                            <b>百科图鉴</b>
+                        </font>
+                        <i class="large book icon"></i>
+                    </a>
+                    <a th:class="${index}==2?'active red item':'item'" class="item" href="calculator.html">
+                        <font size="4px">
+                            <b>养成计算</b>
+                        </font>
+                        <i class="large calculator icon"></i>
+                    </a>
+                    <a th:class="${index}==3?'active red item':'item'" class="item" href="news.html">
+                        <font size="4px">
+                            <b>游戏资讯</b>
+                        </font>
+                        <i class="large newspaper outline icon"></i>
+                    </a>
+                    <a th:class="${index}==4?'active red item':'item'" class="item" href="gacha.html">
+                        <font size="4px">
+                            <b>抽卡模拟</b>
+                        </font>
+                        <i class="large gem outline icon"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui twelve wide column">
+
+                <div class="ui one column grid">
+                    <div class="computer only tablet only column">
+                        <h1 align="center" class="ui computer only header">Welcome to Genshin Impact Imformation Station!</h1>
+                    </div>
+                </div>
+            <div class="ui raised segment">
+
+                <img class="ui centered image" src="/Projdemo/static/img/gacha/wanderlust_invocation.png">
+                <br>
+                <!--                    <div class="container column"></div>-->
+                <!--凝取结晶-->
+                <div class="six ui buttons">
+                    <button class="ui button" onclick="recharge_6()">￥6.00</button>
+                    <button class="ui button" onclick="recharge_30()">￥30.00</button>
+                    <button class="ui button" onclick="recharge_98()">￥98.00</button>
+                    <button class="ui button" onclick="recharge_198()">￥198.00</button>
+                    <button class="ui button" onclick="recharge_328()">￥328.00</button>
+                    <button class="ui button" onclick="recharge_648()">￥648.00</button>
+                </div>
+                <!--获取一览-->
+                <table class="ui very basic collapsing celled table">
+                    <thead>
+                    <tr><th>Items</th>
+                        <th>Owned</th>
+                    </tr></thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <h4 class="ui image header">
+                                <img src="/Projdemo/static/img/gacha/rmb.png" class="ui mini rounded image">
+                                <div class="content">
+                                    RMB
+                                    <div class="sub header">￥
+                                    </div>
+                                </div>
+                            </h4></td>
+                        <td>
+                            <p id="result_rmb">0</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4 class="ui image header">
+                                <img src="/Projdemo/static/img/gacha/genesis_crystal.png" class="ui mini rounded image">
+                                <div class="content">
+                                    创世结晶
+                                    <div class="sub header">开辟宇宙的能量结晶。虚无的真空中,由足以点亮新星的潜力和希望结晶而成。
+                                    </div>
+                                </div>
+                            </h4></td>
+                        <td>
+                            <p id="result_genesis">0</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4 class="ui image header">
+                                <img src="/Projdemo/static/img/gacha/primogem.png" class="ui mini rounded image">
+                                <div class="content">
+                                    原石
+                                    <div class="sub header">超出世界的原初晶石。黑暗的宇宙中,由无主的梦想与希望凝结而成的辉光。
+                                    </div>
+                                </div>
+                            </h4></td>
+                        <td>
+                            <p id="result_crystal">0</p>
+                            可购买最大值<p id="result_purchase">0</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4 class="ui image header">
+                                <img src="/Projdemo/static/img/gacha/interwined_fate.png" class="ui mini rounded image">
+                                <div class="content">
+                                    纠缠之缘
+                                    <div class="sub header">连结梦想的命运之种。<br>缘石辉光能让本无交集的命运交错,让彼此的梦想相连,正如这种光辉将群星连成心之所向的图形。
+                                    </div>
+                                </div>
+                            </h4></td>
+                        <td>
+                            <p id="result_interwined">0</p>
+                            <button class="ui button" onclick="purchase_interwined()">原石购买</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4 class="ui image header">
+                                <img src="/Projdemo/static/img/gacha/acquaint_fate.png" class="ui mini rounded image">
+                                <div class="content">
+                                    相遇之缘
+                                    <div class="sub header">点亮星空的希望之种。<br>无论相隔多远,命定相遇的人都会受缘石辉光的指引,在星空下相会。
+                                    </div>
+                                </div>
+                            </h4></td>
+                        <td>
+                            <p id="result_acquaint">0</p>
+                            <button class="ui button" onclick="purchase_acquaint()">原石购买</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <!--祈愿-->
+                <div class="two ui buttons">
+                    <button class="ui button" onclick="wish_1()">祈愿1次</button>
+                    <button class="ui button" onclick="wish_10()">祈愿10次</button>
+                </div>
+                <!--祈愿一览-->
+                <div class="ui top attached tabular menu">
+                    <a class="item active" data-tab="wuxingjuese">
+                        五星角色
+                    </a>
+                    <a class="item active" data-tab="wuxingwuqi">
+                        五星武器
+                    </a>
+                    <a class="item" data-tab="sixingjuese">
+                        四星角色
+                    </a>
+                    <a class="item" data-tab="sixingwuqi">
+                        四星武器
+                    </a>
+                    <a class="item" data-tab="sanxingwuqi">
+                        三星武器
+                    </a>
+                </div>
+                <div class="ui botton attached tab segment" data-tab="wuxingjuese">
+                    <div class="ui five column grid">
+                        <table class="ui very basic collapsing celled table">
+                            <thead>
+                            <tr><th>品质</th>
+                                <th>类型</th>
+                                <th>名称</th>
+                                <th>次数</th>
+                            </tr></thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    五星
+                                </td>
+                                <td>
+                                    角色
+                                </td>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/Projdemo/static/img/character/icon_keqing.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            刻晴
+                                            <div class="sub header">璃月七星之一,玉衡星。
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    <p id="result_keqing">0</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    五星
+                                </td>
+                                <td>
+                                    角色
+                                </td>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/Projdemo/static/img/character/icon_mona.JPG" class="ui mini rounded image">
+                                        <div class="content">
+                                            莫娜
+                                            <div class="sub header">璃月七星之一,玉衡星。
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    <p id="result_mona">0</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    五星
+                                </td>
+                                <td>
+                                    角色
+                                </td>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/Projdemo/static/img/character/icon_qiqi.JPG" class="ui mini rounded image">
+                                        <div class="content">
+                                            七七
+                                            <div class="sub header">璃月七星之一,玉衡星。
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    <p id="result_qiqi">0</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    五星
+                                </td>
+                                <td>
+                                    角色
+                                </td>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/Projdemo/static/img/character/icon_diluke.JPG" class="ui mini rounded image">
+                                        <div class="content">
+                                            迪卢克
+                                            <div class="sub header">璃月七星之一,玉衡星。
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    <p id="result_diluke">0</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    五星
+                                </td>
+                                <td>
+                                    角色
+                                </td>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/Projdemo/static/img/character/icon_qin.JPG" class="ui mini rounded image">
+                                        <div class="content">
+                                            琴
+                                            <div class="sub header">璃月七星之一,玉衡星。
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    <p id="result_qin">0</p>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="ui botton attached tab segment" data-tab="wuxingwuqi">
+                    <div class="ui five column grid">
+                        <table class="ui very basic collapsing celled table">
+                            <thead>
+                            <tr><th>Employee</th>
+                                <th>Correct Guesses</th>
+                            </tr></thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/lena.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Lena
+                                            <div class="sub header">Human Resources
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    22
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/matthew.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Matthew
+                                            <div class="sub header">Fabric Design
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    15
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/lindsay.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Lindsay
+                                            <div class="sub header">Entertainment
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    12
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/mark.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Mark
+                                            <div class="sub header">Executive
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    11
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="ui botton attached tab segment" data-tab="sixingjuese">
+                    <div class="ui five column grid">
+                        <table class="ui very basic collapsing celled table">
+                            <thead>
+                            <tr><th>Employee</th>
+                                <th>Correct Guesses</th>
+                            </tr></thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/lena.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Lena
+                                            <div class="sub header">Human Resources
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    22
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/matthew.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Matthew
+                                            <div class="sub header">Fabric Design
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    15
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/lindsay.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Lindsay
+                                            <div class="sub header">Entertainment
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    12
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/mark.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Mark
+                                            <div class="sub header">Executive
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    11
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="ui botton attached tab segment" data-tab="sixingwuqi">
+                    <div class="ui five column grid">
+                        <table class="ui very basic collapsing celled table">
+                            <thead>
+                            <tr><th>Employee</th>
+                                <th>Correct Guesses</th>
+                            </tr></thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/lena.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Lena
+                                            <div class="sub header">Human Resources
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    22
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/matthew.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Matthew
+                                            <div class="sub header">Fabric Design
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    15
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/lindsay.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Lindsay
+                                            <div class="sub header">Entertainment
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    12
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/mark.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Mark
+                                            <div class="sub header">Executive
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    11
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="ui botton attached tab segment" data-tab="sanxingwuqi">
+                    <div class="ui five column grid">
+                        <table class="ui very basic collapsing celled table">
+                            <thead>
+                            <tr><th>Employee</th>
+                                <th>Correct Guesses</th>
+                            </tr></thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/lena.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Lena
+                                            <div class="sub header">Human Resources
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    22
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/matthew.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Matthew
+                                            <div class="sub header">Fabric Design
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    15
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/lindsay.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Lindsay
+                                            <div class="sub header">Entertainment
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    12
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/images/avatar2/small/mark.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            Mark
+                                            <div class="sub header">Executive
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    11
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+            <form class="ui form" th:action="@{/application}" method="post" enctype="multipart/form-data">
+                <!--                    <div class="field">-->
+                <!--                        <label for="teammates">选择你的队友</label>-->
+                <!--                        <select th:object="${project}" type="text" id="teammates" name="teammates"-->
+                <!--                                class="ui fluid search dropdown" multiple>-->
+                <!--                            <option th:each="student:${students}"-->
+                <!--                                    th:value="${student.uid}"-->
+                <!--                                    th:text="${student.name} + ' ' + ${student.uid}">-->
+                <!--                            </option>-->
+                <!--                        </select>-->
+                <!--                    </div>-->
+                <div class="field">
+                    <label for="profile">
+                        <b>留下你的评论吧</b>
+                    </label>
+                    <textarea th:object="${project}" type="text" id="profile" name="profile" maxlength="200"></textarea>
+                </div>
+                <!--                    <div class="field">-->
+                <!--                        <label for="file-button">上传附件</label>-->
+                <!--                        <div class="ui file action input">-->
+                <!--                            <label for="file-name"></label>-->
+                <!--                            <input type="file" id="file" name="file" autocomplete="off">-->
+                <!--                            <input type="text" id="file-name" name="file-name" readonly>-->
+                <!--                            <div class="ui button" id="file-button">选择文件</div>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <input type="submit" value="确认提交" class="ui fluid large blue submit button"/>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- 通用底部 footer 片段 -->
+<div th:fragment="common_footer" class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <p>
+            Copyright © 2021 Temper.
+        </p>
+        <p>
+            All rights reserved.
+        </p>
+        <div class="ui header">
+            <a href="https://github.com/Abyss-of-Dragon/Cjjpsz" class="ui centered image">
+                <i class="large grey github icon"></i>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
