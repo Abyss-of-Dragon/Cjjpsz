@@ -12,6 +12,21 @@
     let cnt_keqing=0;
     let cnt_mona=0;
 
+    <!--祈愿获得各物品的次数-->
+        // <!--五星角色-->
+            let cnt_keqing=0;
+            let cnt_mona=0;
+            let cnt_qiqi=0;
+            let cnt_diluke=0;
+            let cnt_qin=0;
+        // <!--五星武器-->
+            let cnt_=0;
+            let cnt_amosizhigong=0;
+            let cnt_tiankongzhiyi=0;
+            let cnt_diluke=0;
+            let cnt_qin=0;
+
+
     <!--祈愿 wish-->
     function wish_1(){
         if(cnt_acquaint<1){
