@@ -7,6 +7,10 @@
     let cnt_purchase=0;
     let cnt_ssrwish=0;
     let cnt_srwish=0;
+    let cnt_ssrjuese=0;
+    let cnt_srjuese=0;
+    let cnt_keqing=0;
+    let cnt_mona=0;
 
     <!--祈愿 wish-->
     function wish_1(){
@@ -15,7 +19,7 @@
         }else{
             cnt_acquaint=cnt_acquaint-1;
             sendResult_acquaint(cnt_acquaint);
-            wish();
+            wish01();
         }
 
     }
@@ -25,20 +29,96 @@
         }else{
             cnt_acquaint=cnt_acquaint-10;
             sendResult_acquaint(cnt_acquaint)
-            for(let i=0;i<10;i++){
-                wish();
+            wish01();
+            wish02();
+            wish03();
+            wish04();
+            wish05();
+            wish06();
+            wish07();
+            wish08();
+            wish09();
+            wish10();
             }
-        }
-
     }
-    function wish(){
+    function wish01(){
         cnt_ssrwish=cnt_ssrwish+1;
         cnt_srwish=cnt_srwish+1;
+        if(cnt_ssrwish=90){
+            cnt_ssrwish=0;//ssr保底重置
+            cnt_srwish=0;//sr保底重置
+            alert("恭喜您通过保底获得了SSR");
+            let x=random_ssr();//随机获得一张ssr
+            sendResult_wish01(x);
+        }else{
+            let x="未获得SSR";
+            sendResult_wish01(x);
+        }
+
 
         let temp=Math.floor(Math.random()*10);
         //floor() 返回小于等于x的最大整数
         //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机数
 
+    }
+    function random_ssr(){
+        let tempRandomSsr=Math.floor(Math.random()*15);
+        let ssr;
+            switch (tempRandomSsr) {
+            case 0:
+                 ssr = "刻晴";
+                cnt_keqing=cnt_keqing+1;
+                cnt_ssrjuese=cnt_ssrjuese+1;
+                sendResult_keqing(cnt_keqing);
+                sendResult_wuxingjuese(cnt_ssrjuese);
+                break;
+            case 1:
+                ssr = "莫娜";
+                cnt_mona=cnt_mona+1;
+                cnt_ssrjuese=cnt_ssrjuese+1;
+                sendResult_mona(cnt_mona);
+                sendResult_wuxingjuese(cnt_ssrjuese);
+                break;
+            case 2:
+                ssr = "七七";
+                break;
+            case 3:
+                ssr = "迪卢克";
+                break;
+            case 4:
+                ssr = "琴";
+                break;
+            case 5:
+                ssr = "阿莫斯之弓";
+                break;
+            case  6:
+                ssr = "天空之翼";
+                break;
+            case 7:
+                ssr = "四风原典";
+                break;
+            case 8:
+                ssr = "天空之卷";
+                break;
+            case 9:
+                ssr = "和璞鸢";
+                break;
+            case 10:
+                ssr = "天空之脊";
+                break;
+            case 11:
+                ssr = "狼的末路";
+                break;
+            case 12:
+                ssr = "天空之傲";
+                break;
+            case 13:
+                ssr = "天空之刃";
+                break;
+            case 14:
+                ssr = "风鹰剑";
+        }
+        return ssr;
     }
     <!--充值 recharge-->
     function recharge_6(){
@@ -136,6 +216,8 @@
             alert("所需原石不足，是否凝取结晶？")
         }
     }
+
+    <!--sendResult-->
     function sendResult_purchase(cnt_purchase) {
         let num = document.getElementById("result_purchase")
         num.innerHTML = cnt_purchase;
@@ -162,3 +244,19 @@
     num.innerHTML = cnt_crystal;
 }
 
+    function sendResult_keqing(cnt_keqing) {
+        let num = document.getElementById("result_keqing")
+        num.innerHTML = cnt_keqing;
+    }
+    function sendResult_mona(cnt_mona) {
+        let num = document.getElementById("result_mona")
+        num.innerHTML = cnt_mona;
+    }
+    function sendResult_wuxingjuese(cnt_ssrjuese) {
+        let num = document.getElementById("result_wuxingjuese")
+        num.innerHTML = cnt_ssrjuese;
+    }
+    function sendResult_wish01(x) {
+        let num = document.getElementById("wish_1")
+        num.innerHTML = x;
+    }
