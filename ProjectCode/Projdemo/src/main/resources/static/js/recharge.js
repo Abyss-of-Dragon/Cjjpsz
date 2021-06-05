@@ -89,7 +89,7 @@
             cnt_acquaint=cnt_acquaint-1;
             sendResult_acquaint(cnt_acquaint);
             wish01();
-            let temp="本次为单抽，该行无数据"
+            let temp=" "
             sendResult_wish02(temp);
             sendResult_wish03(temp);
             sendResult_wish04(temp);
