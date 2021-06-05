@@ -196,6 +196,85 @@
                     <button class="ui button" onclick="wish_1()">祈愿1次</button>
                     <button class="ui button" onclick="wish_10()">祈愿10次</button>
                 </div>
+                <!--祈愿结果-->
+                <table class="ui very basic collapsing celled table">
+                    <thead>
+                    <tr><th>Order</th>
+                        <th>Owned</th>
+                    </tr></thead>
+                    <tbody>
+                    <!--wish_1--><tr>
+                        <td>
+                           1
+                        <td>
+                            <p id="wish_1">?</p>
+                        </td>
+                    </tr>
+                    <!--wish_2--><tr>
+                        <td>
+                            2
+                        <td>
+                            <p id="wish_2">?</p>
+                        </td>
+                    </tr>
+                    <!--wish_3--><tr>
+                        <td>
+                            3
+                        <td>
+                            <p id="wish_3">?</p>
+                        </td>
+                    </tr>
+                    <!--wish_4--><tr>
+                        <td>
+                            4
+                        <td>
+                            <p id="wish_4">?</p>
+                        </td>
+                    </tr>
+                    <!--wish_5--><tr>
+                        <td>
+                            5
+                        <td>
+                            <p id="wish_5">?</p>
+                        </td>
+                    </tr>
+                    <!--wish_6--><tr>
+                        <td>
+                            6
+                        <td>
+                            <p id="wish_6">?</p>
+                        </td>
+                    </tr>
+                    <!--wish_7--><tr>
+                        <td>
+                            7
+                        <td>
+                            <p id="wish_7">?</p>
+                        </td>
+                    </tr>
+                    <!--wish_8--><tr>
+                        <td>
+                            8
+                        <td>
+                            <p id="wish_8">?</p>
+                        </td>
+                    </tr>
+                    <!--wish_9--><tr>
+                        <td>
+                            9
+                        <td>
+                            <p id="wish_9">?</p>
+                        </td>
+                    </tr>
+                    <!--wish_10--><tr>
+                        <td>
+                            10
+                        <td>
+                            <p id="wish_10">?</p>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
                 <!--祈愿一览-->
                 <div class="ui top attached tabular menu">
                     <a class="item active" data-tab="wuxingjuese">
@@ -213,8 +292,10 @@
                     <a class="item" data-tab="sanxingwuqi">
                         三星武器
                     </a>
+                    <a class="item" data-tab="qiyuangailan">
+                        祈愿概览
+                    </a>
                 </div>
-
                 <!--五星角色--><div class="ui botton attached tab segment" data-tab="wuxingjuese">
                     <div class="ui five column grid">
                         <table class="ui very basic collapsing celled table">
@@ -1302,26 +1383,318 @@
                                     <p id="result_dangong">0</p>
                                 </td>
                             </tr>
-                            <!--神射手之誓-->
-                            <!--鸦羽弓-->
-                            <!--翡玉法球-->
-                            <!--讨龙英杰谭-->
-                            <!--魔导绪论-->
-                            <!--黑缨枪-->
-                            <!--以理服人-->
-                            <!--沐浴龙血的剑-->
-                            <!--铁影阔剑-->
-                            <!--飞天御剑-->
-                            <!--黎明神剑-->
-                            <!--冷刃-->
+                            <!--神射手之誓--><tr>
+                                <td>
+                                    三星
+                                </td>
+                                <td>
+                                    武器
+                                </td>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/Projdemo/static/img/weapon/icon_shensheshouzhishi.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            神射手之誓
+                                            <div class="sub header">据说曾属于技艺高强的射手，是一把上好的弓。
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    <p id="result_shensheshouzhishi">0</p>
+                                </td>
+                            </tr>
+                            <!--鸦羽弓--><tr>
+                                <td>
+                                    三星
+                                </td>
+                                <td>
+                                    武器
+                                </td>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/Projdemo/static/img/weapon/icon_yayugong.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            鸦羽弓
+                                            <div class="sub header">相传渡鸦是死的使者。
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    <p id="result_yayugong">0</p>
+                                </td>
+                            </tr>
+                            <!--翡玉法球--><tr>
+                                <td>
+                                    三星
+                                </td>
+                                <td>
+                                    武器
+                                </td>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/Projdemo/static/img/weapon/icon_feiyufaqiu.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            翡玉法球
+                                            <div class="sub header">由璃月北郊绝云间出产的硬玉雕琢而成的法器。
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    <p id="result_feiyufaqiu">0</p>
+                                </td>
+                            </tr>
+                            <!--讨龙英杰谭--><tr>
+                                <td>
+                                    三星
+                                </td>
+                                <td>
+                                    武器
+                                </td>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/Projdemo/static/img/weapon/icon_taolongyingjietan.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            讨龙英杰谭
+                                            <div class="sub header">其实就是一把弓。
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    <p id="result_taolongyingjietan">0</p>
+                                </td>
+                            </tr>
+                            <!--魔导绪论--><tr>
+                                <td>
+                                    三星
+                                </td>
+                                <td>
+                                    武器
+                                </td>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/Projdemo/static/img/weapon/icon_modaoxulun.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            魔导绪论
+                                            <div class="sub header">第十二版。
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    <p id="result_modaoxulun">0</p>
+                                </td>
+                            </tr>
+                            <!--黑缨枪--><tr>
+                                <td>
+                                    三星
+                                </td>
+                                <td>
+                                    武器
+                                </td>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/Projdemo/static/img/weapon/icon_heiyingqiang.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            黑缨枪
+                                            <div class="sub header">解决了白缨容易弄脏问题的绝世好枪。
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    <p id="result_heiyingqiang">0</p>
+                                </td>
+                            </tr>
+                            <!--以理服人--><tr>
+                                <td>
+                                    三星
+                                </td>
+                                <td>
+                                    武器
+                                </td>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/Projdemo/static/img/weapon/icon_yilifuren.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            以理服人
+                                            <div class="sub header">精钢打造的趁手大铁棒子，最好的理论依据。
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    <p id="result_yilifuren">0</p>
+                                </td>
+                            </tr>
+                            <!--沐浴龙血的剑--><tr>
+                                <td>
+                                    三星
+                                </td>
+                                <td>
+                                    武器
+                                </td>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/Projdemo/static/img/weapon/icon_muyulongxuedejian.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            沐浴龙血的剑
+                                            <div class="sub header">据说是北方英雄浸过龙血的钢铁大剑。
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    <p id="result_muyulongxuedejian">0</p>
+                                </td>
+                            </tr>
+                            <!--铁影阔剑--><tr>
+                                <td>
+                                    三星
+                                </td>
+                                <td>
+                                    武器
+                                </td>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/Projdemo/static/img/weapon/icon_tieyingkuojian.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            铁影阔剑
+                                            <div class="sub header">这把剑是著名的光之狮艾伦德林的佩剑的仿品。
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    <p id="result_tieyingkuojian">0</p>
+                                </td>
+                            </tr>
+                            <!--飞天御剑--><tr>
+                                <td>
+                                    三星
+                                </td>
+                                <td>
+                                    武器
+                                </td>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/Projdemo/static/img/weapon/icon_feitianyujian.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            飞天御剑
+                                            <div class="sub header">可靠的钢剑。
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    <p id="result_feitianyujian">0</p>
+                                </td>
+                            </tr>
+                            <!--黎明神剑--><tr>
+                                <td>
+                                    三星
+                                </td>
+                                <td>
+                                    武器
+                                </td>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/Projdemo/static/img/weapon/icon_limingshenjian.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            黎明神剑
+                                            <div class="sub header">一把曾经耀若朝阳的宝剑。
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    <p id="result_limingshenjian">0</p>
+                                </td>
+                            </tr>
+                            <!--冷刃--><tr>
+                                <td>
+                                    三星
+                                </td>
+                                <td>
+                                    武器
+                                </td>
+                                <td>
+                                    <h4 class="ui image header">
+                                        <img src="/Projdemo/static/img/weapon/icon_lenren.png" class="ui mini rounded image">
+                                        <div class="content">
+                                            冷刃
+                                            <div class="sub header">多层锻打的精钢铸就的可靠兵器。
+                                            </div>
+                                        </div>
+                                    </h4></td>
+                                <td>
+                                    <p id="result_lenren">0</p>
+                                </td>
+                            </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-
-
-
-
+                <!--祈愿概览--><div class="ui botton attached tab segment" data-tab="qiyuangailan">
+                <div class="ui five column grid">
+                    <table class="ui very basic collapsing celled table">
+                        <!--列名--><thead>
+                    <tr><th>品质</th>
+                        <th>类型</th>
+                        <th>次数</th>
+                    </tr></thead>
+                        <tbody>
+                        <!--五星角色--><tr>
+                            <td>
+                                五星
+                            </td>
+                            <td>
+                                角色
+                            </td>
+                            <td>
+                                <p id="result_wuxingjuese">0</p>
+                            </td>
+                        </tr>
+                        <!--五星武器--><tr>
+                            <td>
+                                五星
+                            </td>
+                            <td>
+                                武器
+                            </td>
+                            <td>
+                            <p id="result_wuxingwuqi">0</p>
+                            </td>
+                        </tr>
+                        <!--四星角色--><tr>
+                            <td>
+                                四星
+                            </td>
+                            <td>
+                                角色
+                            </td>
+                            <td>
+                            <p id="result_sixingjuese">0</p>
+                            </td>
+                        </tr>
+                        <!--四星武器--><tr>
+                            <td>
+                                四星
+                            </td>
+                            <td>
+                                武器
+                            </td>
+                            <td>
+                            <p id="result_sixingwuqi">0</p>
+                            </td>
+                        </tr>
+                        <!--三星武器--><tr>
+                            <td>
+                                三星
+                            </td>
+                            <td>
+                                武器
+                            </td>
+                            <td>
+                            <p id="result_sanxingwuqi">0</p>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             </div>
 
             <form class="ui form" th:action="@{/application}" method="post" enctype="multipart/form-data">
