@@ -640,7 +640,7 @@
     cnt_genesis=cnt_genesis+60;
     cnt_crystal=cnt_crystal+60;
     cnt_rmb=cnt_rmb+6;
-    cnt_purchase=cnt_purchase+(cnt_crystal-cnt_crystal%160)/160;
+    cnt_purchase=(cnt_crystal-cnt_crystal%160)/160;
     sendResult_genesis(cnt_genesis);
     sendResult_crystal(cnt_crystal);
     sendResult_rmb(cnt_rmb);
@@ -651,7 +651,7 @@
     cnt_genesis=cnt_genesis+330;
     cnt_crystal=cnt_crystal+330;
     cnt_rmb=cnt_rmb+30;
-    cnt_purchase=cnt_purchase+(cnt_crystal-cnt_crystal%160)/160;
+    cnt_purchase=(cnt_crystal-cnt_crystal%160)/160;
     sendResult_genesis(cnt_genesis);
     sendResult_crystal(cnt_crystal);
     sendResult_rmb(cnt_rmb);
@@ -662,7 +662,7 @@
     cnt_genesis=cnt_genesis+1090;
     cnt_crystal=cnt_crystal+1090;
     cnt_rmb=cnt_rmb+98;
-    cnt_purchase=cnt_purchase+(cnt_crystal-cnt_crystal%160)/160;
+    cnt_purchase=(cnt_crystal-cnt_crystal%160)/160;
     sendResult_genesis(cnt_genesis);
     sendResult_crystal(cnt_crystal);
     sendResult_rmb(cnt_rmb);
@@ -673,7 +673,7 @@
     cnt_genesis=cnt_genesis+2240;
     cnt_crystal=cnt_crystal+2240;
     cnt_rmb=cnt_rmb+198;
-    cnt_purchase=cnt_purchase+(cnt_crystal-cnt_crystal%160)/160;
+    cnt_purchase=(cnt_crystal-cnt_crystal%160)/160;
     sendResult_genesis(cnt_genesis);
     sendResult_crystal(cnt_crystal);
     sendResult_rmb(cnt_rmb);
@@ -684,7 +684,7 @@
     cnt_genesis=cnt_genesis+3880;
     cnt_crystal=cnt_crystal+3880;
     cnt_rmb=cnt_rmb+328;
-    cnt_purchase=cnt_purchase+(cnt_crystal-cnt_crystal%160)/160;
+    cnt_purchase=(cnt_crystal-cnt_crystal%160)/160;
     sendResult_genesis(cnt_genesis);
     sendResult_crystal(cnt_crystal);
     sendResult_rmb(cnt_rmb);
@@ -695,7 +695,7 @@
     cnt_genesis=cnt_genesis+8080;
     cnt_crystal=cnt_crystal+8080;
     cnt_rmb=cnt_rmb+648;
-    cnt_purchase=cnt_purchase+(cnt_crystal-cnt_crystal%160)/160;
+    cnt_purchase=(cnt_crystal-cnt_crystal%160)/160;
     sendResult_genesis(cnt_genesis);
     sendResult_crystal(cnt_crystal);
     sendResult_rmb(cnt_rmb);
@@ -823,6 +823,10 @@
     function sendResult_wuxingjuese(cnt_ssrjuese) {
         let num = document.getElementById("result_wuxingjuese")
         num.innerHTML = cnt_ssrjuese;
+    }
+    function sendResult_wuxingwuqi(cnt_ssrwuqi) {
+        let num = document.getElementById("result_wuxingwuqi")
+        num.innerHTML = cnt_ssrwuqi;
     }
     function sendResult_sixingjuese(cnt_srjuese) {
         let num = document.getElementById("result_sixingjuese")
