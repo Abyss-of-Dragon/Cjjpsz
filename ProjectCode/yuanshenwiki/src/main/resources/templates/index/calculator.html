@@ -17,6 +17,7 @@
     <!-- Site Specified Style and Script -->
     <link rel="stylesheet" type="text/css" href="css/common.css" th:href="@{/css/common.css}">
     <script src="/js/common.js" th:src="@{/js/common.js}"></script>
+    <script src="/js/calculator.js" th:src="@{/js/calculator.js}"></script>
 </head>
 
 <body>
@@ -58,9 +59,7 @@
             <div th:fragment="common_menu(index)" class="ui container">
                 <div class="ui fluid card">
                     <div class="ui centered image">
-                        <img src="/img/title2.png"
-                             th:src="@{/img/head_user.jpg}"
-                             alt="Avatar">
+                        <img src="/img/title2.png">
                     </div>
                 </div>
                 <div class="ui vertical fluid stackable sticky menu container">
@@ -93,44 +92,78 @@
         </div>
 
         <div class="ui twelve wide column">
-            <div class="ui form message">
+
                 <div class="ui one column grid">
                     <div class="computer only tablet only column">
-                        <h1 align="center" class="ui computer only header">Welcome to Genshin Impact Imformation Station!</h1>
+                        <h1 align="center" class="ui computer only header">欢迎来到养成计算器！</h1>
                     </div>
                 </div>
+            <div class="ui segment">
+                <div class="ui two column very relaxed grid">
+                    <div class="column">
+                        <h3 align="center">武器升级消耗计算器</h3>
+                        <div>武器星级
+                            <select class="dropdown" id="stars">
+                                <option value="5">五星武器</option>
+                                <option value="4">四星武器</option>
+                                <option value="3">三星武器</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div>当前等级
+                            <div class="ui small icon input">
+                                <input class="containerInput" type="number" id="wlevel1"
+                                       oninput="if(value>90)value=90;if(value<0)value=0;if(value.length>2)value=value.slice(0,2)">
+                            </div>
+                        </div>
+                        <br>
+                        <div>目标等级
+                            <div class="ui small icon input">
+                                <input class="containerInput" type="number" id="wlevel2"
+                                       oninput="if(value>90)value=90;if(value<0)value=0;if(value.length>2)value=value.slice(0,2)">
+                            </div>
+                        </div>
+                        <div class="ui divider"></div>
+                        <div class="row line">
+                            <div class="col-xs-6">需要经验：<span class="" id="wexp"></span></div>
+                            <br>
+                            <div class="col-xs-6">需要摩拉：<span class="" id="wmora"></span></div>
+                            <br>
+                            <div class="col-xs-6 center-row">需要<img style="width: 40px; height: 40px;" src="/img/material/purple-ore.png" />×<span class="" id="wbook"></span>
+                            </div>
+                        </div>
+                    </div>
 
-                <img class="ui big centered circular image" src="/img/background1.png">
-                <!--                    <div class="container column"></div>-->
-            </div>
-            <form class="ui form" th:action="@{/application}" method="post" enctype="multipart/form-data">
-                <!--                    <div class="field">-->
-                <!--                        <label for="teammates">选择你的队友</label>-->
-                <!--                        <select th:object="${project}" type="text" id="teammates" name="teammates"-->
-                <!--                                class="ui fluid search dropdown" multiple>-->
-                <!--                            <option th:each="student:${students}"-->
-                <!--                                    th:value="${student.uid}"-->
-                <!--                                    th:text="${student.name} + ' ' + ${student.uid}">-->
-                <!--                            </option>-->
-                <!--                        </select>-->
-                <!--                    </div>-->
-                <div class="field">
-                    <label for="profile">
-                        <b>留下你的评论吧</b>
-                    </label>
-                    <textarea th:object="${project}" type="text" id="profile" name="profile" maxlength="200"></textarea>
+
+                    <div class="column">
+                        <h3 align="center">角色升级计算器</h3>
+                        <br><br>
+                        <div>
+                        当前等级
+                            <div class="ui small icon input">
+                                <input input class="containerInput" type="number" id="clevel1"
+                                       oninput="if(value>80)value=80;if(value<0)value=0;if(value.length>2)value=value.slice(0,2)">
+                            </div>
+                        </div>
+
+                        <br>
+                        目标等级
+                        <div class="ui small icon input">
+                            <input input class="containerInput" type="number" id="clevel2"
+                                   oninput="if(value>80)value=80;if(value<0)value=0;if(value.length>2)value=value.slice(0,2)">
+                        </div>
+                        <div class="ui divider"></div>
+                        <div class="row line">
+                            <div class="col-xs-6">需要经验：<span class="" id="cexp"></span></div>
+                            <br>
+                            <div class="col-xs-6 center-row">需要<img style="width: 40px; height: 40px;" src="/img/material/purple-book.png" />×<span class="" id="cbook"></span>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-                <!--                    <div class="field">-->
-                <!--                        <label for="file-button">上传附件</label>-->
-                <!--                        <div class="ui file action input">-->
-                <!--                            <label for="file-name"></label>-->
-                <!--                            <input type="file" id="file" name="file" autocomplete="off">-->
-                <!--                            <input type="text" id="file-name" name="file-name" readonly>-->
-                <!--                            <div class="ui button" id="file-button">选择文件</div>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <input type="submit" value="确认提交" class="ui fluid large blue submit button"/>
-            </form>
+                <div class="ui vertical divider">OR</div>
+            </div>
 
         </div>
     </div>
