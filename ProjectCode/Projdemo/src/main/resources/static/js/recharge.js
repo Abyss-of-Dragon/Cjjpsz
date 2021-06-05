@@ -8,8 +8,6 @@
     let cnt_ssrwish=0;
     let cnt_srwish=0;
 
-
-
     //五星角色
     let cnt_ssrjuese=0;
     let cnt_keqing=0;
@@ -91,6 +89,16 @@
             cnt_acquaint=cnt_acquaint-1;
             sendResult_acquaint(cnt_acquaint);
             wish01();
+            let temp="本次为单抽，该行无数据"
+            sendResult_wish02(temp);
+            sendResult_wish03(temp);
+            sendResult_wish04(temp);
+            sendResult_wish05(temp);
+            sendResult_wish06(temp);
+            sendResult_wish07(temp);
+            sendResult_wish08(temp);
+            sendResult_wish09(temp);
+            sendResult_wish10(temp);
         }
 
     }
@@ -116,30 +124,36 @@
         cnt_ssrwish=cnt_ssrwish+1;
         cnt_srwish=cnt_srwish+1;
         let temp=Math.floor(Math.random()*27888);
-        let x=random_ssr();//随机获得一张ssr
+        let x="ssr";
         let Temp=Math.floor(Math.random()*390);
-        let y=random_sr();//随机获得一张sr
-        let z=random_r();
+        let y="sr";
+        let z="r";
         if(cnt_ssrwish == 90){//90保底出金
             cnt_ssrwish=0;//ssr保底重置
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SSR");
+            x=random_ssr();//随机获得一张ssr
             sendResult_wish01(x);
         }else if(cnt_srwish==10){
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SR");
+            y=random_sr();//随机获得一张
             sendResult_wish01(y);
+
         }
         else  if(temp%167==0){
                 cnt_ssrwish=0;//ssr保底重置
                 cnt_srwish=0;//sr保底重置
                 alert("恭喜您未通过保底获得了SSR");
+                x=random_ssr();//随机获得一张ssr
                 sendResult_wish01(x);
             }else  if(Temp%19==0){
                     cnt_srwish=0;//sr保底重置
                     alert("恭喜您未通过保底获得了SR");
+                    y=random_sr();//随机获得一张
                     sendResult_wish01(y);
                 }else{
+                    z=random_r();
                     sendResult_wish01(z);
                 }
 }
@@ -147,19 +161,22 @@
         cnt_ssrwish=cnt_ssrwish+1;
         cnt_srwish=cnt_srwish+1;
         let temp=Math.floor(Math.random()*27888);
-        let x=random_ssr();//随机获得一张ssr
+        let x="ssr";
         let Temp=Math.floor(Math.random()*390);
-        let y=random_sr();//随机获得一张sr
-        let z=random_r();
+        let y="sr";
+        let z="r";
         if(cnt_ssrwish == 90){//90保底出金
             cnt_ssrwish=0;//ssr保底重置
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SSR");
+            x=random_ssr();//随机获得一张ssr
             sendResult_wish02(x);
         }else if(cnt_srwish==10){
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SR");
+            y=random_sr();//随机获得一张
             sendResult_wish02(y);
+
         }
         else  if(temp%167==0){
             cnt_ssrwish=0;//ssr保底重置
@@ -170,10 +187,10 @@
         }else  if(Temp%19==0){
             cnt_srwish=0;//sr保底重置
             alert("恭喜您未通过保底获得了SR");
-            y=random_sr();//随机获得一张sr
+            y=random_sr();//随机获得一张
             sendResult_wish02(y);
         }else{
-            z=random_r();//随机获得一张r
+            z=random_r();
             sendResult_wish02(z);
         }
     }
@@ -181,19 +198,22 @@
         cnt_ssrwish=cnt_ssrwish+1;
         cnt_srwish=cnt_srwish+1;
         let temp=Math.floor(Math.random()*27888);
-        let x=random_ssr();//随机获得一张ssr
+        let x="ssr";
         let Temp=Math.floor(Math.random()*390);
-        let y=random_sr();//随机获得一张sr
-        let z=random_r();
+        let y="sr";
+        let z="r";
         if(cnt_ssrwish == 90){//90保底出金
             cnt_ssrwish=0;//ssr保底重置
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SSR");
+            x=random_ssr();//随机获得一张ssr
             sendResult_wish03(x);
         }else if(cnt_srwish==10){
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SR");
+            y=random_sr();//随机获得一张
             sendResult_wish03(y);
+
         }
         else  if(temp%167==0){
             cnt_ssrwish=0;//ssr保底重置
@@ -204,10 +224,10 @@
         }else  if(Temp%19==0){
             cnt_srwish=0;//sr保底重置
             alert("恭喜您未通过保底获得了SR");
-            y=random_sr();//随机获得一张sr
+            y=random_sr();//随机获得一张
             sendResult_wish03(y);
         }else{
-            z=random_r();//随机获得一张r
+            z=random_r();
             sendResult_wish03(z);
         }
     }
@@ -215,19 +235,22 @@
         cnt_ssrwish=cnt_ssrwish+1;
         cnt_srwish=cnt_srwish+1;
         let temp=Math.floor(Math.random()*27888);
-        let x=random_ssr();//随机获得一张ssr
+        let x="ssr";
         let Temp=Math.floor(Math.random()*390);
-        let y=random_sr();//随机获得一张sr
-        let z=random_r();
+        let y="sr";
+        let z="r";
         if(cnt_ssrwish == 90){//90保底出金
             cnt_ssrwish=0;//ssr保底重置
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SSR");
+            x=random_ssr();//随机获得一张ssr
             sendResult_wish04(x);
         }else if(cnt_srwish==10){
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SR");
+            y=random_sr();//随机获得一张
             sendResult_wish04(y);
+
         }
         else  if(temp%167==0){
             cnt_ssrwish=0;//ssr保底重置
@@ -238,10 +261,10 @@
         }else  if(Temp%19==0){
             cnt_srwish=0;//sr保底重置
             alert("恭喜您未通过保底获得了SR");
-            y=random_sr();//随机获得一张sr
+            y=random_sr();//随机获得一张
             sendResult_wish04(y);
         }else{
-            z=random_r();//随机获得一张r
+            z=random_r();
             sendResult_wish04(z);
         }
     }
@@ -249,19 +272,22 @@
         cnt_ssrwish=cnt_ssrwish+1;
         cnt_srwish=cnt_srwish+1;
         let temp=Math.floor(Math.random()*27888);
-        let x=random_ssr();//随机获得一张ssr
+        let x="ssr";
         let Temp=Math.floor(Math.random()*390);
-        let y=random_sr();//随机获得一张sr
-        let z=random_r();
+        let y="sr";
+        let z="r";
         if(cnt_ssrwish == 90){//90保底出金
             cnt_ssrwish=0;//ssr保底重置
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SSR");
+            x=random_ssr();//随机获得一张ssr
             sendResult_wish05(x);
         }else if(cnt_srwish==10){
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SR");
+            y=random_sr();//随机获得一张
             sendResult_wish05(y);
+
         }
         else  if(temp%167==0){
             cnt_ssrwish=0;//ssr保底重置
@@ -272,10 +298,10 @@
         }else  if(Temp%19==0){
             cnt_srwish=0;//sr保底重置
             alert("恭喜您未通过保底获得了SR");
-            y=random_sr();//随机获得一张sr
+            y=random_sr();//随机获得一张
             sendResult_wish05(y);
         }else{
-            z=random_r();//随机获得一张r
+            z=random_r();
             sendResult_wish05(z);
         }
     }
@@ -283,19 +309,22 @@
         cnt_ssrwish=cnt_ssrwish+1;
         cnt_srwish=cnt_srwish+1;
         let temp=Math.floor(Math.random()*27888);
-        let x=random_ssr();//随机获得一张ssr
+        let x="ssr";
         let Temp=Math.floor(Math.random()*390);
-        let y=random_sr();//随机获得一张sr
-        let z=random_r();
+        let y="sr";
+        let z="r";
         if(cnt_ssrwish == 90){//90保底出金
             cnt_ssrwish=0;//ssr保底重置
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SSR");
+            x=random_ssr();//随机获得一张ssr
             sendResult_wish06(x);
         }else if(cnt_srwish==10){
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SR");
+            y=random_sr();//随机获得一张
             sendResult_wish06(y);
+
         }
         else  if(temp%167==0){
             cnt_ssrwish=0;//ssr保底重置
@@ -306,10 +335,10 @@
         }else  if(Temp%19==0){
             cnt_srwish=0;//sr保底重置
             alert("恭喜您未通过保底获得了SR");
-            y=random_sr();//随机获得一张sr
+            y=random_sr();//随机获得一张
             sendResult_wish06(y);
         }else{
-            z=random_r();//随机获得一张r
+            z=random_r();
             sendResult_wish06(z);
         }
     }
@@ -317,19 +346,22 @@
         cnt_ssrwish=cnt_ssrwish+1;
         cnt_srwish=cnt_srwish+1;
         let temp=Math.floor(Math.random()*27888);
-        let x=random_ssr();//随机获得一张ssr
+        let x="ssr";
         let Temp=Math.floor(Math.random()*390);
-        let y=random_sr();//随机获得一张sr
-        let z=random_r();
+        let y="sr";
+        let z="r";
         if(cnt_ssrwish == 90){//90保底出金
             cnt_ssrwish=0;//ssr保底重置
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SSR");
+            x=random_ssr();//随机获得一张ssr
             sendResult_wish07(x);
         }else if(cnt_srwish==10){
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SR");
+            y=random_sr();//随机获得一张
             sendResult_wish07(y);
+
         }
         else  if(temp%167==0){
             cnt_ssrwish=0;//ssr保底重置
@@ -340,10 +372,10 @@
         }else  if(Temp%19==0){
             cnt_srwish=0;//sr保底重置
             alert("恭喜您未通过保底获得了SR");
-            y=random_sr();//随机获得一张sr
+            y=random_sr();//随机获得一张
             sendResult_wish07(y);
         }else{
-            z=random_r();//随机获得一张r
+            z=random_r();
             sendResult_wish07(z);
         }
     }
@@ -351,19 +383,22 @@
         cnt_ssrwish=cnt_ssrwish+1;
         cnt_srwish=cnt_srwish+1;
         let temp=Math.floor(Math.random()*27888);
-        let x=random_ssr();//随机获得一张ssr
+        let x="ssr";
         let Temp=Math.floor(Math.random()*390);
-        let y=random_sr();//随机获得一张sr
-        let z=random_r();
+        let y="sr";
+        let z="r";
         if(cnt_ssrwish == 90){//90保底出金
             cnt_ssrwish=0;//ssr保底重置
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SSR");
+            x=random_ssr();//随机获得一张ssr
             sendResult_wish08(x);
         }else if(cnt_srwish==10){
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SR");
+            y=random_sr();//随机获得一张
             sendResult_wish08(y);
+
         }
         else  if(temp%167==0){
             cnt_ssrwish=0;//ssr保底重置
@@ -374,10 +409,10 @@
         }else  if(Temp%19==0){
             cnt_srwish=0;//sr保底重置
             alert("恭喜您未通过保底获得了SR");
-            y=random_sr();//随机获得一张sr
+            y=random_sr();//随机获得一张
             sendResult_wish08(y);
         }else{
-            z=random_r();//随机获得一张r
+            z=random_r();
             sendResult_wish08(z);
         }
     }
@@ -385,19 +420,22 @@
         cnt_ssrwish=cnt_ssrwish+1;
         cnt_srwish=cnt_srwish+1;
         let temp=Math.floor(Math.random()*27888);
-        let x=random_ssr();//随机获得一张ssr
+        let x="ssr";
         let Temp=Math.floor(Math.random()*390);
-        let y=random_sr();//随机获得一张sr
-        let z=random_r();
+        let y="sr";
+        let z="r";
         if(cnt_ssrwish == 90){//90保底出金
             cnt_ssrwish=0;//ssr保底重置
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SSR");
+            x=random_ssr();//随机获得一张ssr
             sendResult_wish09(x);
         }else if(cnt_srwish==10){
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SR");
+            y=random_sr();//随机获得一张
             sendResult_wish09(y);
+
         }
         else  if(temp%167==0){
             cnt_ssrwish=0;//ssr保底重置
@@ -408,10 +446,10 @@
         }else  if(Temp%19==0){
             cnt_srwish=0;//sr保底重置
             alert("恭喜您未通过保底获得了SR");
-            y=random_sr();//随机获得一张sr
+            y=random_sr();//随机获得一张
             sendResult_wish09(y);
         }else{
-            z=random_r();//随机获得一张r
+            z=random_r();
             sendResult_wish09(z);
         }
     }
@@ -419,19 +457,22 @@
         cnt_ssrwish=cnt_ssrwish+1;
         cnt_srwish=cnt_srwish+1;
         let temp=Math.floor(Math.random()*27888);
-        let x=random_ssr();//随机获得一张ssr
+        let x="ssr";
         let Temp=Math.floor(Math.random()*390);
-        let y=random_sr();//随机获得一张sr
-        let z=random_r();
+        let y="sr";
+        let z="r";
         if(cnt_ssrwish == 90){//90保底出金
             cnt_ssrwish=0;//ssr保底重置
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SSR");
+            x=random_ssr();//随机获得一张ssr
             sendResult_wish10(x);
         }else if(cnt_srwish==10){
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SR");
+            y=random_sr();//随机获得一张
             sendResult_wish10(y);
+
         }
         else  if(temp%167==0){
             cnt_ssrwish=0;//ssr保底重置
@@ -442,13 +483,15 @@
         }else  if(Temp%19==0){
             cnt_srwish=0;//sr保底重置
             alert("恭喜您未通过保底获得了SR");
-            y=random_sr();//随机获得一张sr
+            y=random_sr();//随机获得一张
             sendResult_wish10(y);
         }else{
-            z=random_r();//随机获得一张r
+            z=random_r();
             sendResult_wish10(z);
         }
     }
+
+
     function random_ssr(){
         let tempRandomSsr=Math.floor(Math.random()*15);
         let ssr="ssr";
