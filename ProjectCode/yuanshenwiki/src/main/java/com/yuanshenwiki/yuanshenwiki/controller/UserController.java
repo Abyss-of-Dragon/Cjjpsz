@@ -29,17 +29,18 @@ public class UserController {
             Base64.Encoder encoder=Base64.getEncoder();
             Integer randInt=new Random().nextInt();
             String sign=encoder.encodeToString(String.valueOf(randInt).getBytes());
+            System.out.println("Try to login with username "+username+" password "+password);
             User user = service.login(username, password,sign);
             if (user != null) {
                 response.addCookie(new Cookie("logined",user.getId()+"#"+sign));
                 response.sendRedirect("/mainpage");
             }else{
-                mav.setViewName("login.html");
+                mav.setViewName("login");
                 mav.addObject("login_failed", true);
             }
         }else{
             User logined=service.checkCookie(request.getCookies());
-            mav.setViewName("login.html");
+            mav.setViewName("login");
             mav.addObject("login_failed", false);
         }
         return mav;

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <link rel='stylesheet' href='/css/cal.css' />
+    <title>活动日历</title>
+    <script type="text/javascript">
+        var events=new Map()
+        events.set('20210604','测试')
+        function showEvent(e) {
+            console.log(e);
+            var event=events.get(e.getAttribute('data'));
+            console.log(event);
+            document.getElementById('event').innerText=event;
+        }
+        function addEvent(t,e) {
+            events.set(t,e);
+            console.log(events);
+        }
+    </script>
+</head>
+<body>
+<div class='calendar' id='calendar'></div>
+<script type='text/javascript' src='/js/cal.js'></script>
+<input id="time-in">
+<input id="event-in">
+<button onclick="addEvent(document.getElementById('time-in').value,document.getElementById('event-in').value)"></button>
+</body>
+</html>

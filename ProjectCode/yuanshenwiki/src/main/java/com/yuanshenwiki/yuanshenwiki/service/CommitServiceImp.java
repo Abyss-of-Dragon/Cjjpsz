@@ -13,6 +13,8 @@ public class CommitServiceImp implements CommitService{
     @Autowired
     CharaService charaService;
     @Autowired
+    WeaponService weaponService;
+    @Autowired
     CommitMapper mapper;
     @Override
     public Commit getCommitByID(Integer id) {
@@ -26,5 +28,12 @@ public class CommitServiceImp implements CommitService{
         Integer newId=mapper.getMaxId()+1;
         mapper.commit(newId,user,context);
         charaService.commit(charaId,getCommitByID(newId));
+    }
+
+    @Override
+    public void commitWeapon(Integer weaponId, Integer user, String context) {
+        Integer newId=mapper.getMaxId()+1;
+        mapper.commit(newId,user,context);
+        weaponService.commit(weaponId,getCommitByID(newId));
     }
 }

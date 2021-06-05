@@ -46,10 +46,7 @@
                 </div>
             </form>
         </a>
-        <a class="item">
-            <img class="ui avatar image" src="/img/youla.png">
-        </a>
-        <a href="/login" class="item">
+        <a href="/logout" class="item">
             <div class="ui logout icon">登出</div>
             <i class="sign out alternate icon"></i>
         </a>
@@ -146,12 +143,13 @@
                 </h3>
                 <img class="ui fluid image" src="/img/event_1.6.png">
 
-                <h3 class="ui header">
+                <h2 class="ui header">
                     <i class="user circle icon"></i>
                     <div class="content">
                         角色
                     </div>
-                </h3>
+                </h2>
+
 
                 <div class="ui top attached tabular menu">
                     <a class="item active" data-tab="wuxing">
@@ -160,7 +158,6 @@
                     <a class="item" data-tab="sixing">
                         四星
                     </a>
-
                     <div class="right menu">
                         <div class="item">
                             <div style="float: right">
@@ -171,7 +168,7 @@
                 </div>
                 <div class="ui botton attached tab segment" data-tab="wuxing">
                     <div class="ui five column grid">
-                        <div class="column" th:each="chara:${stars5}">
+                        <div class="column"  th:each="chara:${stars5}">
                             <div class="ui fluid card">
                                 <div class="image">
                                     <img th:src="${chara.getAvatar()}">
@@ -182,6 +179,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <div class="ui botton attached tab segment" data-tab="sixing">
                     <div class="ui five column grid">
@@ -198,30 +196,22 @@
                     </div>
                 </div>
 
+                <div class="ui divider"></div>
+
                 <h3 class="ui header">
-                    <i class="ui gavel icon"></i>
+                    <i class="gavel icon"></i>
                     <div class="content">
                         武器
                     </div>
                 </h3>
 
                 <div class="ui top attached tabular menu">
-                    <a class="item active" data-tab="5">
+                    <a class="item active" data-tab="wuxingw">
                         五星
                     </a>
-                    <a class="item" data-tab="4">
+                    <a class="item" data-tab="sixingw">
                         四星
                     </a>
-                    <a class="item" data-tab="3">
-                        三星
-                    </a>
-                    <a class="item" data-tab="2">
-                        二星
-                    </a>
-                    <a class="item" data-tab="1">
-                        一星
-                    </a>
-
                     <div class="right menu">
                         <div class="item">
                             <div style="float: right">
@@ -230,278 +220,35 @@
                         </div>
                     </div>
                 </div>
+                <div class="ui botton attached tab segment" data-tab="wuxingw">
+                    <div class="ui five column grid">
+                        <div class="column"  th:each="w:${stars5w}">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img th:src="${w.getAvatar()}">
+                                </div>
+                                <div class="content">
+                                    <a th:href="'/weapon?id='+${w.getId()}" th:text="${w.getName()}" class="header"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="ui botton attached tab segment" data-tab="5">
+                </div>
+                <div class="ui botton attached tab segment" data-tab="sixingw">
                     <div class="ui five column grid">
-                        <div class="column">
+                        <div class="column" th:each="w:${stars4w}">
                             <div class="ui fluid card">
                                 <div class="image">
-                                    <img src="/img/character/icon_youla2.png">
+                                    <img th:src="${w.getAvatar()}">
                                 </div>
                                 <div class="content">
-                                    <a class="header">优菈</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_hutao.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">胡桃</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_xiao.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">魈</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_ganyu.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">甘雨</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_abeiduo.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">阿贝多</a>
+                                    <a th:href="'/weapon?id='+${w.getId()}" th:text="${w.getName()}" class="header"></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="ui botton attached tab segment" data-tab="4">
-                    <div class="ui five column grid">
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_youla2.png">
-                                </div>
-                                <div class="content">
-                                    <a class="header">优菈</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_hutao.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">胡桃</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_xiao.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">魈</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_ganyu.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">甘雨</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_abeiduo.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">阿贝多</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ui botton attached tab segment" data-tab="3">
-                    <div class="ui five column grid">
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_youla2.png">
-                                </div>
-                                <div class="content">
-                                    <a class="header">优菈</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_hutao.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">胡桃</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_xiao.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">魈</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_ganyu.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">甘雨</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_abeiduo.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">阿贝多</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ui botton attached tab segment" data-tab="2">
-                    <div class="ui five column grid">
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_youla2.png">
-                                </div>
-                                <div class="content">
-                                    <a class="header">优菈</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_hutao.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">胡桃</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_xiao.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">魈</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_ganyu.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">甘雨</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_abeiduo.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">阿贝多</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ui botton attached tab segment" data-tab="1">
-                    <div class="ui five column grid">
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_youla2.png">
-                                </div>
-                                <div class="content">
-                                    <a class="header">优菈</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_hutao.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">胡桃</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_xiao.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">魈</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_ganyu.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">甘雨</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="column">
-                            <div class="ui fluid card">
-                                <div class="image">
-                                    <img src="/img/character/icon_abeiduo.jpg">
-                                </div>
-                                <div class="content">
-                                    <a class="header">阿贝多</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
 
             </div>
             <form class="ui form" th:action="@{/application}" method="post" enctype="multipart/form-data">
