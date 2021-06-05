@@ -31,12 +31,15 @@ public class CharaServiceImp implements CharaService{
         String growth=mapper.getGrowthByID(id);
         String tags=mapper.getTagsByID(id);
         String avatar=mapper.getAvatarByID(id);
+//        new
+        String tachie=mapper.getTachieByID(id);
+
         List<Integer> commitIds=IdUtil.str2list(mapper.getCommitsByID(id));
         List<Commit> commits=new ArrayList<>();
         for(Integer i:commitIds){
             commits.add(commitService.getCommitByID(i));
         }
-        Chara c=new Chara(id,name,rarity,weaponclass,element,sex,nation,hp,damage,armor,growth,tags,avatar,commits);
+        Chara c=new Chara(id,name,rarity,weaponclass,element,sex,nation,hp,damage,armor,growth,tags,avatar,commits,tachie);
         return c;
     }
 
