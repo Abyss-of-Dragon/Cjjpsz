@@ -29,8 +29,26 @@
     let cnt_tiankongzhiao=0;
     let cnt_tiankongzhiren=0;
     let cnt_fengyingjian=0;
-    //let cnt_srjuese=0;
-    // <!--祈愿 wish-->
+    //四星角色
+    let cnt_srjuese=0;
+    let cnt_luoshaliya=0;
+    let cnt_xinyan=0;
+    let cnt_shatang=0;
+    let cnt_diaona=0;
+    let cnt_chongyun=0;
+    let cnt_nuoaier=0;
+    let cnt_bannite=0;
+    let cnt_feixieer=0;
+    let cnt_ninggguang=0;
+    let cnt_xingqiu=0;
+    let cnt_beidou=0;
+    let cnt_xiangling=0;
+    let cnt_anbai=0;
+    let cnt_leize=0;
+    let cnt_kaiya=0;
+    let cnt_babala=0;
+    let cnt_lisha=0;
+    <!--祈愿 wish-->
     function wish_1(){
         if(cnt_acquaint<1){
             alert("缺少1个相遇之缘，是否消耗160原石购买?");
@@ -62,19 +80,23 @@
     function wish01(){
         cnt_ssrwish=cnt_ssrwish+1;
         cnt_srwish=cnt_srwish+1;
-        if(cnt_ssrwish == 90){
+        if(cnt_ssrwish == 90){//90保底出金
             cnt_ssrwish=0;//ssr保底重置
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SSR");
             let x=random_ssr();//随机获得一张ssr
             sendResult_wish01(x);
-        }else{
-            let x="未获得SSR";
+        }else if(cnt_srwish==10){
+            cnt_srwish=0;//sr保底重置
+            alert("恭喜您通过保底获得了SR");
+            let x=random_sr();//随机获得一张sr
             sendResult_wish01(x);
+        }else {
+            //let temp=Math.floor(Math.random()*26);
+            //floor() 返回小于等于x的最大整数
+            //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机
         }
-        // temp=Math.floor(Math.random()*1);
-        //floor() 返回小于等于x的最大整数
-        //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机
+
     }
     function wish02(){
         cnt_ssrwish=cnt_ssrwish+1;
@@ -233,105 +255,105 @@
         let tempRandomSsr=Math.floor(Math.random()*15);
         let ssr;
             switch (tempRandomSsr) {
-            <!--刻晴-->case 0:
+            case 0:
                  ssr = "刻晴";
                 cnt_keqing=cnt_keqing+1;
                 cnt_ssrjuese=cnt_ssrjuese+1;
                 sendResult_keqing(cnt_keqing);
                 sendResult_wuxingjuese(cnt_ssrjuese);
                 break;
-            <!--莫娜-->case 1:
+            case 1:
                 ssr = "莫娜";
                 cnt_mona=cnt_mona+1;
                 cnt_ssrjuese=cnt_ssrjuese+1;
                 sendResult_mona(cnt_mona);
                 sendResult_wuxingjuese(cnt_ssrjuese);
                 break;
-            <!--七七-->case 2:
+            case 2:
                 ssr = "七七";
                 cnt_qiqi=cnt_qiqi+1;
                 cnt_ssrjuese=cnt_ssrjuese+1;
                 sendResult_qiqi(cnt_qiqi);
                 sendResult_wuxingjuese(cnt_ssrjuese);
                 break;
-            <!--迪卢克-->case 3:
+            case 3:
                 ssr = "迪卢克";
                 cnt_diluke=cnt_diluke+1;
                 cnt_ssrjuese=cnt_ssrjuese+1;
                 sendResult_diluke(cnt_diluke);
                 sendResult_wuxingjuese(cnt_ssrjuese);
                 break;
-            <!--琴-->case 4:
+            case 4:
                 ssr = "琴";
                 cnt_qin=cnt_qin+1;
                 cnt_ssrjuese=cnt_ssrjuese+1;
                 sendResult_qin(cnt_qin);
                 sendResult_wuxingjuese(cnt_ssrjuese);
                 break;
-            <!--阿莫斯之弓-->case 5:
+            case 5:
                 ssr = "阿莫斯之弓";
                     cnt_amosizhigong=cnt_amosizhigong+1;
                     cnt_ssrwuqi=cnt_ssrwuqi+1;
                     sendResult_amosizhigong(cnt_amosizhigong);
                     sendResult_wuxingwuqi(cnt_ssrwuqi);
                 break;
-            <!--天空之翼-->case  6:
+            case  6:
                 ssr = "天空之翼";
                     cnt_tiankongzhiyi=cnt_tiankongzhiyi+1;
                     cnt_ssrwuqi=cnt_ssrwuqi+1;
                     sendResult_tiankongzhiyi(cnt_tiankongzhiyi);
                     sendResult_wuxingwuqi(cnt_ssrwuqi);
                 break;
-            <!--四风原典-->case 7:
+            case 7:
                 ssr = "四风原典";
                     cnt_sifengyuandian=cnt_sifengyuandian+1;
                     cnt_ssrwuqi=cnt_ssrwuqi+1;
                     sendResult_sifengyuandian(cnt_sifengyuandian);
                     sendResult_wuxingwuqi(cnt_ssrwuqi);
                 break;
-            <!--天空之卷-->case 8:
+            case 8:
                 ssr = "天空之卷";
                     cnt_tiankongzhijuan=cnt_tiankongzhijuan+1;
                     cnt_ssrwuqi=cnt_ssrwuqi+1;
                     sendResult_tiankongzhijuan(cnt_tiankongzhijuan);
                     sendResult_wuxingwuqi(cnt_ssrwuqi);
                 break;
-            <!--和璞鸢-->case 9:
+            case 9:
                 ssr = "和璞鸢";
                     cnt_hepuyuan=cnt_hepuyuan+1;
                     cnt_ssrwuqi=cnt_ssrwuqi+1;
                     sendResult_hepuyuan(cnt_hepuyuan);
                     sendResult_wuxingwuqi(cnt_ssrwuqi);
                 break;
-            <!--天空之脊-->case 10:
+            case 10:
                 ssr = "天空之脊";
                     cnt_tiankongzhiji=cnt_tiankongzhiji+1;
                     cnt_ssrwuqi=cnt_ssrwuqi+1;
                     sendResult_tiankongzhiji(cnt_tiankongzhiji);
                     sendResult_wuxingwuqi(cnt_ssrwuqi);
                 break;
-            <!--狼的末路-->case 11:
+            case 11:
                 ssr = "狼的末路"
                     cnt_langdemolu=cnt_langdemolu+1;
                     cnt_ssrwuqi=cnt_ssrwuqi+1;
                     sendResult_langdemolu(cnt_langdemolu);
                     sendResult_wuxingwuqi(cnt_ssrwuqi);
                 break;
-            <!--天空之傲-->case 12:
+            case 12:
                 ssr = "天空之傲";
                     cnt_tiankongzhiao=cnt_tiankongzhiao+1;
                     cnt_ssrwuqi=cnt_ssrwuqi+1;
                     sendResult_tiankongzhiao(cnt_tiankongzhiao);
                     sendResult_wuxingwuqi(cnt_ssrwuqi);
                 break;
-            <!--天空之刃-->case 13:
+            case 13:
                 ssr = "天空之刃";
                     cnt_tiankongzhiren=cnt_tiankongzhiren+1;
                     cnt_ssrwuqi=cnt_ssrwuqi+1;
                     sendResult_tiankongzhiren(cnt_tiankongzhiren);
                     sendResult_wuxingwuqi(cnt_ssrwuqi);
                 break;
-            <!--风鹰剑-->case 14:
+            case 14:
                 ssr = "风鹰剑";
                     cnt_fengyingjian=cnt_fengyingjian+1;
                     cnt_ssrwuqi=cnt_ssrwuqi+1;
@@ -339,6 +361,279 @@
                     sendResult_wuxingwuqi(cnt_ssrwuqi);
         }
         return ssr;
+    }
+    function random_sr() {
+        let tempRandomSr = Math.floor(Math.random() * 35);
+        let sr;
+        switch (tempRandomSr) {
+            case 0:
+                sr = "罗莎莉亚";
+                cnt_luoshaliya = cnt_luoshaliya + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_luoshaliya(cnt_luoshaliya);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 1:
+                sr = "辛焱";
+                cnt_xinyan = cnt_xinyan + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xinyan(cnt_xinyan);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 2:
+                sr = "砂糖";
+                cnt_shatang = cnt_shatang + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_shatang(cnt_shatang);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 3:
+                sr = "迪奥娜";
+                cnt_diaona = cnt_diaona + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_diaona(cnt_diaona);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 4:
+                sr = "重云";
+                cnt_chongyun = cnt_chongyun + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_chongyun(cnt_chongyun);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 5:
+                sr = "辛焱";
+                cnt_xinyan = cnt_xinyan + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xinyan(cnt_xinyan);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 6:
+                sr = "罗莎莉亚";
+                cnt_luoshaliya = cnt_luoshaliya + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_luoshaliya(cnt_luoshaliya);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 7:
+                sr = "辛焱";
+                cnt_xinyan = cnt_xinyan + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xinyan(cnt_xinyan);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 8:
+                sr = "罗莎莉亚";
+                cnt_luoshaliya = cnt_luoshaliya + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_luoshaliya(cnt_luoshaliya);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 9:
+                sr = "辛焱";
+                cnt_xinyan = cnt_xinyan + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xinyan(cnt_xinyan);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 10:
+                sr = "罗莎莉亚";
+                cnt_luoshaliya = cnt_luoshaliya + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_luoshaliya(cnt_luoshaliya);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 11:
+                sr = "辛焱";
+                cnt_xinyan = cnt_xinyan + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xinyan(cnt_xinyan);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 12:
+                sr = "罗莎莉亚";
+                cnt_luoshaliya = cnt_luoshaliya + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_luoshaliya(cnt_luoshaliya);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 13:
+                sr = "辛焱";
+                cnt_xinyan = cnt_xinyan + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xinyan(cnt_xinyan);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 14:
+                sr = "罗莎莉亚";
+                cnt_luoshaliya = cnt_luoshaliya + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_luoshaliya(cnt_luoshaliya);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 15:
+                sr = "辛焱";
+                cnt_xinyan = cnt_xinyan + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xinyan(cnt_xinyan);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 16:
+                sr = "罗莎莉亚";
+                cnt_luoshaliya = cnt_luoshaliya + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_luoshaliya(cnt_luoshaliya);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 17:
+                sr = "辛焱";
+                cnt_xinyan = cnt_xinyan + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xinyan(cnt_xinyan);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 18:
+                sr = "罗莎莉亚";
+                cnt_luoshaliya = cnt_luoshaliya + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_luoshaliya(cnt_luoshaliya);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 19:
+                sr = "辛焱";
+                cnt_xinyan = cnt_xinyan + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xinyan(cnt_xinyan);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 20:
+                sr = "罗莎莉亚";
+                cnt_luoshaliya = cnt_luoshaliya + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_luoshaliya(cnt_luoshaliya);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 21:
+                sr = "辛焱";
+                cnt_xinyan = cnt_xinyan + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xinyan(cnt_xinyan);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 22:
+                sr = "罗莎莉亚";
+                cnt_luoshaliya = cnt_luoshaliya + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_luoshaliya(cnt_luoshaliya);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 23:
+                sr = "辛焱";
+                cnt_xinyan = cnt_xinyan + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xinyan(cnt_xinyan);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+                sr = "罗莎莉亚";
+                cnt_luoshaliya = cnt_luoshaliya + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_luoshaliya(cnt_luoshaliya);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 24:
+                sr = "辛焱";
+                cnt_xinyan = cnt_xinyan + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xinyan(cnt_xinyan);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 25:
+                sr = "罗莎莉亚";
+                cnt_luoshaliya = cnt_luoshaliya + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_luoshaliya(cnt_luoshaliya);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 26:
+                sr = "辛焱";
+                cnt_xinyan = cnt_xinyan + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xinyan(cnt_xinyan);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 27:
+                sr = "罗莎莉亚";
+                cnt_luoshaliya = cnt_luoshaliya + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_luoshaliya(cnt_luoshaliya);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 28:
+                sr = "辛焱";
+                cnt_xinyan = cnt_xinyan + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xinyan(cnt_xinyan);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+
+
+                return sr;
+            case 29:
+                sr = "罗莎莉亚";
+                cnt_luoshaliya = cnt_luoshaliya + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_luoshaliya(cnt_luoshaliya);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 30:
+                sr = "辛焱";
+                cnt_xinyan = cnt_xinyan + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xinyan(cnt_xinyan);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 31:
+                sr = "辛焱";
+                cnt_xinyan = cnt_xinyan + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xinyan(cnt_xinyan);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 32:
+                sr = "罗莎莉亚";
+                cnt_luoshaliya = cnt_luoshaliya + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_luoshaliya(cnt_luoshaliya);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 33:
+                sr = "辛焱";
+                cnt_xinyan = cnt_xinyan + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xinyan(cnt_xinyan);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+                sr = "罗莎莉亚";
+                cnt_luoshaliya = cnt_luoshaliya + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_luoshaliya(cnt_luoshaliya);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 34:
+                sr = "辛焱";
+                cnt_xinyan = cnt_xinyan + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xinyan(cnt_xinyan);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+            case 35:
+                sr = "罗莎莉亚";
+                cnt_luoshaliya = cnt_luoshaliya + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_luoshaliya(cnt_luoshaliya);
+                sendResult_wuxingjuese(cnt_srjuese);
+                break;
+        }
     }
     <!--充值 recharge-->
     function recharge_6(){
@@ -525,17 +820,11 @@
         let num = document.getElementById("result_fengyingjian")
         num.innerHTML = cnt_fengyingjian;
     }
-
     function sendResult_wuxingjuese(cnt_ssrjuese) {
         let num = document.getElementById("result_wuxingjuese")
         num.innerHTML = cnt_ssrjuese;
     }
-    function sendResult_wuxingwuqi(cnt_ssrwuqi) {
-        let num = document.getElementById("result_wuxingwuqi")
-        num.innerHTML = cnt_ssrwuqi;
-        }
-    /*
-    * function sendResult_sixingjuese(cnt_srjuese) {
+    function sendResult_sixingjuese(cnt_srjuese) {
         let num = document.getElementById("result_sixingjuese")
         num.innerHTML = cnt_srjuese;
     }
@@ -546,7 +835,7 @@
     function sendResult_sanxingwuqi(cnt_rwuqi) {
         let num = document.getElementById("result_sanxingwuqi")
         num.innerHTML = cnt_rwuqi;
-    }*/
+    }
     function sendResult_wish01(x) {
         let num = document.getElementById("wish_1")
         num.innerHTML = x;
