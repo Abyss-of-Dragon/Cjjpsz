@@ -30,7 +30,7 @@
 <div th:fragment="common_header" class="ui fixed brown large borderless menu">
     <div class="ui container">
         <div class="header item">
-            <img class="proj icon" src="/img/cjjpsz.png" th:src="@{/img/cjjpsz.png}" alt="Logo">
+            <img class="proj icon" src="/img/cjjpsz.png" alt="Logo">
             原神Wiki
         </div>
         <a href="/mainpage" class="header item">
@@ -39,12 +39,16 @@
         <a class="right item">
             <form style="margin: auto;outline: none" method="get" action="/search" id="searchForm">
                 <div class="ui icon input">
-                    <i class="search icon"></i>
+                    <i class="search link icon"></i>
                     <input type="text" name="key" placeholder="Search..." onkeypress="(e)=>{if(e.keyCode===13){document.getElementById('searchForm').submit()}}">
                 </div>
             </form>
         </a>
-        <a href="/logout" class="item">
+        <a class="item" href="/profile" >
+            <img class="ui avatar image" th:src="${loginUser.getAvatar()}"
+                 alt="Avatar">
+        </a>
+        <a href="/login" class="item">
             <div class="ui logout icon">登出</div>
             <i class="sign out alternate icon"></i>
         </a>
@@ -54,174 +58,99 @@
 <div class="ui main container">
     <div class="ui stackable grid">
 
-        <div class="ui four wide column">
-            <!-- 通用左侧菜单 menu 片段， index 为传递进来的参数 -->
-            <div th:fragment="common_menu(index)" class="ui container">
-                <div class="ui fluid card">
-                    <div class="ui centered image">
-                        <img src="/img/title2.png"
-                             th:src="@{/img/head_user.jpg}"
-                             alt="Avatar">
-                    </div>
-                </div>
-                <div class="ui vertical fluid stackable menu container">
-                    <a th:class="${index}==1?'active red item':'item'" class="item" href="/Encyclopedia">
-                        <font size="4px">
-                            <b>百科图鉴</b>
-                        </font>
-                        <i class="large book icon"></i>
-                    </a>
-                    <a th:class="${index}==2?'active red item':'item'" class="item" href="/calculator">
-                        <font size="4px">
-                            <b>养成计算</b>
-                        </font>
-                        <i class="large calculator icon"></i>
-                    </a>
-                    <a th:class="${index}==3?'active red item':'item'" class="item" href="/news">
-                        <font size="4px">
-                            <b>游戏资讯</b>
-                        </font>
-                        <i class="large newspaper outline icon"></i>
-                    </a>
-                    <a th:class="${index}==4?'active red item':'item'" class="item" href="/gacha">
-                        <font size="4px">
-                            <b>抽卡模拟</b>
-                        </font>
-                        <i class="large gem outline icon"></i>
-                    </a>
-                </div>
+        <div class="ui ten wide column">
+            <!--            &lt;!&ndash; 通用左侧菜单 menu 片段， index 为传递进来的参数 &ndash;&gt;-->
+            <!--            <div th:fragment="common_menu(index)" class="ui container">-->
+            <div class="ui raised segment">
+                <p style="text-align:center">
+                    <img src="/img/img.png">
+                </p>
+                <h2>活动时间</h2>
+                <div style="border-bottom:5px solid #CCC"></div>
+                <p>2020/10/12 10:00 ~ 2020/10/19 03:59</p>
+
+                <h2>参与条件</h2>
+                <div style="border-bottom:5px solid #CCC"></div>
+                <p>冒险等阶≥20级   完成序章·第二幕「为了没有眼泪的明天」全部任务</p>
+
+                <h2>活动玩法</h2>
+                <div style="border-bottom:5px solid #CCC"></div>
+                <p>活动期间，旅行者可以使用指定的试用角色编队并挑战6个不同主题的试炼，完成试炼任务可获得原石、大英雄的经验、天赋培养材料等奖励。</p>
+
+                <h2>活动说明</h2>
+                <div style="border-bottom:5px solid #CCC"></div>
+                <P>亲爱的旅行者：</p>
+                <p>「原素烘炉」多人游戏挑战活动现已开启！</p>
+                <p>与其他旅行者互相协助，运输纯元素凝块至「原素烘炉」内，推进炼金进程。完成炼金后，消耗原粹树脂可获取角色经验素材、冒险阅历等秘宝，秘宝按照旅行者自身世界等级进行结算。同时，达成炼金手册内成就，也可获取原石、角色突破素材等宝物。</p>
+
+                <h2>活动奖励</h2>
+                <div style="border-bottom:5px solid #CCC"></div>
+                <p>炼金手册：</P>
+                <P>在「原素烘炉」处完成1次炼金	  原石  *20</P>
+                <P>在「原素烘炉」处完成5次炼金	  原石  *40</P>
+                <P>在「原素烘炉」处完成10次炼金	  原石  *80</P>
+                <P>在「原素烘炉」处完成20次炼金	  原石  *160</P>
+                <P>共积累10000炼金效率	  涤净青金断片 *1  精锻用魔矿  *1</P>
+                <P>共积累40000炼金效率	  最胜紫晶断片 *1  精锻用魔矿  *2</P>
+                <P>共积累80000炼金效率	  坚牢黄玉断片 *1  精锻用魔矿  *4</P>
+                <P>共积累16000炼金效率	  摩拉  *50000  精锻用魔矿  *8</P>
+                <P>击败5名来犯的敌人	  燃愿玛瑙断片  *1  冒险家的经验  *2</P>
+                <P>击败10名来犯的敌人	  自在松石断片  *1  冒险家的经验  *4</P>
+                <P>击败30名来犯的敌人	  自在松石断片  *1  大英雄的经验  *2</P>
+                <P>击败100名来犯的敌人	  摩拉  *50000  大英雄的经验  *4</P>
+                <P>在启动原素烘炉，并且与队长处在同一世界等级时，在三分钟内达成元素充溢</P>
+                <P>精锻用魔矿  *8  大英雄的经验  *4</p>
+
+                <h2>活动建议</h2>
+                <div style="border-bottom:5px solid #CCC"></div>
+                <P>尽量让元素浸染的两个人去捡晶体。</p>
+                <P>注意丘丘人弓箭手，被弓箭打到会触发元素反应，这样元素块就会消失。</p>
             </div>
-        </div>
-
-        <div class="ui twelve wide column">
-
-                <div class="ui one column grid">
-                    <div class="computer only tablet only column">
-                        <h1 align="center" class="ui computer only header">Welcome to Genshin Impact Imformation Station!</h1>
-                    </div>
-                </div>
-
-            <div class="ui form message">
-                <div class="main_div">
-                    <div class="arrows">
-                        <span title="1" class="arrow"><</span>
-                        <span title="0" class="arrow" style="float: right">></span>
-                    </div>
-
-                    <ul class="ul_img">
-                        <a href="https://google.com">
-                            <li class="li_img"><img src="/img/ver1.5.jpg" /></li>
-                        </a>
-                        <a href="https://google.com">
-                            <li class="li_img"><img src="/img/up_character.jpg" /></li>
-                        </a>
-                        <a href="https://google.com">
-                            <li class="li_img"><img src="/img/up_weapon.jpg" /></li>
-                        </a>
-                        <a href="https://google.com">
-                            <li class="li_img"><img src="/img/background2.png" /></li>
-                        </a>
-                    </ul>
-                </div>
-
-                <div style="margin-left: 330px">
-                    <div class="div_btn"></div>
-                    <div class="div_btn"></div>
-                    <div class="div_btn"></div>
-                    <div class="div_btn"></div>
-                </div>
-                <br>
-            </div>
-            <div class="ui form message">
-                <h3 class="ui header">
-                    <i class="user circle icon"></i>
-                    <div class="content">
-                        角色
-                    </div>
-                </h3>
-
-
-                <div class="ui five column grid">
-                    <div class="column">
-                        <div class="ui fluid card">
-                            <div class="image">
-                                <img src="/img/hutao_icon.png">
-                            </div>
-                            <div class="content">
-                                <a class="header">胡桃</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui fluid card">
-                            <div class="image">
-                                <img src="/img/youla_icon.png">
-                            </div>
-                            <div class="content">
-                                <a class="header">优菈</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui fluid card">
-                            <div class="image">
-                                <img src="/img/rosalia_icon.png">
-                            </div>
-                            <div class="content">
-                                <a class="header">罗莎莉亚</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui fluid card">
-                            <div class="image">
-                                <img src="/img/mona_icon.png">
-                            </div>
-                            <div class="content">
-                                <a class="header">莫娜</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="ui fluid card">
-                            <div class="image">
-                                <img src="/img/ganyu_icon.png">
-                            </div>
-                            <div class="content">
-                                <a class="header">甘雨</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <form class="ui form" th:action="@{/application}" method="post" enctype="multipart/form-data">
-                <!--                    <div class="field">-->
-                <!--                        <label for="teammates">选择你的队友</label>-->
-                <!--                        <select th:object="${project}" type="text" id="teammates" name="teammates"-->
-                <!--                                class="ui fluid search dropdown" multiple>-->
-                <!--                            <option th:each="student:${students}"-->
-                <!--                                    th:value="${student.uid}"-->
-                <!--                                    th:text="${student.name} + ' ' + ${student.uid}">-->
-                <!--                            </option>-->
-                <!--                        </select>-->
-                <!--                    </div>-->
+            <form class="ui form" action="/commitChara" method="post" enctype="multipart/form-data">
                 <div class="field">
                     <label for="profile">
                         <b>留下你的评论吧</b>
                     </label>
-                    <textarea th:object="${project}" type="text" id="profile" name="profile" maxlength="200"></textarea>
+                    <input type="hidden" name="userId" th:value="${loginUser.getId()}">
+                    <textarea type="text" id="profile" name="context" maxlength="255"></textarea>
                 </div>
-                <!--                    <div class="field">-->
-                <!--                        <label for="file-button">上传附件</label>-->
-                <!--                        <div class="ui file action input">-->
-                <!--                            <label for="file-name"></label>-->
-                <!--                            <input type="file" id="file" name="file" autocomplete="off">-->
-                <!--                            <input type="text" id="file-name" name="file-name" readonly>-->
-                <!--                            <div class="ui button" id="file-button">选择文件</div>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
                 <input type="submit" value="确认提交" class="ui fluid large blue submit button"/>
             </form>
+        </div>
+
+        <div class="ui six wide column">
+<!--            <div class="ui form message">-->
+
+<!--&lt;!&ndash;                <img class="ui image" th:src="${user.getTachie()}">&ndash;&gt;-->
+<!--                &lt;!&ndash;                    <div class="container column"></div>&ndash;&gt;-->
+<!--            </div>-->
+            <div class="ui vertical fluid stackable sticky menu container">
+                <a th:class="${index}==1?'active red item':'item'" class="item" href="/Encyclopedia">
+                    <font size="4px">
+                        <b>百科图鉴</b>
+                    </font>
+                    <i class="large book icon"></i>
+                </a>
+                <a th:class="${index}==2?'active red item':'item'" class="item" href="/calculator">
+                    <font size="4px">
+                        <b>养成计算</b>
+                    </font>
+                    <i class="large calculator icon"></i>
+                </a>
+                <a th:class="${index}==3?'active red item':'item'" class="item" href="/news">
+                    <font size="4px">
+                        <b>游戏资讯</b>
+                    </font>
+                    <i class="large newspaper outline icon"></i>
+                </a>
+                <a th:class="${index}==4?'active red item':'item'" class="item" href="/gacha">
+                    <font size="4px">
+                        <b>抽卡模拟</b>
+                    </font>
+                    <i class="large gem outline icon"></i>
+                </a>
+            </div>
+
 
         </div>
     </div>

@@ -143,7 +143,9 @@
                         当期活动
                     </div>
                 </h3>
-                <img class="ui fluid image" src="/img/event_1.6.png">
+                <a href="/templates/index/news.html">
+                <img class="ui fluid image" src="/img/event_1.6.png" >
+                </a>
 
                 <h2 class="ui header">
                     <i class="user circle icon"></i>
@@ -251,34 +253,22 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-            <form class="ui form" th:action="@{/application}" method="post" enctype="multipart/form-data">
-                <!--                    <div class="field">-->
-                <!--                        <label for="teammates">选择你的队友</label>-->
-                <!--                        <select th:object="${project}" type="text" id="teammates" name="teammates"-->
-                <!--                                class="ui fluid search dropdown" multiple>-->
-                <!--                            <option th:each="student:${students}"-->
-                <!--                                    th:value="${student.uid}"-->
-                <!--                                    th:text="${student.name} + ' ' + ${student.uid}">-->
-                <!--                            </option>-->
-                <!--                        </select>-->
-                <!--                    </div>-->
+            <form class="ui form" action="/commitChara" method="post" enctype="multipart/form-data">
                 <div class="field">
                     <label for="profile">
                         <b>留下你的评论吧</b>
                     </label>
-                    <textarea th:object="${project}" type="text" id="profile" name="profile" maxlength="200"></textarea>
+                    <div>
+                        <div class="ui floating message" th:each="commit:${chara.getCommits()}">
+                            <span style="margin-left: 15px;font-weight: bolder;margin-right: 30px"  th:text="${commit.getUser().getNickname()}+':'"></span><span th:text="${commit.getContext()}"></span>
+                        </div>
+                        <br>
+                    </div>
+                    <input type="hidden" name="charaId" th:value="${chara.getId()}">
+                    <input type="hidden" name="userId" th:value="${loginUser.getId()}">
+                    <textarea type="text" id="profile" name="context" maxlength="255"></textarea>
                 </div>
-                <!--                    <div class="field">-->
-                <!--                        <label for="file-button">上传附件</label>-->
-                <!--                        <div class="ui file action input">-->
-                <!--                            <label for="file-name"></label>-->
-                <!--                            <input type="file" id="file" name="file" autocomplete="off">-->
-                <!--                            <input type="text" id="file-name" name="file-name" readonly>-->
-                <!--                            <div class="ui button" id="file-button">选择文件</div>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
                 <input type="submit" value="确认提交" class="ui fluid large blue submit button"/>
             </form>
 
