@@ -54,20 +54,30 @@
 <!--            <div th:fragment="common_menu(index)" class="ui container">-->
             <div class="ui raised segment">
                 <form action="/uploadAvatar" method="post" enctype="multipart/form-data">
-                    <h3 th:text="${loginUser.getNickname()}"></h3>
+                    <h3 th:text="欢迎！+ ${loginUser.getNickname()}"></h3>
                     <br>
-                    <img th:src="${loginUser.getAvatar()}">
+                    <img class="ui tiny circular image" th:src="${loginUser.getAvatar()}">
                     <br>
-                    <input type="file" name="avatar">
-                    <button type="submit">上传</button>
+
+<!--                    <div class="ui vertical animated button" tabindex="0">-->
+<!--                        <div class="hidden content"><input type="file" name="avatar"></div>-->
+<!--                        <div class="visible content">-->
+<!--                            <i class="upload icon"></i>上传头像(仅支持JPG格式)-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <button class="ui primary button" type="submit">上传</button>-->
+<!--                    <br>-->
+                    <input type="file" name="avatar"><button type="submit">上传</button>
                 </form>
             </div>
+        </div>
         <div class="ui six wide column">
             <div class="ui form message">
 
-                <img class="ui image" th:src="${loginUser.getAvatar()}">
+                <img class="ui centered image" th:src="${loginUser.getAvatar()}"  width="139" height="139">
                 <!--                    <div class="container column"></div>-->
             </div>
+
             <div class="ui vertical fluid stackable sticky menu container">
                 <a th:class="${index}==1?'active red item':'item'" class="item" href="/Encyclopedia">
                     <font size="4px">

@@ -39,8 +39,9 @@
         </div>
       </form>
     </a>
-    <a class="item">
-      <img class="ui avatar image" src="/img/youla.png">
+    <a class="item" href="/profile" >
+      <img class="ui avatar image" th:src="${loginUser.getAvatar()}"
+           alt="Avatar">
     </a>
     <a href="/login" class="item">
       <div class="ui logout icon">登出</div>
