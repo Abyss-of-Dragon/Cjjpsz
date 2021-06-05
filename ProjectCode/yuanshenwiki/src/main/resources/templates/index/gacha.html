@@ -36,7 +36,7 @@
         <a class="right item">
             <form style="margin: auto;outline: none" method="get" action="/search" id="searchForm">
                 <div class="ui icon input">
-                    <i class="search icon"></i>
+                    <i class="search link icon"></i>
                     <input type="text" name="key" placeholder="Search..." onkeypress="(e)=>{if(e.keyCode===13){document.getElementById('searchForm').submit()}}">
                 </div>
             </form>
@@ -58,9 +58,7 @@
             <div th:fragment="common_menu(index)" class="ui container">
                 <div class="ui fluid card">
                     <div class="ui centered image">
-                        <img src="/img/title2.png"
-                             th:src="@{/img/head_user.jpg}"
-                             alt="Avatar">
+                        <img src="/img/title2.png">
                     </div>
                 </div>
                 <div class="ui vertical fluid stackable sticky menu container">

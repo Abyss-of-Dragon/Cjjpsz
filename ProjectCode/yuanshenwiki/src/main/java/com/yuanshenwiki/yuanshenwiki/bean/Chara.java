@@ -17,8 +17,10 @@ public class Chara {
     String tags;
     String avatar;
     List<Commit> commits;
+//立绘
+    String tachie;
 
-    public Chara(int id, String name, String rarity, String weaponclass, String element, String sex, String nation, Integer hp, Integer damage, Integer armor, String growth, String tags, String avatar,List<Commit> commits) {
+    public Chara(int id, String name, String rarity, String weaponclass, String element, String sex, String nation, Integer hp, Integer damage, Integer armor, String growth, String tags, String avatar,List<Commit> commits, String tachie) {
         this.id = id;
         this.name = name;
         this.rarity = rarity;
@@ -33,6 +35,8 @@ public class Chara {
         this.tags = tags;
         this.avatar = avatar;
         this.commits = commits;
+
+        this.tachie = tachie;
     }
 
     public String getElement() {
@@ -93,5 +97,8 @@ public class Chara {
     public Chara(List<Commit> commits) {
         this.commits = commits;
     }
+
+
+    public String getTachie(){ return tachie; }
 
 }

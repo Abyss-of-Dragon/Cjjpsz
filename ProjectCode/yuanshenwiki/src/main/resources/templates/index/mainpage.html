@@ -46,6 +46,7 @@
                 </div>
             </form>
         </a>
+<!--        个人资料页入口-->
         <a class="item">
             <img class="ui avatar image" src="/img/youla.png">
         </a>
@@ -64,9 +65,7 @@
             <div th:fragment="common_menu(index)" class="ui container">
                 <div class="ui fluid card">
                     <div class="ui centered image">
-                        <img src="/img/title2.png"
-                             th:src="@{/img/head_user.jpg}"
-                             alt="Avatar">
+                        <img src="/img/title2.png">
                     </div>
                 </div>
                 <div class="ui vertical fluid stackable menu container">
@@ -91,6 +90,12 @@
                     <a th:class="${index}==4?'active red item':'item'" class="item" href="/gacha">
                         <font size="4px">
                             <b>抽卡模拟</b>
+                        </font>
+                        <i class="large gem outline icon"></i>
+                    </a>
+                    <a th:class="${index}==5?'active red item':'item'" class="item" href="/calendar">
+                        <font size="4px">
+                            <b>活动日历</b>
                         </font>
                         <i class="large gem outline icon"></i>
                     </a>

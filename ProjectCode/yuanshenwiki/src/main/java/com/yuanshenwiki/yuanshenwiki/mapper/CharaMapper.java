@@ -41,4 +41,7 @@ public interface CharaMapper {
     List<Integer> getIdsByRarity(String rarity);
     @Select("SELECT Commits FROM charas WHERE id=#{id}")
     String getCommitsByID(Integer id);
+
+    @Select("SELECT Tachie FROM charas WHERE id=#{id}")
+    String getTachieByID(Integer id);
 }

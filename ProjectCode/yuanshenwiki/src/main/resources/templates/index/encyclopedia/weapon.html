@@ -34,7 +34,7 @@
     <a class="right item">
       <form style="margin: auto;outline: none" method="get" action="/search" id="searchForm">
         <div class="ui icon input">
-          <i class="search icon"></i>
+          <i class="search link icon"></i>
           <input type="text" name="key" placeholder="Search..." onkeypress="(e)=>{if(e.keyCode===13){document.getElementById('searchForm').submit()}}">
         </div>
       </form>
@@ -125,17 +125,19 @@
           </tr>
           </tbody>
         </table>
-        <div>
-          <div th:each="commit:${weapon.getCommits()}" style="margin-bottom: 18px">
-            <span style="margin-left: 15px;font-weight: bolder;margin-right: 30px"  th:text="${commit.getUser().getNickname()}+':'"></span><span th:text="${commit.getContext()}"></span>
-          </div>
-          <br>
-        </div>
+
+      </div>
         <form class="ui form" action="/commitWeapon" method="post" enctype="multipart/form-data">
           <div class="field">
             <label for="profile">
               <b>留下你的评论吧</b>
             </label>
+            <div>
+              <div class="ui floating message" th:each="commit:${weapon.getCommits()}" style="margin-bottom: 18px">
+                <span style="margin-left: 15px;font-weight: bolder;margin-right: 30px"  th:text="${commit.getUser().getNickname()}+':'"></span><span th:text="${commit.getContext()}"></span>
+              </div>
+              <br>
+            </div>
             <input type="hidden" name="weaponId" th:value="${weapon.getId()}">
             <input type="hidden" name="userId" th:value="${loginUser.getId()}">
             <textarea type="text" id="profile" name="context" maxlength="255"></textarea>
@@ -147,7 +149,7 @@
       <div class="ui six wide column">
         <div class="ui form message">
 
-          <img class="ui image" th:src="${weapon.getAvatar()}">
+          <img class="ui centered image" th:src="${weapon.getAvatar()}">
           <!--                    <div class="container column"></div>-->
         </div>
         <div class="ui vertical fluid stackable sticky menu container">
@@ -176,8 +178,6 @@
             <i class="large gem outline icon"></i>
           </a>
         </div>
-
-
       </div>
     </div>
   </div>
