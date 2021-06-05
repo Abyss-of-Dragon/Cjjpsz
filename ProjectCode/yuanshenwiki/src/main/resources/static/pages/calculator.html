@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/calculator.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .center-row {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <p>武器升级消耗计算器</p>
+        <select id="stars">
+            <option value="5">五星武器</option>
+            <option value="4">四星武器</option>
+            <option value="3">三星武器</option>
+        </select>
+        <div class="classInputCase line">
+            <div class="classInput">
+                当前等级：<input class="containerInput" type="number" id="wlevel1"
+                    oninput="if(value>90)value=90;if(value<0)value=0;if(value.length>2)value=value.slice(0,2)">
+
+            </div>
+            <div class="classInput">
+                目标等级：<input class="containerInput" type="number" id="wlevel2"
+                    oninput="if(value>90)value=90;if(value<0)value=0;if(value.length>2)value=value.slice(0,2)">
+
+            </div>
+        </div>
+        <hr>
+        <div class="row line">
+
+            <div class="col-xs-6">需要经验：<span class="" id="wexp"></span>
+            </div>
+            <div class="col-xs-6">需要摩拉：<span class="" id="wmora"></span>
+            </div>
+
+            <div class="col-xs-6 center-row">需要<img style="width: 25px; height: 25px;"
+                    src="../img/materials/purple-ore.png" />×<span class="" id="wbook"></span>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <p>角色升级计算器</p>
+        <div class="classInputCase line">
+            <div class="classInput">
+                当前等级：<input class="containerInput" type="number" id="clevel1"
+                    oninput="if(value>80)value=80;if(value<0)value=0;if(value.length>2)value=value.slice(0,2)">
+
+            </div>
+            <div class="classInput">
+                目标等级：<input class="containerInput" type="number" id="clevel2"
+                    oninput="if(value>80)value=80;if(value<0)value=0;if(value.length>2)value=value.slice(0,2)">
+
+            </div>
+        </div>
+        <hr>
+        <div class="row line">
+            <div class="col-xs-6">需要经验：<span class="" id="cexp"></span>
+            </div>
+            <div class="col-xs-6 center-row">需要 <img style="width: 25px; height: 25px;"
+                    src="../img/materials/purple-book.png" />×<span class="" id="cbook"></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

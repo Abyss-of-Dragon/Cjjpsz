@@ -29,8 +29,26 @@
     let cnt_tiankongzhiao=0;
     let cnt_tiankongzhiren=0;
     let cnt_fengyingjian=0;
-    //let cnt_srjuese=0;
-    // <!--祈愿 wish-->
+    //四星角色
+    let cnt_srjuese=0;
+    let cnt_luoshaliya=0;
+    let cnt_xinyan=0;
+    let cnt_shatang=0;
+    let cnt_diaona=0;
+    let cnt_chongyun=0;
+    let cnt_nuoaier=0;
+    let cnt_bannite=0;
+    let cnt_feixieer=0;
+    let cnt_ninggguang=0;
+    let cnt_xingqiu=0;
+    let cnt_beidou=0;
+    let cnt_xiangling=0;
+    let cnt_anbai=0;
+    let cnt_leize=0;
+    let cnt_kaiya=0;
+    let cnt_babala=0;
+    let cnt_lisha=0;
+    <!--祈愿 wish-->
     function wish_1(){
         if(cnt_acquaint<1){
             alert("缺少1个相遇之缘，是否消耗160原石购买?");
@@ -62,276 +80,448 @@
     function wish01(){
         cnt_ssrwish=cnt_ssrwish+1;
         cnt_srwish=cnt_srwish+1;
-        if(cnt_ssrwish == 90){
+        if(cnt_ssrwish == 90){//90保底出金
             cnt_ssrwish=0;//ssr保底重置
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SSR");
             let x=random_ssr();//随机获得一张ssr
             sendResult_wish01(x);
-        }else{
-            let x="未获得SSR";
+        }else {}
+        if(cnt_srwish==10){
+            cnt_srwish=0;//sr保底重置
+            alert("恭喜您通过保底获得了SR");
+            let x=random_sr();//随机获得一张sr
             sendResult_wish01(x);
+        }else {let temp=Math.floor(Math.random()*27888);
+            if(temp%167==0){
+                cnt_ssrwish=0;//ssr保底重置
+                cnt_srwish=0;//sr保底重置
+                alert("恭喜您未通过保底获得了SSR");
+                let x=random_ssr();//随机获得一张ssr
+                sendResult_wish01(x);
+            }else{let Temp=Math.floor(Math.random()*390);
+                if(Temp%19==0){
+                    cnt_srwish=0;//sr保底重置
+                    alert("恭喜您未通过保底获得了SR");
+                    let x=random_sr();//随机获得一张sr
+                    sendResult_wish01(x);
+                }else{
+                    let x=random_r();//随机获得一张r
+                    sendResult_wish01(x);
+                }
+            }
         }
-        // temp=Math.floor(Math.random()*1);
-        //floor() 返回小于等于x的最大整数
-        //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机
     }
     function wish02(){
         cnt_ssrwish=cnt_ssrwish+1;
         cnt_srwish=cnt_srwish+1;
-        if(cnt_ssrwish==90){
+        if(cnt_ssrwish == 90){//90保底出金
             cnt_ssrwish=0;//ssr保底重置
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SSR");
             let x=random_ssr();//随机获得一张ssr
             sendResult_wish02(x);
-        }else{
-            let x="未获得SSR";
+        }else if(cnt_srwish==10){
+            cnt_srwish=0;//sr保底重置
+            alert("恭喜您通过保底获得了SR");
+            let x=random_sr();//随机获得一张sr
             sendResult_wish02(x);
+        }else {let temp=Math.floor(Math.random()*27888);
+            if(temp%167==0){
+                cnt_ssrwish=0;//ssr保底重置
+                cnt_srwish=0;//sr保底重置
+                alert("恭喜您未通过保底获得了SSR");
+                let x=random_ssr();//随机获得一张ssr
+                sendResult_wish02(x);
+            }else{let Temp=Math.floor(Math.random()*390);
+                if(Temp%19==0){
+                    cnt_srwish=0;//sr保底重置
+                    alert("恭喜您未通过保底获得了SR");
+                    let x=random_sr();//随机获得一张sr
+                    sendResult_wish02(x);
+                }else{
+                    let x=random_r();//随机获得一张r
+                    sendResult_wish02(x);
+                }
+            }
         }
-        // temp=Math.floor(Math.random()*1);
-        //floor() 返回小于等于x的最大整数
-        //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机
     }
     function wish03(){
         cnt_ssrwish=cnt_ssrwish+1;
         cnt_srwish=cnt_srwish+1;
-        if(cnt_ssrwish==90){
+        if(cnt_ssrwish == 90){//90保底出金
             cnt_ssrwish=0;//ssr保底重置
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SSR");
             let x=random_ssr();//随机获得一张ssr
             sendResult_wish03(x);
-        }else{
-            let x="未获得SSR";
+        }else if(cnt_srwish==10){
+            cnt_srwish=0;//sr保底重置
+            alert("恭喜您通过保底获得了SR");
+            let x=random_sr();//随机获得一张sr
             sendResult_wish03(x);
+        }else {let temp=Math.floor(Math.random()*27888);
+            if(temp%167==0){
+                cnt_ssrwish=0;//ssr保底重置
+                cnt_srwish=0;//sr保底重置
+                alert("恭喜您未通过保底获得了SSR");
+                let x=random_ssr();//随机获得一张ssr
+                sendResult_wish03(x);
+            }else{let Temp=Math.floor(Math.random()*390);
+                if(Temp%19==0){
+                    cnt_srwish=0;//sr保底重置
+                    alert("恭喜您未通过保底获得了SR");
+                    let x=random_sr();//随机获得一张sr
+                    sendResult_wish03(x);
+                }else{
+                    let x=random_r();//随机获得一张r
+                    sendResult_wish03(x);
+                }
+            }
         }
-        // temp=Math.floor(Math.random()*1);
-        //floor() 返回小于等于x的最大整数
-        //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机
     }
     function wish04(){
         cnt_ssrwish=cnt_ssrwish+1;
         cnt_srwish=cnt_srwish+1;
-        if(cnt_ssrwish==90){
+        if(cnt_ssrwish == 90){//90保底出金
             cnt_ssrwish=0;//ssr保底重置
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SSR");
             let x=random_ssr();//随机获得一张ssr
             sendResult_wish04(x);
-        }else{
-            let x="未获得SSR";
+        }else if(cnt_srwish==10){
+            cnt_srwish=0;//sr保底重置
+            alert("恭喜您通过保底获得了SR");
+            let x=random_sr();//随机获得一张sr
             sendResult_wish04(x);
+        }else {let temp=Math.floor(Math.random()*27888);
+            if(temp%167==0){
+                cnt_ssrwish=0;//ssr保底重置
+                cnt_srwish=0;//sr保底重置
+                alert("恭喜您未通过保底获得了SSR");
+                let x=random_ssr();//随机获得一张ssr
+                sendResult_wish04(x);
+            }else{let Temp=Math.floor(Math.random()*390);
+                if(Temp%19==0){
+                    cnt_srwish=0;//sr保底重置
+                    alert("恭喜您未通过保底获得了SR");
+                    let x=random_sr();//随机获得一张sr
+                    sendResult_wish04(x);
+                }else{
+                    let x=random_r();//随机获得一张r
+                    sendResult_wish04(x);
+                }
+            }
         }
-        // temp=Math.floor(Math.random()*1);
-        //floor() 返回小于等于x的最大整数
-        //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机
     }
     function wish05(){
         cnt_ssrwish=cnt_ssrwish+1;
         cnt_srwish=cnt_srwish+1;
-        if(cnt_ssrwish==90){
+        if(cnt_ssrwish == 90){//90保底出金
             cnt_ssrwish=0;//ssr保底重置
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SSR");
             let x=random_ssr();//随机获得一张ssr
             sendResult_wish05(x);
-        }else{
-            let x="未获得SSR";
+        }else if(cnt_srwish==10){
+            cnt_srwish=0;//sr保底重置
+            alert("恭喜您通过保底获得了SR");
+            let x=random_sr();//随机获得一张sr
             sendResult_wish05(x);
+        }else {let temp=Math.floor(Math.random()*27888);
+            if(temp%167==0){
+                cnt_ssrwish=0;//ssr保底重置
+                cnt_srwish=0;//sr保底重置
+                alert("恭喜您未通过保底获得了SSR");
+                let x=random_ssr();//随机获得一张ssr
+                sendResult_wish05(x);
+            }else{let Temp=Math.floor(Math.random()*390);
+                if(Temp%19==0){
+                    cnt_srwish=0;//sr保底重置
+                    alert("恭喜您未通过保底获得了SR");
+                    let x=random_sr();//随机获得一张sr
+                    sendResult_wish05(x);
+                }else{
+                    let x=random_r();//随机获得一张r
+                    sendResult_wish05(x);
+                }
+            }
         }
-        // temp=Math.floor(Math.random()*1);
-        //floor() 返回小于等于x的最大整数
-        //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机
     }
     function wish06(){
         cnt_ssrwish=cnt_ssrwish+1;
         cnt_srwish=cnt_srwish+1;
-        if(cnt_ssrwish==90){
+        if(cnt_ssrwish == 90){//90保底出金
             cnt_ssrwish=0;//ssr保底重置
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SSR");
             let x=random_ssr();//随机获得一张ssr
             sendResult_wish06(x);
-        }else{
-            let x="未获得SSR";
+        }else if(cnt_srwish==10){
+            cnt_srwish=0;//sr保底重置
+            alert("恭喜您通过保底获得了SR");
+            let x=random_sr();//随机获得一张sr
             sendResult_wish06(x);
+        }else {let temp=Math.floor(Math.random()*27888);
+            if(temp%167==0){
+                cnt_ssrwish=0;//ssr保底重置
+                cnt_srwish=0;//sr保底重置
+                alert("恭喜您未通过保底获得了SSR");
+                let x=random_ssr();//随机获得一张ssr
+                sendResult_wish06(x);
+            }else{let Temp=Math.floor(Math.random()*390);
+                if(Temp%19==0){
+                    cnt_srwish=0;//sr保底重置
+                    alert("恭喜您未通过保底获得了SR");
+                    let x=random_sr();//随机获得一张sr
+                    sendResult_wish06(x);
+                }else{
+                    let x=random_r();//随机获得一张r
+                    sendResult_wish06(x);
+                }
+            }
         }
-        // temp=Math.floor(Math.random()*1);
-        //floor() 返回小于等于x的最大整数
-        //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机
     }
     function wish07(){
         cnt_ssrwish=cnt_ssrwish+1;
         cnt_srwish=cnt_srwish+1;
-        if(cnt_ssrwish==90){
+        if(cnt_ssrwish == 90){//90保底出金
             cnt_ssrwish=0;//ssr保底重置
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SSR");
             let x=random_ssr();//随机获得一张ssr
             sendResult_wish07(x);
-        }else{
-            let x="未获得SSR";
+        }else if(cnt_srwish==10){
+            cnt_srwish=0;//sr保底重置
+            alert("恭喜您通过保底获得了SR");
+            let x=random_sr();//随机获得一张sr
             sendResult_wish07(x);
+        }else {let temp=Math.floor(Math.random()*27888);
+            if(temp%167==0){
+                cnt_ssrwish=0;//ssr保底重置
+                cnt_srwish=0;//sr保底重置
+                alert("恭喜您未通过保底获得了SSR");
+                let x=random_ssr();//随机获得一张ssr
+                sendResult_wish07(x);
+            }else{let Temp=Math.floor(Math.random()*390);
+                if(Temp%19==0){
+                    cnt_srwish=0;//sr保底重置
+                    alert("恭喜您未通过保底获得了SR");
+                    let x=random_sr();//随机获得一张sr
+                    sendResult_wish07(x);
+                }else{
+                    let x=random_r();//随机获得一张r
+                    sendResult_wish07(x);
+                }
+            }
         }
-        // temp=Math.floor(Math.random()*1);
-        //floor() 返回小于等于x的最大整数
-        //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机
     }
     function wish08(){
         cnt_ssrwish=cnt_ssrwish+1;
         cnt_srwish=cnt_srwish+1;
-        if(cnt_ssrwish==90){
+        if(cnt_ssrwish == 90){//90保底出金
             cnt_ssrwish=0;//ssr保底重置
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SSR");
             let x=random_ssr();//随机获得一张ssr
             sendResult_wish08(x);
-        }else{
-            let x="未获得SSR";
+        }else if(cnt_srwish==10){
+            cnt_srwish=0;//sr保底重置
+            alert("恭喜您通过保底获得了SR");
+            let x=random_sr();//随机获得一张sr
             sendResult_wish08(x);
+        }else {let temp=Math.floor(Math.random()*27888);
+            if(temp%167==0){
+                cnt_ssrwish=0;//ssr保底重置
+                cnt_srwish=0;//sr保底重置
+                alert("恭喜您未通过保底获得了SSR");
+                let x=random_ssr();//随机获得一张ssr
+                sendResult_wish08(x);
+            }else{let Temp=Math.floor(Math.random()*390);
+                if(Temp%19==0){
+                    cnt_srwish=0;//sr保底重置
+                    alert("恭喜您未通过保底获得了SR");
+                    let x=random_sr();//随机获得一张sr
+                    sendResult_wish08(x);
+                }else{
+                    let x=random_r();//随机获得一张r
+                    sendResult_wish08(x);
+                }
+            }
         }
-        // temp=Math.floor(Math.random()*1);
-        //floor() 返回小于等于x的最大整数
-        //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机
     }
     function wish09(){
         cnt_ssrwish=cnt_ssrwish+1;
         cnt_srwish=cnt_srwish+1;
-        if(cnt_ssrwish==10){
+        if(cnt_ssrwish == 90){//90保底出金
             cnt_ssrwish=0;//ssr保底重置
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SSR");
             let x=random_ssr();//随机获得一张ssr
             sendResult_wish09(x);
-        }else{
-            let x="未获得SSR";
+        }else if(cnt_srwish==10){
+            cnt_srwish=0;//sr保底重置
+            alert("恭喜您通过保底获得了SR");
+            let x=random_sr();//随机获得一张sr
             sendResult_wish09(x);
+        }else {let temp=Math.floor(Math.random()*27888);
+            if(temp%167==0){
+                cnt_ssrwish=0;//ssr保底重置
+                cnt_srwish=0;//sr保底重置
+                alert("恭喜您未通过保底获得了SSR");
+                let x=random_ssr();//随机获得一张ssr
+                sendResult_wish09(x);
+            }else{let Temp=Math.floor(Math.random()*390);
+                if(Temp%19==0){
+                    cnt_srwish=0;//sr保底重置
+                    alert("恭喜您未通过保底获得了SR");
+                    let x=random_sr();//随机获得一张sr
+                    sendResult_wish09(x);
+                }else{
+                    let x=random_r();//随机获得一张r
+                    sendResult_wish09(x);
+                }
+            }
         }
-        // temp=Math.floor(Math.random()*1);
-        //floor() 返回小于等于x的最大整数
-        //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机
     }
     function wish10(){
         cnt_ssrwish=cnt_ssrwish+1;
         cnt_srwish=cnt_srwish+1;
-        if(cnt_ssrwish==90){
+        if(cnt_ssrwish == 90){//90保底出金
             cnt_ssrwish=0;//ssr保底重置
             cnt_srwish=0;//sr保底重置
             alert("恭喜您通过保底获得了SSR");
             let x=random_ssr();//随机获得一张ssr
             sendResult_wish10(x);
-        }else{
-            let x="未获得SSR";
+        }else if(cnt_srwish==10){
+            cnt_srwish=0;//sr保底重置
+            alert("恭喜您通过保底获得了SR");
+            let x=random_sr();//随机获得一张sr
             sendResult_wish10(x);
+        }else {let temp=Math.floor(Math.random()*27888);
+            if(temp%167==0){
+                cnt_ssrwish=0;//ssr保底重置
+                cnt_srwish=0;//sr保底重置
+                alert("恭喜您未通过保底获得了SSR");
+                let x=random_ssr();//随机获得一张ssr
+                sendResult_wish10(x);
+            }else{let Temp=Math.floor(Math.random()*390);
+                if(Temp%19==0){
+                    cnt_srwish=0;//sr保底重置
+                    alert("恭喜您未通过保底获得了SR");
+                    let x=random_sr();//随机获得一张sr
+                    sendResult_wish10(x);
+                }else{
+                    let x=random_r();//随机获得一张r
+                    sendResult_wish10(x);
+                }
+            }
         }
-        // temp=Math.floor(Math.random()*1);
-        //floor() 返回小于等于x的最大整数
-        //random返回介于 0（包含） ~ 1（不包含） 之间的一个随机
     }
+
     function random_ssr(){
         let tempRandomSsr=Math.floor(Math.random()*15);
-        let ssr;
+        let ssr="ssr";
             switch (tempRandomSsr) {
-            <!--刻晴-->case 0:
+            case 0:
                  ssr = "刻晴";
                 cnt_keqing=cnt_keqing+1;
                 cnt_ssrjuese=cnt_ssrjuese+1;
                 sendResult_keqing(cnt_keqing);
                 sendResult_wuxingjuese(cnt_ssrjuese);
                 break;
-            <!--莫娜-->case 1:
+            case 1:
                 ssr = "莫娜";
                 cnt_mona=cnt_mona+1;
                 cnt_ssrjuese=cnt_ssrjuese+1;
                 sendResult_mona(cnt_mona);
                 sendResult_wuxingjuese(cnt_ssrjuese);
                 break;
-            <!--七七-->case 2:
+            case 2:
                 ssr = "七七";
                 cnt_qiqi=cnt_qiqi+1;
                 cnt_ssrjuese=cnt_ssrjuese+1;
                 sendResult_qiqi(cnt_qiqi);
                 sendResult_wuxingjuese(cnt_ssrjuese);
                 break;
-            <!--迪卢克-->case 3:
+            case 3:
                 ssr = "迪卢克";
                 cnt_diluke=cnt_diluke+1;
                 cnt_ssrjuese=cnt_ssrjuese+1;
                 sendResult_diluke(cnt_diluke);
                 sendResult_wuxingjuese(cnt_ssrjuese);
                 break;
-            <!--琴-->case 4:
+            case 4:
                 ssr = "琴";
                 cnt_qin=cnt_qin+1;
                 cnt_ssrjuese=cnt_ssrjuese+1;
                 sendResult_qin(cnt_qin);
                 sendResult_wuxingjuese(cnt_ssrjuese);
                 break;
-            <!--阿莫斯之弓-->case 5:
+            case 5:
                 ssr = "阿莫斯之弓";
                     cnt_amosizhigong=cnt_amosizhigong+1;
                     cnt_ssrwuqi=cnt_ssrwuqi+1;
                     sendResult_amosizhigong(cnt_amosizhigong);
                     sendResult_wuxingwuqi(cnt_ssrwuqi);
                 break;
-            <!--天空之翼-->case  6:
+            case  6:
                 ssr = "天空之翼";
                     cnt_tiankongzhiyi=cnt_tiankongzhiyi+1;
                     cnt_ssrwuqi=cnt_ssrwuqi+1;
                     sendResult_tiankongzhiyi(cnt_tiankongzhiyi);
                     sendResult_wuxingwuqi(cnt_ssrwuqi);
                 break;
-            <!--四风原典-->case 7:
+            case 7:
                 ssr = "四风原典";
                     cnt_sifengyuandian=cnt_sifengyuandian+1;
                     cnt_ssrwuqi=cnt_ssrwuqi+1;
                     sendResult_sifengyuandian(cnt_sifengyuandian);
                     sendResult_wuxingwuqi(cnt_ssrwuqi);
                 break;
-            <!--天空之卷-->case 8:
+            case 8:
                 ssr = "天空之卷";
                     cnt_tiankongzhijuan=cnt_tiankongzhijuan+1;
                     cnt_ssrwuqi=cnt_ssrwuqi+1;
                     sendResult_tiankongzhijuan(cnt_tiankongzhijuan);
                     sendResult_wuxingwuqi(cnt_ssrwuqi);
                 break;
-            <!--和璞鸢-->case 9:
+            case 9:
                 ssr = "和璞鸢";
                     cnt_hepuyuan=cnt_hepuyuan+1;
                     cnt_ssrwuqi=cnt_ssrwuqi+1;
                     sendResult_hepuyuan(cnt_hepuyuan);
                     sendResult_wuxingwuqi(cnt_ssrwuqi);
                 break;
-            <!--天空之脊-->case 10:
+            case 10:
                 ssr = "天空之脊";
                     cnt_tiankongzhiji=cnt_tiankongzhiji+1;
                     cnt_ssrwuqi=cnt_ssrwuqi+1;
                     sendResult_tiankongzhiji(cnt_tiankongzhiji);
                     sendResult_wuxingwuqi(cnt_ssrwuqi);
                 break;
-            <!--狼的末路-->case 11:
+            case 11:
                 ssr = "狼的末路"
                     cnt_langdemolu=cnt_langdemolu+1;
                     cnt_ssrwuqi=cnt_ssrwuqi+1;
                     sendResult_langdemolu(cnt_langdemolu);
                     sendResult_wuxingwuqi(cnt_ssrwuqi);
                 break;
-            <!--天空之傲-->case 12:
+            case 12:
                 ssr = "天空之傲";
                     cnt_tiankongzhiao=cnt_tiankongzhiao+1;
                     cnt_ssrwuqi=cnt_ssrwuqi+1;
                     sendResult_tiankongzhiao(cnt_tiankongzhiao);
                     sendResult_wuxingwuqi(cnt_ssrwuqi);
                 break;
-            <!--天空之刃-->case 13:
+            case 13:
                 ssr = "天空之刃";
                     cnt_tiankongzhiren=cnt_tiankongzhiren+1;
                     cnt_ssrwuqi=cnt_ssrwuqi+1;
                     sendResult_tiankongzhiren(cnt_tiankongzhiren);
                     sendResult_wuxingwuqi(cnt_ssrwuqi);
                 break;
-            <!--风鹰剑-->case 14:
+            case 14:
                 ssr = "风鹰剑";
                     cnt_fengyingjian=cnt_fengyingjian+1;
                     cnt_ssrwuqi=cnt_ssrwuqi+1;
@@ -340,12 +530,376 @@
         }
         return ssr;
     }
+    function random_sr() {
+        let tempRandomSr = Math.floor(Math.random() * 35);
+        let sr="sr";
+        switch (tempRandomSr) {
+            case 0:
+                sr = "罗莎莉亚";
+                cnt_luoshaliya = cnt_luoshaliya + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_luoshaliya(cnt_luoshaliya);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 1:
+                sr = "辛焱";
+                cnt_xinyan = cnt_xinyan + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xinyan(cnt_xinyan);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 2:
+                sr = "砂糖";
+                cnt_shatang = cnt_shatang + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_shatang(cnt_shatang);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 3:
+                sr = "迪奥娜";
+                cnt_diaona = cnt_diaona + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_diaona(cnt_diaona);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 4:
+                sr = "重云";
+                cnt_chongyun = cnt_chongyun + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_chongyun(cnt_chongyun);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 5:
+                sr = "诺艾尔";
+                cnt_nuoaier = cnt_nuoaier + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_nuoaier(cnt_nuoaier);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 6:
+                sr = "班尼特";
+                cnt_bannite = cnt_bannite + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_bannite(cnt_bannite);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 7:
+                sr = "菲谢尔";
+                cnt_feixieer = cnt_feixieer + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_feixieer(cnt_feixieer);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 8:
+                sr = "凝光";
+                cnt_ningguang = cnt_ningguang + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_ningguang(cnt_ningguang);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 9:
+                sr = "行秋";
+                cnt_xingqiu = cnt_xingqiu+ 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xingqiu(cnt_xingqiu);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 10:
+                sr = "北斗";
+                cnt_beidou = cnt_beidou + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_beidou(cnt_beidou);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 11:
+                sr = "香菱";
+                cnt_xiangling= cnt_xiangling + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xiangling(cnt_xiangling);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 12:
+                sr = "安柏";
+                cnt_anbai = cnt_anbai + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_anbai(cnt_anbai);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 13:
+                sr = "雷泽";
+                cnt_leize = cnt_leize + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_leize(cnt_leize);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 14:
+                sr = "凯亚";
+                cnt_kaiya = cnt_kaiya + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_kaiya(cnt_kaiya);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 15:
+                sr = "芭芭拉";
+                cnt_babala = cnt_babala + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_babalar(cnt_babala);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 16:
+                sr = "丽莎";
+                cnt_lisha = cnt_lisha + 1;
+                cnt_srjuese = cnt_lisha + 1;
+                sendResult_lisha(cnt_lisha);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 17:
+                sr = "弓藏";
+                cnt_gongzang = cnt_gongzang + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_gongzang(cnt_gongzang);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 18:
+                sr = "砂糖";
+                cnt_shatang = cnt_shatang + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_shatang(cnt_shatang);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 19:
+                sr = "迪奥娜";
+                cnt_diaona = cnt_diaona + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_diaona(cnt_diaona);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 20:
+                sr = "罗莎莉亚";
+                cnt_luoshaliya = cnt_luoshaliya + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_luoshaliya(cnt_luoshaliya);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 21:
+                sr = "辛焱";
+                cnt_xinyan = cnt_xinyan + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xinyan(cnt_xinyan);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 22:
+                sr = "砂糖";
+                cnt_shatang = cnt_shatang + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_shatang(cnt_shatang);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 23:
+                sr = "迪奥娜";
+                cnt_diaona = cnt_diaona + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_diaona(cnt_diaona);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 24:
+                sr = "重云";
+                cnt_chongyun = cnt_chongyun + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_chongyun(cnt_chongyun);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 25:
+                sr = "诺艾尔";
+                cnt_nuoaier = cnt_nuoaier + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_nuoaier(cnt_nuoaier);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 26:
+                sr = "罗莎莉亚";
+                cnt_luoshaliya = cnt_luoshaliya + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_luoshaliya(cnt_luoshaliya);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 27:
+                sr = "辛焱";
+                cnt_xinyan = cnt_xinyan + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xinyan(cnt_xinyan);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 28:
+                sr = "砂糖";
+                cnt_shatang = cnt_shatang + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_shatang(cnt_shatang);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 29:
+                sr = "迪奥娜";
+                cnt_diaona = cnt_diaona + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_diaona(cnt_diaona);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 30:
+                sr = "罗莎莉亚";
+                cnt_luoshaliya = cnt_luoshaliya + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_luoshaliya(cnt_luoshaliya);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 31:
+                sr = "辛焱";
+                cnt_xinyan = cnt_xinyan + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_xinyan(cnt_xinyan);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 32:
+                sr = "砂糖";
+                cnt_shatang = cnt_shatang + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_shatang(cnt_shatang);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 33:
+                sr = "迪奥娜";
+                cnt_diaona = cnt_diaona + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_diaona(cnt_diaona);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 34:
+                sr = "重云";
+                cnt_chongyun = cnt_chongyun + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_chongyun(cnt_chongyun);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+            case 35:
+                sr = "诺艾尔";
+                cnt_nuoaier = cnt_nuoaier + 1;
+                cnt_srjuese = cnt_srjuese + 1;
+                sendResult_nuoaier(cnt_nuoaier);
+                sendResult_sixingjuese(cnt_srjuese);
+                break;
+        }
+        return sr;
+    }
+    function random_r() {
+        let tempRandomr = Math.floor(Math.random() * 14);
+        let r="r";
+        switch (tempRandomr) {
+            case 0:
+                r = "弹弓";
+                cnt_dangong = cnt_dangong + 1;
+                cnt_rwuqi = cnt_rwuqi + 1;
+                sendResult_dangong(cnt_dangong);
+                sendResult_sanxingwuqi(cnt_rwuqi);
+                break;
+            case 1:
+                r = "神射手之誓";
+                cnt_shensheshouzhishi = cnt_shensheshouzhishi + 1;
+                cnt_rwuqi = cnt_rwuqi + 1;
+                sendResult_shensheshouzhishi(cnt_shensheshouzhishi);
+                sendResult_sanxingwuqi(cnt_rwuqi);
+                break;
+            case 2:
+                r = "鸦羽弓";
+                cnt_yayugong = cnt_yayugong + 1;
+                cnt_rwuqi = cnt_rwuqi + 1;
+                sendResult_yayugong(cnt_yayugong);
+                sendResult_sanxingwuqi(cnt_rwuqi);
+                break;
+            case 3:
+                r = "翡玉法球";
+                cnt_feiyufaqiu = cnt_feiyufaqiu + 1;
+                cnt_rwuqi = cnt_rwuqi + 1;
+                sendResult_feiyufaqiu(cnt_feiyufaqiu);
+                sendResult_sanxingwuqi(cnt_rwuqi);
+                break;
+            case 4:
+                r = "讨龙英杰谭";
+                cnt_taolongyingjietan = cnt_taolongyingjietan + 1;
+                cnt_rwuqi = cnt_rwuqi + 1;
+                sendResult_taolongyingjietan(cnt_taolongyingjietan);
+                sendResult_sanxingwuqi(cnt_rwuqi);
+                break;
+            case 5:
+                r = "魔导绪论";
+                cnt_modaoxulun = cnt_modaoxulun + 1;
+                cnt_rwuqi = cnt_rwuqi + 1;
+                sendResult_modaoxulun(cnt_modaoxulun);
+                sendResult_sanxingwuqi(cnt_rwuqi);
+                break;
+            case 6:
+                r = "黑缨枪";
+                cnt_heiyingqiang = cnt_heiyingqiang + 1;
+                cnt_rwuqi = cnt_rwuqi + 1;
+                sendResult_heiyingqiang(cnt_heiyingqiang);
+                sendResult_sanxingwuqi(cnt_rwuqi);
+                break;
+            case 7:
+                r = "以理服人";
+                cnt_yilifuren = cnt_yilifuren + 1;
+                cnt_rwuqi = cnt_rwuqi + 1;
+                sendResult_yilifuren(cnt_yilifuren);
+                sendResult_sanxingwuqi(cnt_rwuqi);
+                break;
+            case 8:
+                r = "沐浴龙血的剑";
+                cnt_muyulongxuedejian = cnt_muyulongxuedejian + 1;
+                cnt_rwuqi = cnt_rwuqi + 1;
+                sendResult_muyulongxuedejian(cnt_muyulongxuedejian);
+                sendResult_sanxingwuqi(cnt_rwuqi);
+                break;
+            case 9:
+                r = "铁影阔剑";
+                cnt_tieyingkuojian = cnt_tieyingkuojian + 1;
+                cnt_rwuqi = cnt_rwuqi + 1;
+                sendResult_tieyingkuojian(cnt_tieyingkuojian);
+                sendResult_sanxingwuqi(cnt_rwuqi);
+                break;
+            case 10:
+                r = "弹弓";
+                cnt_dangong = cnt_dangong + 1;
+                cnt_rwuqi = cnt_rwuqi + 1;
+                sendResult_dangong(cnt_dangong);
+                sendResult_sanxingwuqi(cnt_rwuqi);
+                break;
+            case 11:
+                r = "飞天御剑";
+                cnt_feitianyujian = cnt_feitianyujian + 1;
+                cnt_rwuqi = cnt_rwuqi + 1;
+                sendResult_feitianyujian(cnt_feitianyujian);
+                sendResult_sanxingwuqi(cnt_rwuqi);
+                break;
+            case 12:
+                r = "黎明神剑";
+                cnt_limingshenjian = cnt_limingshenjian + 1;
+                cnt_rwuqi = cnt_rwuqi + 1;
+                sendResult_limingshenjian(cnt_limingshenjian);
+                sendResult_sanxingwuqi(cnt_rwuqi);
+                break;
+            case 13:
+                r = "冷刃";
+                cnt_lenren = cnt_lenren + 1;
+                cnt_rwuqi = cnt_rwuqi + 1;
+                sendResult_lenren(cnt_lenren);
+                sendResult_sanxingwuqi(cnt_rwuqi);
+                break;
+        }
+        return r;
+    }
     <!--充值 recharge-->
     function recharge_6(){
     cnt_genesis=cnt_genesis+60;
     cnt_crystal=cnt_crystal+60;
     cnt_rmb=cnt_rmb+6;
-    cnt_purchase=cnt_purchase+(cnt_crystal-cnt_crystal%160)/160;
+    cnt_purchase=(cnt_crystal-cnt_crystal%160)/160;
     sendResult_genesis(cnt_genesis);
     sendResult_crystal(cnt_crystal);
     sendResult_rmb(cnt_rmb);
@@ -356,7 +910,7 @@
     cnt_genesis=cnt_genesis+330;
     cnt_crystal=cnt_crystal+330;
     cnt_rmb=cnt_rmb+30;
-    cnt_purchase=cnt_purchase+(cnt_crystal-cnt_crystal%160)/160;
+    cnt_purchase=(cnt_crystal-cnt_crystal%160)/160;
     sendResult_genesis(cnt_genesis);
     sendResult_crystal(cnt_crystal);
     sendResult_rmb(cnt_rmb);
@@ -367,7 +921,7 @@
     cnt_genesis=cnt_genesis+1090;
     cnt_crystal=cnt_crystal+1090;
     cnt_rmb=cnt_rmb+98;
-    cnt_purchase=cnt_purchase+(cnt_crystal-cnt_crystal%160)/160;
+    cnt_purchase=(cnt_crystal-cnt_crystal%160)/160;
     sendResult_genesis(cnt_genesis);
     sendResult_crystal(cnt_crystal);
     sendResult_rmb(cnt_rmb);
@@ -378,7 +932,7 @@
     cnt_genesis=cnt_genesis+2240;
     cnt_crystal=cnt_crystal+2240;
     cnt_rmb=cnt_rmb+198;
-    cnt_purchase=cnt_purchase+(cnt_crystal-cnt_crystal%160)/160;
+    cnt_purchase=(cnt_crystal-cnt_crystal%160)/160;
     sendResult_genesis(cnt_genesis);
     sendResult_crystal(cnt_crystal);
     sendResult_rmb(cnt_rmb);
@@ -389,7 +943,7 @@
     cnt_genesis=cnt_genesis+3880;
     cnt_crystal=cnt_crystal+3880;
     cnt_rmb=cnt_rmb+328;
-    cnt_purchase=cnt_purchase+(cnt_crystal-cnt_crystal%160)/160;
+    cnt_purchase=(cnt_crystal-cnt_crystal%160)/160;
     sendResult_genesis(cnt_genesis);
     sendResult_crystal(cnt_crystal);
     sendResult_rmb(cnt_rmb);
@@ -400,7 +954,7 @@
     cnt_genesis=cnt_genesis+8080;
     cnt_crystal=cnt_crystal+8080;
     cnt_rmb=cnt_rmb+648;
-    cnt_purchase=cnt_purchase+(cnt_crystal-cnt_crystal%160)/160;
+    cnt_purchase=(cnt_crystal-cnt_crystal%160)/160;
     sendResult_genesis(cnt_genesis);
     sendResult_crystal(cnt_crystal);
     sendResult_rmb(cnt_rmb);
@@ -533,9 +1087,8 @@
     function sendResult_wuxingwuqi(cnt_ssrwuqi) {
         let num = document.getElementById("result_wuxingwuqi")
         num.innerHTML = cnt_ssrwuqi;
-        }
-    /*
-    * function sendResult_sixingjuese(cnt_srjuese) {
+    }
+    function sendResult_sixingjuese(cnt_srjuese) {
         let num = document.getElementById("result_sixingjuese")
         num.innerHTML = cnt_srjuese;
     }
@@ -546,7 +1099,7 @@
     function sendResult_sanxingwuqi(cnt_rwuqi) {
         let num = document.getElementById("result_sanxingwuqi")
         num.innerHTML = cnt_rwuqi;
-    }*/
+    }
     function sendResult_wish01(x) {
         let num = document.getElementById("wish_1")
         num.innerHTML = x;
