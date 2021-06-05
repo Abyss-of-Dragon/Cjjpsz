@@ -41,11 +41,12 @@
         <a class="right item">
             <form style="margin: auto;outline: none" method="get" action="/search" id="searchForm">
                 <div class="ui icon input">
-                    <i class="search link icon"></i>
+                    <i class="search icon"></i>
                     <input type="text" name="key" placeholder="Search..." onkeypress="(e)=>{if(e.keyCode===13){document.getElementById('searchForm').submit()}}">
                 </div>
             </form>
         </a>
+<!--        个人资料页入口-->
         <a class="item">
             <img class="ui avatar image" src="/img/youla.png">
         </a>
@@ -64,8 +65,7 @@
             <div th:fragment="common_menu(index)" class="ui container">
                 <div class="ui fluid card">
                     <div class="ui centered image">
-                        <img src="/img/title2.png"
-                             >
+                        <img src="/img/title2.png">
                     </div>
                 </div>
                 <div class="ui vertical fluid stackable menu container">
@@ -90,6 +90,12 @@
                     <a th:class="${index}==4?'active red item':'item'" class="item" href="/gacha">
                         <font size="4px">
                             <b>抽卡模拟</b>
+                        </font>
+                        <i class="large gem outline icon"></i>
+                    </a>
+                    <a th:class="${index}==5?'active red item':'item'" class="item" href="/calendar">
+                        <font size="4px">
+                            <b>活动日历</b>
                         </font>
                         <i class="large gem outline icon"></i>
                     </a>
