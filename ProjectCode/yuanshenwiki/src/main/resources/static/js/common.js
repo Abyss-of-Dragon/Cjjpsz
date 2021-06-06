@@ -1,7 +1,6 @@
 $(document)
     .ready(function() {
 
-        $(".selection.dropdown .item").value();
         $(".tabular.menu .item").tab();
         $(".pointing.menu .item").tab();
 
