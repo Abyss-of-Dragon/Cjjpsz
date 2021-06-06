@@ -58,16 +58,16 @@
                     <br>
                     <img class="ui tiny circular image" th:src="${loginUser.getAvatar()}">
                     <br>
+                                        <div class="ui vertical animated button" tabindex="0">
+                                            <div class="hidden content"><input type="file" name="avatar"></div>
+                                            <div class="visible content">
+                                                <i class="upload icon"></i>上传头像(仅支持JPG格式)
+                                            </div>
+                                        </div>
+                                        <button class="ui primary button" type="submit">上传</button>
+                                        <br>
 
-<!--                    <div class="ui vertical animated button" tabindex="0">-->
-<!--                        <div class="hidden content"><input type="file" name="avatar"></div>-->
-<!--                        <div class="visible content">-->
-<!--                            <i class="upload icon"></i>上传头像(仅支持JPG格式)-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <button class="ui primary button" type="submit">上传</button>-->
-<!--                    <br>-->
-                    <input type="file" name="avatar"><button type="submit">上传</button>
+<!--                    <input type="file" name="avatar"><button type="submit">上传</button>-->
                 </form>
             </div>
         </div>
