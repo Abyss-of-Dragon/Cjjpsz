@@ -24,6 +24,39 @@
     <script src="/js/img_roll.js" th:src="@{/js/img_roll.js}"></script>
 
 
+    <script type="text/javascript">
+
+        var ShareUtil = {
+            openShareUrl: (url) => {
+                var a = document.createElement("a");
+                a.href = url;
+                a.target = "_blank";
+                a.click();
+            },
+            shareToQQ: (option) => {
+                var url = "https://connect.qq.com/widget/shareqq/index.html" +
+                    "?url="     + encodeURIComponent(option.url)      +
+                    "&title="   + encodeURIComponent(option.title)    +
+                    "&source="  + encodeURIComponent('https://www.baidu.com/')   +
+                    "&summary=" + encodeURIComponent(option.desc)     +
+                    "&pics="    + encodeURIComponent(option.pics)     +
+                    "&desc="    + encodeURIComponent(option.summary);
+                ShareUtil.openShareUrl(url);
+            },
+            shareToQZone: (option)=>{
+                var url = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey" +
+                    "?url="     + encodeURIComponent(option.url)      +
+                    "&title="   + encodeURIComponent(option.title)    +
+                    "&summary=" + encodeURIComponent(option.desc)     +
+                    "&desc="    + encodeURIComponent(option.summary)  +
+                    "&site="    + encodeURIComponent('https://www.baidu.com/')     +
+                    "&pics="    + encodeURIComponent(option.pics);
+                ShareUtil.openShareUrl(url);
+            }
+        }
+    </script>
+
+
 </head>
 
 <body>
@@ -38,6 +71,17 @@
         <a href="/mainpage" class="header item">
             首页
         </a>
+
+        <button class="ui basic button" style="width: 50px;height: 30px;position: absolute;top: 90px;left: 500px" onclick='ShareUtil.shareToQQ({
+             url: "",
+             title: "",
+             summary: "",
+             desc: "",
+             pics: ""
+         })'>
+            <i class="qq icon"></i>
+        </button>
+
         <a class="right item">
             <form style="margin: auto;outline: none" method="get" action="/search" id="searchForm">
                 <div class="ui icon input">
@@ -94,6 +138,7 @@
                         <i class="large gem outline icon"></i>
                     </a>
                 </div>
+
             </div>
         </div>
 
@@ -275,6 +320,7 @@
         </div>
     </div>
 </div>
-</body>
 
+
+</body>
 </html>
